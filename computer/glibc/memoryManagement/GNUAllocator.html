@@ -1,0 +1,657 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.2 GNU 分配器 · ebook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="zhangkaiyuan">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="pageTable.html" />
+    
+    
+    <link rel="prev" href="ProcessMemoryConcepts.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../computer.html">
+            
+                <a href="../../computer.html">
+            
+                    
+                    计算机
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../glibc.html">
+            
+                <a href="../glibc.html">
+            
+                    
+                    glibc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="memoryManagement.html">
+            
+                <a href="memoryManagement.html">
+            
+                    
+                    1 虚拟地址分配和分页
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="ProcessMemoryConcepts.html">
+            
+                <a href="ProcessMemoryConcepts.html">
+            
+                    
+                    1.1 进程内存概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.1.2" data-path="GNUAllocator.html">
+            
+                <a href="GNUAllocator.html">
+            
+                    
+                    1.2 GNU 分配器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3" data-path="pageTable.html">
+            
+                <a href="pageTable.html">
+            
+                    
+                    1.3 页表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../literature/literature.html">
+            
+                <a href="../../../literature/literature.html">
+            
+                    
+                    文学
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../literature/poetry/poetry.html">
+            
+                <a href="../../../literature/poetry/poetry.html">
+            
+                    
+                    诗词
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../../literature/poetry/sushi/sushi.html">
+            
+                <a href="../../../literature/poetry/sushi/sushi.html">
+            
+                    
+                    苏轼
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1.1" data-path="../../../literature/poetry/sushi/1.html">
+            
+                <a href="../../../literature/poetry/sushi/1.html">
+            
+                    
+                    《定风波·莫听穿林打叶声》
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >1.2 GNU 分配器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="gnu-&#x5206;&#x914D;&#x5668;"><center> GNU &#x5206;&#x914D;&#x5668;</center></h1>
+<p>GNU C &#x5E93;&#x4E2D;&#x7684; malloc &#x5B9E;&#x73B0;&#x6D3E;&#x751F;&#x81EA; ptmalloc (pthreads malloc)&#xFF0C;&#x800C;&#x540E;&#x8005;&#x53C8;&#x6D3E;&#x751F;&#x81EA; dlmalloc (&#x7531;Doug Lea&#x5728;1987&#x5E74;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#xFF0C;&#x8FD9;&#x662F;Android&#x7CFB;&#x7EDF;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5206;&#x914D;&#x5668;&#x3002;&#x800C;Linux&#x7CFB;&#x7EDF;&#x4E2D;&#x91C7;&#x7528;&#x7684;&#x662F;ptmalloc&#xFF0C;ptmalloc&#x5728;dlmalloc&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x8FDB;&#x884C;&#x4E86;&#x6539;&#x8FDB;&#xFF0C;&#x4EE5;&#x66F4;&#x597D;&#x9002;&#x5E94;&#x591A;&#x7EBF;&#x7A0B;)&#x3002;&#x8FD9;&#x4E2A; malloc &#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5B83;&#x4EEC;&#x7684;&#x5927;&#x5C0F;&#x548C;&#x53EF;&#x80FD;&#x7531;&#x7528;&#x6237;&#x63A7;&#x5236;&#x7684;&#x67D0;&#x4E9B;&#x53C2;&#x6570;&#x4EE5;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x5206;&#x914D;&#x5185;&#x5B58;&#x3002;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4ECE;&#x5927;&#x7684;&#x8FDE;&#x7EED;&#x5185;&#x5B58;&#x533A;&#x57DF;&#x5206;&#x914D;&#x90E8;&#x5206;&#x5185;&#x5B58;&#xFF08;&#x79F0;&#x4E3A;&#x5757;&#xFF09;&#x5E76;&#x7BA1;&#x7406;&#x8FD9;&#x4E9B;&#x533A;&#x57DF;&#x4EE5;&#x4F18;&#x5316;&#x5B83;&#x4EEC;&#x7684;&#x4F7F;&#x7528;&#x5E76;&#x51CF;&#x5C11;&#x4E0D;&#x53EF;&#x7528;&#x5757;&#x5F62;&#x5F0F;&#x7684;&#x6D6A;&#x8D39;&#x3002;&#x4F20;&#x7EDF;&#x4E0A;&#xFF0C;&#x7CFB;&#x7EDF;&#x5806;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;&#x4E00;&#x4E2A;&#x5927;&#x5185;&#x5B58;&#x533A;&#x57DF;&#xFF0C;&#x4F46; GNU C &#x5E93; malloc &#x5B9E;&#x73B0;&#x7EF4;&#x62A4;&#x591A;&#x4E2A;&#x8FD9;&#x6837;&#x7684;&#x533A;&#x57DF;&#x4EE5;&#x4F18;&#x5316;&#x5B83;&#x4EEC;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x4F7F;&#x7528;&#x3002;&#x6BCF;&#x4E2A;&#x8FD9;&#x6837;&#x7684;&#x533A;&#x57DF;&#x5728;&#x5185;&#x90E8;&#x88AB;&#x79F0;&#x4E3A;&#x4E00;&#x4E2A;arena&#x3002;</p>
+<p>&#x4E0E;&#x5176;&#x4ED6;&#x7248;&#x672C;&#x76F8;&#x53CD;&#xFF0C;GNU C &#x5E93;&#x4E2D;&#x7684; malloc &#x4E0D;&#x4F1A;&#x5C06;&#x5757;&#x5927;&#x5C0F;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x4E3A; 2 &#x7684;&#x5E42;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x5927;&#x7684;&#x8FD8;&#x662F;&#x5C0F;&#x7684;&#x5927;&#x5C0F;&#x3002;&#x76F8;&#x90BB;&#x7684;&#x5757;&#x53EF;&#x4EE5;&#x5728;&#x7A7A;&#x95F2;&#x65F6;&#x5408;&#x5E76;&#xFF0C;&#x65E0;&#x8BBA;&#x5B83;&#x4EEC;&#x7684;&#x5927;&#x5C0F;&#x662F;&#x591A;&#x5C11;&#x3002;&#x8FD9;&#x4F7F;&#x5F97;&#x8BE5;&#x5B9E;&#x73B0;&#x9002;&#x7528;&#x4E8E;&#x5404;&#x79CD;&#x5206;&#x914D;&#x6A21;&#x5F0F;&#xFF0C;&#x800C;&#x901A;&#x5E38;&#x4E0D;&#x4F1A;&#x56E0;&#x788E;&#x7247;&#x800C;&#x5BFC;&#x81F4;&#x5927;&#x91CF;&#x5185;&#x5B58;&#x6D6A;&#x8D39;&#x3002;&#x591A;&#x4E2A; arena &#x7684;&#x5B58;&#x5728;&#x5141;&#x8BB8;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x5728;&#x5355;&#x72EC;&#x7684; arena &#x4E2D;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF0C;&#x4ECE;&#x800C;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#x3002;</p>
+<p>&#x5185;&#x5B58;&#x5206;&#x914D;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x975E;&#x5E38;&#x5927;&#x7684;&#x5757;&#xFF0C;&#x5373;&#x6BD4;&#x9875;&#x5927;&#x5F97;&#x591A;&#x3002;&#x8FD9;&#x4E9B;&#x8BF7;&#x6C42;&#x4F7F;&#x7528; mmap &#x5206;&#x914D;&#xFF08;&#x533F;&#x540D;&#x6216;&#x901A;&#x8FC7; /dev/zero&#xFF1B;&#x8BF7;&#x53C2;&#x9605;&#x5185;&#x5B58;&#x6620;&#x5C04; I/O&#xFF09;&#x3002;&#x8FD9;&#x5177;&#x6709;&#x5F88;&#x5927;&#x7684;&#x4F18;&#x52BF;&#xFF0C;&#x5373;&#x8FD9;&#x4E9B;&#x5757;&#x5728;&#x88AB;&#x91CA;&#x653E;&#x65F6;&#x4F1A;&#x7ACB;&#x5373;&#x8FD4;&#x56DE;&#x5230;&#x7CFB;&#x7EDF;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x5927;&#x5757;&#x88AB;&#x201C;&#x9501;&#x5B9A;&#x201D;&#x5728;&#x8F83;&#x5C0F;&#x5757;&#x4E4B;&#x95F4;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5373;&#x4F7F;&#x5728;&#x8C03;&#x7528; free &#x4E4B;&#x540E;&#x4E5F;&#x4F1A;&#x6D6A;&#x8D39;&#x5185;&#x5B58;&#x3002;&#x8981;&#x4F7F;&#x7528;&#x7684; mmap &#x7684;&#x5927;&#x5C0F;&#x9608;&#x503C;&#x662F;&#x52A8;&#x6001;&#x7684;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x7A0B;&#x5E8F;&#x7684;&#x5206;&#x914D;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x8C03;&#x6574;&#x3002;mallopt &#x53EF;&#x7528;&#x4E8E;&#x4F7F;&#x7528; M_MMAP_THRESHOLD &#x9759;&#x6001;&#x8C03;&#x6574;&#x9608;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; M_MMAP_MAX &#x5B8C;&#x5168;&#x7981;&#x7528; mmap &#x7684;&#x4F7F;&#x7528;&#xFF1B;&#x8BF7;&#x53C2;&#x9605; <a href="https://www.gnu.org/software/libc/manual/html_mono/libc.html#Malloc-Tunable-Parameters" target="_blank">Malloc &#x53EF;&#x8C03;&#x53C2;&#x6570;</a>&#x3002;</p>
+<p>GNU &#x5206;&#x914D;&#x5668;&#x7684;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x6280;&#x672F;&#x63CF;&#x8FF0;&#x4FDD;&#x5B58;&#x5728; GNU C &#x5E93; wiki &#x4E2D;&#x3002;&#x8BF7;&#x53C2;&#x9605;<a href="https://sourceware.org/glibc/wiki/MallocInternals" target="_blank">wiki</a>&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x60A8;&#x81EA;&#x5DF1;&#x7684;&#x81EA;&#x5B9A;&#x4E49; malloc &#x4EE3;&#x66FF; GNU C &#x5E93;&#x63D0;&#x4F9B;&#x7684;&#x5185;&#x7F6E;&#x5206;&#x914D;&#x5668;&#x3002;&#x8BF7;&#x53C2;&#x9605;<a href="https://www.gnu.org/software/libc/manual/html_mono/libc.html#Replacing-malloc" target="_blank">&#x66FF;&#x6362; malloc</a>&#x3002;</p>
+<h3 id="&#x57FA;&#x672C;&#x5185;&#x5B58;&#x5206;&#x914D;&#xFF08;malloc&#xFF09;">&#x57FA;&#x672C;&#x5185;&#x5B58;&#x5206;&#x914D;&#xFF08;malloc&#xFF09;</h3>
+<ul>
+<li>&#x8981;&#x5206;&#x914D;&#x4E00;&#x5757;&#x5185;&#x5B58;&#xFF0C;&#x8BF7;&#x8C03;&#x7528; malloc&#x3002;&#x6B64;&#x51FD;&#x6570;&#x7684;&#x539F;&#x578B;&#x4F4D;&#x4E8E; stdlib.h &#x4E2D;&#x3002;</li>
+<li>&#x51FD;&#x6570;&#xFF1A;<code>void * malloc (size t size)</code></li>
+<li>&#x6B64;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x65B0;&#x5206;&#x914D;&#x7684;&#x5757; size &#x5B57;&#x8282;&#x957F;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x5982;&#x679C;&#x65E0;&#x6CD5;&#x5206;&#x914D;&#x5757;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x6307;&#x9488;&#xFF08;&#x8BBE;&#x7F6E; errno&#xFF09;&#x3002;</li>
+<li>&#x5757;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x672A;&#x5B9A;&#x4E49;&#x7684;&#xFF1B;&#x60A8;&#x5FC5;&#x987B;&#x81EA;&#x5DF1;&#x521D;&#x59CB;&#x5316;&#x5B83;&#xFF08;&#x6216;&#x4F7F;&#x7528; calloc &#x4EE3;&#x66FF;&#xFF1B;&#x8BF7;&#x53C2;&#x9605;<a href="https://www.gnu.org/software/libc/manual/html_mono/libc.html#Allocating-Cleared-Space" target="_blank">&#x5206;&#x914D;&#x5DF2;&#x6E05;&#x9664;&#x7A7A;&#x95F4;</a>&#xFF09;&#x3002;</li>
+<li>&#x60A8;&#x53EF;&#x4EE5;&#x5C06; malloc &#x7684;&#x7ED3;&#x679C;&#x5B58;&#x50A8;&#x5230;&#x4EFB;&#x4F55;&#x6307;&#x9488;&#x53D8;&#x91CF;&#x4E2D;&#x800C;&#x65E0;&#x9700;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#xFF0C;&#x56E0;&#x4E3A; ISO C &#x5728;&#x5FC5;&#x8981;&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x5C06;&#x7C7B;&#x578B; void * &#x8F6C;&#x6362;&#x4E3A;&#x53E6;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6307;&#x9488;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x7C7B;&#x578B;&#x4F46;&#x4E0A;&#x4E0B;&#x6587;&#x672A;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#xFF0C;&#x5219;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x662F;&#x5FC5;&#x8981;&#x7684;&#x3002;&#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;&#x5728;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x5206;&#x914D;&#x7A7A;&#x95F4;&#x65F6;&#xFF0C;malloc &#x7684;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x52A0;&#x4E00;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x4EE5;&#x4E0D;&#x8BA1;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x201C;&#x957F;&#x5EA6;&#x201D;&#x4F46;&#x9700;&#x8981;&#x7A7A;&#x95F4;&#x7684;&#x7A7A;&#x5B57;&#x7B26;&#x7EC8;&#x6B62;&#x3002;</li>
+<li>&#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;&#x5728;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x5206;&#x914D;&#x7A7A;&#x95F4;&#x65F6;&#xFF0C;malloc &#x7684;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x52A0;&#x4E00;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x4EE5;&#x4E0D;&#x8BA1;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x201C;&#x957F;&#x5EA6;&#x201D;&#x4F46;&#x9700;&#x8981;&#x7A7A;&#x95F4;&#x7684;&#x7A7A;&#x5B57;&#x7B26;&#x7EC8;&#x6B62;&#x3002;</li>
+<li>malloc &#x4E3A;&#x60A8;&#x63D0;&#x4F9B;&#x7684;&#x5757;&#x4FDD;&#x8BC1;&#x662F;&#x5BF9;&#x9F50;&#x7684;&#xFF0C;&#x4EE5;&#x4FBF;&#x5B83;&#x53EF;&#x4EE5;&#x4FDD;&#x5B58;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x3002;&#x5728; GNU &#x7CFB;&#x7EDF;&#x4E0A;&#xFF0C;&#x5730;&#x5740;&#x5728; 32 &#x4F4D;&#x7CFB;&#x7EDF;&#x4E0A;&#x59CB;&#x7EC8;&#x662F; 8 &#x7684;&#x500D;&#x6570;&#xFF0C;&#x5728; 64 &#x4F4D;&#x7CFB;&#x7EDF;&#x4E0A;&#x59CB;&#x7EC8;&#x662F; 16 &#x7684;&#x500D;&#x6570;&#x3002;&#x5F88;&#x5C11;&#x9700;&#x8981;&#x4EFB;&#x4F55;&#x66F4;&#x9AD8;&#x7684;&#x8FB9;&#x754C;&#xFF08;&#x4F8B;&#x5982;&#x9875;&#x9762;&#x8FB9;&#x754C;&#xFF09;&#xFF1B;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E9B;&#x60C5;&#x51B5;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; aligned_alloc &#x6216; posix_memalign&#xFF08;&#x8BF7;&#x53C2;&#x9605;<a href="https://www.gnu.org/software/libc/manual/html_mono/libc.html#Aligned-Memory-Blocks" target="_blank">&#x5206;&#x914D;&#x5BF9;&#x9F50;&#x7684;&#x5185;&#x5B58;&#x5757;</a>&#xFF09;&#x3002;</li>
+</ul>
+<h3 id="&#x91CA;&#x653E;malloc&#x5206;&#x914D;&#x7684;&#x5185;&#x5B58;&#xFF08;free&#xFF09;">&#x91CA;&#x653E;malloc&#x5206;&#x914D;&#x7684;&#x5185;&#x5B58;&#xFF08;free&#xFF09;</h3>
+<ul>
+<li>&#x5F53;&#x60A8;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x4F7F;&#x7528; malloc &#x83B7;&#x5F97;&#x7684;&#x5757;&#x65F6;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; free &#x51FD;&#x6570;&#x4F7F;&#x8BE5;&#x5757;&#x53EF;&#x518D;&#x6B21;&#x5206;&#x914D;&#x3002;&#x6B64;&#x51FD;&#x6570;&#x7684;&#x539F;&#x578B;&#x4F4D;&#x4E8E; stdlib.h &#x4E2D;</li>
+<li>&#x51FD;&#x6570;&#xFF1A;void free (void *ptr)</li>
+<li>&#x6709;&#x65F6;&#xFF0C;free &#x5B9E;&#x9645;&#x4E0A;&#x53EF;&#x4EE5;&#x5C06;&#x5185;&#x5B58;&#x8FD4;&#x56DE;&#x7ED9;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x5E76;&#x4F7F;&#x8FDB;&#x7A0B;&#x66F4;&#x5C0F;&#x3002;&#x901A;&#x5E38;&#xFF0C;&#x5B83;&#x6240;&#x80FD;&#x505A;&#x7684;&#x5C31;&#x662F;&#x5141;&#x8BB8;&#x7A0D;&#x540E;&#x8C03;&#x7528; malloc &#x6765;&#x91CD;&#x7528;&#x7A7A;&#x95F4;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x8BE5;&#x7A7A;&#x95F4;&#x4F5C;&#x4E3A; malloc &#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x7A7A;&#x95F2;&#x5217;&#x8868;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x4FDD;&#x7559;&#x5728;&#x60A8;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#x3002;</li>
+<li>&#x5728;&#x7A0B;&#x5E8F;&#x7ED3;&#x675F;&#x65F6;&#x91CA;&#x653E;&#x5757;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x56E0;&#x4E3A;&#x5F53;&#x8FDB;&#x7A0B;&#x7EC8;&#x6B62;&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x7684;&#x6240;&#x6709;&#x7A7A;&#x95F4;&#x90FD;&#x5F52;&#x8FD8;&#x7ED9;&#x7CFB;&#x7EDF;&#x3002;</li>
+</ul>
+<h3 id="&#x66F4;&#x6539;&#x5757;&#x7684;&#x5927;&#x5C0F;&#xFF08;realloc&#xFF09;">&#x66F4;&#x6539;&#x5757;&#x7684;&#x5927;&#x5C0F;&#xFF08;realloc&#xFF09;</h3>
+<ul>
+<li>&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x7528; realloc &#x6216; reallocarray &#x4F7F;&#x5757;&#x66F4;&#x957F;&#x3002;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x5728; stdlib.h &#x4E2D;&#x58F0;&#x660E;&#x3002;</li>
+<li>&#x51FD;&#x6570;&#xFF1A;void <em> realloc (void </em>ptr, size t newsize)</li>
+<li>realloc &#x51FD;&#x6570;&#x5C06;&#x5730;&#x5740;&#x4E3A; ptr &#x7684;&#x5757;&#x7684;&#x5927;&#x5C0F;&#x66F4;&#x6539;&#x4E3A; newsize&#x3002;&#x7531;&#x4E8E;&#x5757;&#x672B;&#x5C3E;&#x4E4B;&#x540E;&#x7684;&#x7A7A;&#x95F4;&#x53EF;&#x80FD;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x4E2D;&#xFF0C;realloc &#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x73B0;&#x6709;&#x5FC5;&#x8981;&#x5C06;&#x5757;&#x590D;&#x5236;&#x5230;&#x6709;&#x66F4;&#x591A;&#x53EF;&#x7528;&#x7A7A;&#x95F4;&#x7684;&#x65B0;&#x5730;&#x5740;&#x3002;realloc &#x7684;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x5757;&#x7684;&#x65B0;&#x5730;&#x5740;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x79FB;&#x52A8;&#x5757;&#xFF0C;realloc &#x4F1A;&#x590D;&#x5236;&#x65E7;&#x7684;&#x5185;&#x5BB9;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4F60;&#x4E3A; ptr &#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x7A7A;&#x6307;&#x9488;&#xFF0C;realloc &#x7684;&#x884C;&#x4E3A;&#x5C31;&#x50CF;&#x2019;malloc (newsize)&apos;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x5982;&#x679C; newsize &#x4E3A;&#x96F6;&#xFF0C;realloc &#x91CA;&#x653E;&#x5757;&#x5E76;&#x8FD4;&#x56DE; NULL&#x3002;&#x5426;&#x5219;&#xFF0C;&#x5982;&#x679C; realloc &#x65E0;&#x6CD5;&#x91CD;&#x65B0;&#x5206;&#x914D;&#x8BF7;&#x6C42;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; NULL &#x5E76;&#x8BBE;&#x7F6E; errno&#xFF1B;&#x539F;&#x59CB;&#x5757;&#x4E0D;&#x53D7;&#x5E72;&#x6270;&#x3002;</li>
+<li>&#x51FD;&#x6570;&#xFF1A;void <em> reallocarray (void </em>ptr, size t nmemb, size t size)</li>
+<li>reallocarray &#x51FD;&#x6570;&#x5C06;&#x5730;&#x5740;&#x4E3A; ptr &#x7684;&#x5757;&#x7684;&#x5927;&#x5C0F;&#x66F4;&#x6539;&#x4E3A;&#x8DB3;&#x591F;&#x957F;&#x4EE5;&#x5305;&#x542B; nmemb &#x5143;&#x7D20;&#x7684;&#x5411;&#x91CF;&#xFF08;vector&#xFF09;&#xFF0C;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x5927;&#x5C0F;&#x4E3A;size&#x3002;&#x5B83;&#x7B49;&#x6548;&#x4E8E;&#x201C;realloc (ptr, nmemb * size)&#x201D;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x4E58;&#x6CD5;&#x6EA2;&#x51FA;&#xFF0C;reallocarray &#x4F1A;&#x5B89;&#x5168;&#x5931;&#x8D25;&#xFF0C;&#x65B9;&#x6CD5;&#x662F;&#x5C06; errno &#x8BBE;&#x7F6E;&#x4E3A; ENOMEM&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x6307;&#x9488;&#xFF0C;&#x5E76;&#x4FDD;&#x6301;&#x539F;&#x59CB;&#x5757;&#x4E0D;&#x53D8;&#x3002;</li>
+<li>&#x5F53;&#x5206;&#x914D;&#x5757;&#x7684;&#x65B0;&#x5927;&#x5C0F;&#x662F;&#x53EF;&#x80FD;&#x6EA2;&#x51FA;&#x7684;&#x4E58;&#x6CD5;&#x7ED3;&#x679C;&#x65F6;&#xFF0C;&#x5E94;&#x4F7F;&#x7528; reallocarray &#x800C;&#x4E0D;&#x662F; realloc&#x3002;</li>
+<li>&#x4E0E; malloc &#x4E00;&#x6837;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x53EF;&#x7528;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x4F7F;&#x5757;&#x53D8;&#x5927;&#xFF0C;realloc &#x548C; reallocarray &#x53EF;&#x80FD;&#x4F1A;&#x8FD4;&#x56DE;&#x7A7A;&#x6307;&#x9488;&#x3002;&#x53D1;&#x751F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x65F6;&#xFF0C;&#x539F;&#x59CB;&#x5757;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#xFF1B;&#x5B83;&#x6CA1;&#x6709;&#x88AB;&#x4FEE;&#x6539;&#x6216;&#x642C;&#x79FB;&#x3002;</li>
+<li>&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; realloc &#x6216; reallocarray &#x4F7F;&#x5757;&#x66F4;&#x5C0F;&#x3002;&#x8FD9;&#x6837;&#x505A;&#x7684;&#x539F;&#x56E0;&#x662F;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x5728;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x70B9;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x65F6;&#x5360;&#x7528;&#x5927;&#x91CF;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x3002;&#x5728;&#x51E0;&#x79CD;&#x5206;&#x914D;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;&#x6709;&#x65F6;&#x9700;&#x8981;&#x590D;&#x5236;&#x4E00;&#x4E2A;&#x5757;&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5176;&#x4ED6;&#x53EF;&#x7528;&#x7A7A;&#x95F4;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x4F1A;&#x5931;&#x8D25;&#x3002;</li>
+</ul>
+<h3 id="&#x5206;&#x914D;&#x5DF2;&#x6E05;&#x7406;&#x7A7A;&#x95F4;&#xFF08;calloc&#xFF09;">&#x5206;&#x914D;&#x5DF2;&#x6E05;&#x7406;&#x7A7A;&#x95F4;&#xFF08;calloc&#xFF09;</h3>
+<ul>
+<li>&#x51FD;&#x6570; calloc &#x5206;&#x914D;&#x5185;&#x5B58;&#x5E76;&#x5C06;&#x5176;&#x6E05;&#x9664;&#x4E3A;&#x96F6;&#x3002;&#x5B83;&#x5728; stdlib.h &#x4E2D;&#x58F0;&#x660E;&#x3002;</li>
+<li>&#x51FD;&#x6570;&#xFF1A;void * calloc (size t count, size t eltsize)</li>
+<li>&#x6B64;&#x51FD;&#x6570;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x8DB3;&#x591F;&#x957F;&#x7684;&#x5757;&#x4EE5;&#x5305;&#x542B; count &#x5143;&#x7D20;&#x7684;&#x5411;&#x91CF;&#xFF0C;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x5927;&#x5C0F;&#x4E3A; eltsize&#x3002;&#x5728; calloc &#x8FD4;&#x56DE;&#x4E4B;&#x524D;&#xFF0C;&#x5B83;&#x7684;&#x5185;&#x5BB9;&#x88AB;&#x6E05;&#x96F6;&#x3002;</li>
+</ul>
+<h3 id="&#x5206;&#x914D;&#x5BF9;&#x9F50;&#x7684;&#x5185;&#x5B58;&#x5757;&#xFF08;alignedalloc&#xFF09;">&#x5206;&#x914D;&#x5BF9;&#x9F50;&#x7684;&#x5185;&#x5B58;&#x5757;&#xFF08;aligned_alloc&#xFF09;</h3>
+<ul>
+<li>&#x5728; GNU &#x7CFB;&#x7EDF;&#x4E2D; malloc &#x6216; realloc &#x8FD4;&#x56DE;&#x7684;&#x5757;&#x7684;&#x5730;&#x5740;&#x59CB;&#x7EC8;&#x662F; 8 &#x7684;&#x500D;&#x6570;&#xFF08;&#x6216; 64 &#x4F4D;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684; 16&#xFF09;&#x3002;&#x5982;&#x679C;&#x60A8;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5730;&#x5740;&#x662F; 2 &#x7684;&#x9AD8;&#x6B21;&#x5E42;&#x7684;&#x500D;&#x6570;&#x7684;&#x5757;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;aligned_alloc&#x6216;posix_memalign&#x3002;aligned_alloc &#x548C; posix_memalign &#x5728; stdlib.h &#x4E2D;&#x58F0;&#x660E;&#x3002;</li>
+<li>&#x51FD;&#x6570;&#xFF1A;void * aligned_alloc (size t alignment, size t size)</li>
+<li>aligned_alloc &#x51FD;&#x6570;&#x5206;&#x914D;&#x4E00;&#x4E2A;size&#x5B57;&#x8282;&#x7684;&#x5757;&#xFF0C;&#x5176;&#x5730;&#x5740;&#x662F;alignment&#x7684;&#x500D;&#x6570;&#x3002;alignment&#x5FC5;&#x987B;&#x662F; 2 &#x7684;&#x5E42;&#xFF0C;size&#x5FC5;&#x987B;&#x662F;alignment&#x7684;&#x500D;&#x6570;&#x3002;aligned_alloc &#x51FD;&#x6570;&#x5728;&#x51FA;&#x9519;&#x65F6;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x6307;&#x9488;&#xFF0C;&#x5E76;&#x5C06; errno &#x8BBE;&#x7F6E;&#x4E3A;&#x4E0B;&#x5217;&#x503C;&#x4E4B;&#x4E00;&#xFF1A;<ul>
+<li>ENOMEM &#x6CA1;&#x6709;&#x8DB3;&#x591F;&#x7684;&#x5185;&#x5B58;&#x6765;&#x6EE1;&#x8DB3;&#x8BF7;&#x6C42;&#x3002;</li>
+<li>EINVAL alignment&#x4E0D;&#x662F; 2 &#x7684;&#x5E42;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h3 id="malloc&#x53EF;&#x8C03;&#x53C2;&#x6570;&#xFF08;mallopt&#xFF09;">malloc&#x53EF;&#x8C03;&#x53C2;&#x6570;&#xFF08;mallopt&#xFF09;</h3>
+<ul>
+<li>&#x51FD;&#x6570;&#xFF1A;int mallopt (int param, int value)&#xFF0C;param &#x53C2;&#x6570;&#x6307;&#x5B9A;&#x8981;&#x8BBE;&#x7F6E;&#x7684;&#x53C2;&#x6570;&#xFF0C;value &#x662F;&#x8981;&#x8BBE;&#x7F6E;&#x7684;&#x65B0;&#x503C;&#x3002;<ul>
+<li>M<em>MMAP_MAX&#xFF1A;&#x4F7F;&#x7528; mmap &#x5206;&#x914D;&#x7684;&#x6700;&#x5927;&#x5757;&#x6570;&#x3002;&#x5C06;&#x6B64;&#x8BBE;&#x7F6E;&#x4E3A;&#x96F6;&#x5C06;&#x7981;&#x7528;&#x6240;&#x6709; mmap &#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 65536&#xFF0C;&#x901A;&#x8FC7;&#x5C06;&#x73AF;&#x5883;&#x53D8;&#x91CF; MALLOC_MMAP_MAX</em> &#x8BBE;&#x7F6E;&#x4E3A;&#x6240;&#x9700;&#x7684;&#x503C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x4E3A;&#x8FDB;&#x7A0B;&#x8BBE;&#x7F6E;&#x6B64;&#x53C2;&#x6570;&#x3002;</li>
+<li>M<em>MMAP_THRESHOLD&#xFF1A;&#x4F7F;&#x7528; mmap &#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x5C06;&#x6240;&#x6709;&#x5927;&#x4E8E;&#x6B64;&#x503C;&#x7684;&#x5757;&#x5206;&#x914D;&#x5230;&#x6B63;&#x5E38;&#x5806;&#x4E4B;&#x5916;&#x3002;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x8FD9;&#x4E9B;&#x5757;&#x7684;&#x5185;&#x5B58; free &#x540E;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x7ED9;&#x7CFB;&#x7EDF;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5C0F;&#x4E8E;&#x6B64;&#x9608;&#x503C;&#x7684;&#x8BF7;&#x6C42;&#x4ECD;&#x53EF;&#x80FD;&#x901A;&#x8FC7; mmap &#x5206;&#x914D;&#xFF0C;&#x5982;&#x679C;&#x672A;&#x8BBE;&#x7F6E;&#x6B64;&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A; 128 KiB&#xFF0C;&#x5E76;&#x52A8;&#x6001;&#x8C03;&#x6574;&#x9608;&#x503C;&#x4EE5;&#x9002;&#x5E94;&#x7A0B;&#x5E8F;&#x7684;&#x5206;&#x914D;&#x6A21;&#x5F0F;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x7981;&#x7528;&#x52A8;&#x6001;&#x8C03;&#x6574;&#xFF0C;&#x5E76;&#x5C06;&#x503C;&#x9759;&#x6001;&#x8BBE;&#x7F6E;&#x4E3A;&#x8F93;&#x5165;&#x503C;&#xFF0C;&#x901A;&#x8FC7;&#x5C06;&#x73AF;&#x5883;&#x53D8;&#x91CF; MALLOC_MMAP_THRESHOLD</em> &#x8BBE;&#x7F6E;&#x4E3A;&#x6240;&#x9700;&#x7684;&#x503C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x4E3A;&#x8FDB;&#x7A0B;&#x8BBE;&#x7F6E;&#x6B64;&#x53C2;&#x6570;&#x3002;</li>
+<li>M<em>PERTURB&#xFF1A;&#x5982;&#x679C;&#x975E;&#x96F6;&#xFF0C;&#x5219;&#x5728;&#x5206;&#x914D;&#x5185;&#x5B58;&#x5757;&#xFF08;&#x7531; calloc &#x5206;&#x914D;&#x65F6;&#x9664;&#x5916;&#xFF09;&#x548C;&#x91CA;&#x653E;&#x65F6;&#xFF0C;&#x6839;&#x636E;&#x6B64;&#x53C2;&#x6570;&#x7684;&#x67D0;&#x4E9B;&#x4F4E;&#x4F4D;&#x7684;&#x4F4D;&#x586B;&#x5145;&#x5185;&#x5B58;&#x5757;&#x3002;&#x8FD9;&#x53EF;&#x7528;&#x4E8E;&#x8C03;&#x8BD5;&#x672A;&#x521D;&#x59CB;&#x5316;&#x6216;&#x5DF2;&#x91CA;&#x653E;&#x5806;&#x5185;&#x5B58;&#x7684;&#x4F7F;&#x7528;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x6B64;&#x9009;&#x9879;&#x4E0D;&#x4FDD;&#x8BC1;&#x91CA;&#x653E;&#x7684;&#x5757;&#x5C06;&#x5177;&#x6709;&#x4EFB;&#x4F55;&#x7279;&#x5B9A;&#x503C;&#x3002;&#x5B83;&#x53EA;&#x4FDD;&#x8BC1;&#x5757;&#x88AB;&#x91CA;&#x653E;&#x4E4B;&#x524D;&#x7684;&#x5185;&#x5BB9;&#x5C06;&#x88AB;&#x8986;&#x76D6;&#xFF0C;&#x6B64;&#x53C2;&#x6570;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 0&#xFF0C;&#x901A;&#x8FC7;&#x5C06;&#x73AF;&#x5883;&#x53D8;&#x91CF; MALLOC_PERTURB</em> &#x8BBE;&#x7F6E;&#x4E3A;&#x6240;&#x9700;&#x7684;&#x503C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x4E3A;&#x8FDB;&#x7A0B;&#x8BBE;&#x7F6E;&#x6B64;&#x53C2;&#x6570;&#x3002;</li>
+<li>M<em>TOP_PAD&#xFF1A;&#x6B64;&#x53C2;&#x6570;&#x786E;&#x5B9A;&#x5F53;&#x9700;&#x8981;&#x6269;&#x5C55; arena &#x65F6;&#x4ECE;&#x7CFB;&#x7EDF;&#x83B7;&#x5F97;&#x7684;&#x989D;&#x5916;&#x5185;&#x5B58;&#x91CF;&#x3002;&#x5B83;&#x8FD8;&#x6307;&#x5B9A;&#x7F29;&#x5C0F; arena &#x65F6;&#x8981;&#x4FDD;&#x7559;&#x7684;&#x5B57;&#x8282;&#x6570;&#x3002;&#x8FD9;&#x63D0;&#x4F9B;&#x4E86;&#x5806;&#x5927;&#x5C0F;&#x7684;&#x5FC5;&#x8981;&#x6EDE;&#x540E;&#xFF0C;&#x4ECE;&#x800C;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x8FC7;&#x591A;&#x7684;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#xFF0C;&#x6B64;&#x53C2;&#x6570;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 0&#xFF0C;&#x901A;&#x8FC7;&#x5C06;&#x73AF;&#x5883;&#x53D8;&#x91CF; MALLOC_TOP_PAD</em> &#x8BBE;&#x7F6E;&#x4E3A;&#x6240;&#x9700;&#x7684;&#x503C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x4E3A;&#x8FDB;&#x7A0B;&#x8BBE;&#x7F6E;&#x6B64;&#x53C2;&#x6570;&#x3002;</li>
+<li>M<em>TRIM_THRESHOLD&#xFF1A;&#x8FD9;&#x662F;&#x6700;&#x9876;&#x5C42;&#x7684;&#x53EF;&#x91CA;&#x653E;&#x5757;&#x7684;&#x6700;&#x5C0F;&#x5927;&#x5C0F;&#xFF08;&#x4EE5;&#x5B57;&#x8282;&#x4E3A;&#x5355;&#x4F4D;&#xFF09;&#xFF0C;&#x5B83;&#x5C06;&#x89E6;&#x53D1;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x4EE5;&#x5C06;&#x5185;&#x5B58;&#x8FD4;&#x56DE;&#x7ED9;&#x7CFB;&#x7EDF;&#x3002;&#x5982;&#x679C;&#x672A;&#x8BBE;&#x7F6E;&#x6B64;&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A; 128 KiB&#xFF0C;&#x5E76;&#x52A8;&#x6001;&#x8C03;&#x6574;&#x9608;&#x503C;&#x4EE5;&#x9002;&#x5E94;&#x7A0B;&#x5E8F;&#x7684;&#x5206;&#x914D;&#x6A21;&#x5F0F;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x7981;&#x7528;&#x52A8;&#x6001;&#x8C03;&#x6574;&#xFF0C;&#x5E76;&#x5C06;&#x503C;&#x9759;&#x6001;&#x8BBE;&#x7F6E;&#x4E3A;&#x63D0;&#x4F9B;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x901A;&#x8FC7;&#x5C06;&#x73AF;&#x5883;&#x53D8;&#x91CF; MALLOC_TRIM_THRESHOLD</em> &#x8BBE;&#x7F6E;&#x4E3A;&#x6240;&#x9700;&#x7684;&#x503C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x4E3A;&#x8FDB;&#x7A0B;&#x8BBE;&#x7F6E;&#x6B64;&#x53C2;&#x6570;&#x3002;</li>
+<li>M_ARENA_TEST&#xFF1A;&#x8BE5;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x5728;&#x5BF9; arena &#x6570;&#x91CF;&#x9650;&#x5236;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#x4E4B;&#x524D;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x7684; arena &#x6570;&#x91CF;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86; M_ARENA_MAX&#xFF0C;&#x5219;&#x5FFD;&#x7565;&#x8BE5;&#x503C;&#x3002;&#x6B64;&#x53C2;&#x6570;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x5728; 32 &#x4F4D;&#x7CFB;&#x7EDF;&#x4E0A;&#x4E3A; 2&#xFF0C;&#x5728; 64 &#x4F4D;&#x7CFB;&#x7EDF;&#x4E0A;&#x4E3A; 8&#x3002;&#x901A;&#x8FC7;&#x5C06;&#x73AF;&#x5883;&#x53D8;&#x91CF; MALLOC_ARENA_TEST &#x8BBE;&#x7F6E;&#x4E3A;&#x6240;&#x9700;&#x7684;&#x503C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x4E3A;&#x8FDB;&#x7A0B;&#x8BBE;&#x7F6E;&#x6B64;&#x53C2;&#x6570;&#x3002;</li>
+<li>M_ARENA_MAX&#xFF1A;&#x6B64;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x8981;&#x4F7F;&#x7528;&#x7684; arena &#x6570;&#x91CF;&#xFF0C;&#x800C;&#x4E0E;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x6838;&#x5FC3;&#x6570;&#x91CF;&#x65E0;&#x5173;&#xFF0C;&#x6B64;&#x53EF;&#x8C03;&#x53C2;&#x6570;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 0&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5BF9; arenas &#x6570;&#x91CF;&#x7684;&#x9650;&#x5236;&#x7531;&#x5728;&#x7EBF; CPU &#x5185;&#x6838;&#x6570;&#x51B3;&#x5B9A;&#x3002;&#x5BF9;&#x4E8E; 32 &#x4F4D;&#x7CFB;&#x7EDF;&#xFF0C;&#x9650;&#x5236;&#x662F;&#x5728;&#x7EBF;&#x5185;&#x6838;&#x6570;&#x7684;&#x4E24;&#x500D;&#xFF0C;&#x5728; 64 &#x4F4D;&#x7CFB;&#x7EDF;&#x4E0A;&#xFF0C;&#x5B83;&#x662F;&#x516B;&#x500D;&#x7684;&#x6838;&#x5FC3;&#x5728;&#x7EBF;&#x6570;&#x91CF;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x5E76;&#x975E;&#x6E90;&#x81EA; M_ARENA_TEST &#x7684;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x800C;&#x662F;&#x72EC;&#x7ACB;&#x8BA1;&#x7B97;&#x7684;&#xFF0C;&#x901A;&#x8FC7;&#x5C06;&#x73AF;&#x5883;&#x53D8;&#x91CF; MALLOC_ARENA_MAX &#x8BBE;&#x7F6E;&#x4E3A;&#x6240;&#x9700;&#x7684;&#x503C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x4E3A;&#x8FDB;&#x7A0B;&#x8BBE;&#x7F6E;&#x6B64;&#x53C2;&#x6570;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x5806;&#x4E00;&#x81F4;&#x6027;&#x68C0;&#x67E5;&#xFF08;mcheck&#xFF09;">&#x5806;&#x4E00;&#x81F4;&#x6027;&#x68C0;&#x67E5;&#xFF08;mcheck&#xFF09;</h3>
+<ul>
+<li>&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; mcheck &#x51FD;&#x6570;&#x8981;&#x6C42; malloc &#x68C0;&#x67E5;&#x52A8;&#x6001;&#x5185;&#x5B58;&#x7684;&#x4E00;&#x81F4;&#x6027;&#xFF0C;&#x5E76;&#x4F7F;&#x7528; LD_PRELOAD &#x73AF;&#x5883;&#x53D8;&#x91CF;&#x9884;&#x52A0;&#x8F7D; malloc &#x8C03;&#x8BD5;&#x5E93; libc_malloc_debug&#x3002;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x662F;&#x4E00;&#x4E2A; GNU &#x6269;&#x5C55;&#xFF0C;&#x5728; mcheck.h &#x4E2D;&#x58F0;&#x660E;&#x3002;</li>
+<li>&#x51FD;&#x6570;&#xFF1A;int mcheck (void (*abortfn) (enum mcheck_status status))</li>
+<li>&#x8C03;&#x7528; mcheck &#x544A;&#x8BC9; malloc &#x6267;&#x884C;&#x5076;&#x5C14;&#x7684;&#xFF08;occasional&#xFF09;&#x4E00;&#x81F4;&#x6027;&#x68C0;&#x67E5;&#x3002;&#x8FD9;&#x4E9B;&#x5C06;&#x6355;&#x83B7;&#x8BF8;&#x5982;&#x5199;&#x5165;&#x8D85;&#x8FC7;&#x4F7F;&#x7528; malloc &#x5206;&#x914D;&#x7684;&#x5757;&#x7684;&#x672B;&#x5C3E;&#x4E4B;&#x7C7B;&#x7684;&#x4E1C;&#x897F;&#x3002;abortfn &#x53C2;&#x6570;&#x662F;&#x53D1;&#x73B0;&#x4E0D;&#x4E00;&#x81F4;&#x65F6;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;&#x3002;&#x5982;&#x679C;&#x60A8;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7A7A;&#x6307;&#x9488;&#xFF0C;&#x5219; mcheck &#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x6253;&#x5370;&#x4E00;&#x6761;&#x6D88;&#x606F;&#x5E76;&#x8C03;&#x7528; abort&#xFF08;&#x8BF7;&#x53C2;&#x9605;&#x7EC8;&#x6B62;&#x7A0B;&#x5E8F;&#xFF09;&#x3002;&#x60A8;&#x63D0;&#x4F9B;&#x7684;&#x51FD;&#x6570;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x8C03;&#x7528;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x68C0;&#x6D4B;&#x5230;&#x54EA;&#x79CD;&#x4E0D;&#x4E00;&#x81F4;&#xFF1B;&#x5176;&#x7C7B;&#x578B;&#x5982;&#x4E0B;&#x6240;&#x8FF0;&#x3002;</li>
+<li>&#x4E00;&#x65E6;&#x4F60;&#x7528; malloc &#x5206;&#x914D;&#x4E86;&#x4EFB;&#x4F55;&#x4E1C;&#x897F;&#xFF0C;&#x518D;&#x5F00;&#x59CB;&#x5206;&#x914D;&#x68C0;&#x67E5;&#x4E3A;&#x65F6;&#x5DF2;&#x665A;&#x3002;&#x6240;&#x4EE5; mcheck &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4EC0;&#x4E48;&#x90FD;&#x4E0D;&#x505A;&#x3002;&#x5982;&#x679C;&#x8C03;&#x7528;&#x592A;&#x665A;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE; -1&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE; 0&#xFF08;&#x6210;&#x529F;&#x65F6;&#xFF09;&#x3002;</li>
+<li>&#x5B89;&#x6392;&#x5C3D;&#x65E9;&#x8C03;&#x7528; mcheck &#x7684;&#x6700;&#x7B80;&#x5355;&#x65B9;&#x6CD5;&#x662F;&#x5728;&#x94FE;&#x63A5;&#x7A0B;&#x5E8F;&#x65F6;&#x4F7F;&#x7528;&#x9009;&#x9879;&#x201C;-lmcheck&#x201D;&#xFF1B;&#x90A3;&#x4E48;&#x4F60;&#x6839;&#x672C;&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4F60;&#x7684;&#x7A0B;&#x5E8F;&#x6E90;&#x3002;&#x6216;&#x8005;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8C03;&#x8BD5;&#x5668;&#x5728;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x65F6;&#x63D2;&#x5165;&#x5BF9; mcheck &#x7684;&#x8C03;&#x7528;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x8FD9;&#x4E9B; gdb &#x547D;&#x4EE4;&#x5C06;&#x5728;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x65F6;&#x81EA;&#x52A8;&#x8C03;&#x7528; mcheck&#xFF1A;<pre><code class="lang-c">  (gdb) break main
+  Breakpoint 1, main (argc=2, argv=0xbffff964) at whatever.c:10
+  (gdb) command 1
+  Type commands for when breakpoint 1 is hit, one per line.
+  End with a line saying just &quot;end&quot;.
+  &gt;call mcheck(0)
+  &gt;continue
+  &gt;end
+  (gdb) ...
+</code></pre>
+</li>
+<li>&#x51FD;&#x6570;&#xFF1A;enum mcheck_status mprobe (void *pointer)</li>
+<li>mprobe &#x51FD;&#x6570;&#x5141;&#x8BB8;&#x60A8;&#x663E;&#x5F0F;&#x68C0;&#x67E5;&#x7279;&#x5B9A;&#x5206;&#x914D;&#x5757;&#x4E2D;&#x7684;&#x4E0D;&#x4E00;&#x81F4;&#x3002;&#x60A8;&#x5FC5;&#x987B;&#x5DF2;&#x7ECF;&#x5728;&#x7A0B;&#x5E8F;&#x5F00;&#x59CB;&#x65F6;&#x8C03;&#x7528;&#x4E86; mcheck &#x6765;&#x8FDB;&#x884C;&#x5076;&#x5C14;&#x7684;&#x68C0;&#x67E5;&#xFF1B;&#x8C03;&#x7528; mprobe &#x8BF7;&#x6C42;&#x5728;&#x8C03;&#x7528;&#x65F6;&#x8FDB;&#x884C;&#x989D;&#x5916;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x68C0;&#x67E5;&#x3002;</li>
+<li>&#x53C2;&#x6570; pointer &#x5FC5;&#x987B;&#x662F; malloc &#x6216; realloc &#x8FD4;&#x56DE;&#x7684;&#x6307;&#x9488;&#x3002;mprobe &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x8BF4;&#x660E;&#x53D1;&#x73B0;&#x4E86;&#x4EC0;&#x4E48;&#x4E0D;&#x4E00;&#x81F4;&#xFF08;&#x5982;&#x679C;&#x6709;&#xFF09;&#x3002;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF1A;enum mcheck_status&#xFF0C;&#x8FD9;&#x4E9B;&#x503C;&#x5982;&#x4E0B;&#x6240;&#x8FF0;&#x3002;<ul>
+<li>MCHECK_DISABLED&#xFF1A;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x5206;&#x914D;&#x4E4B;&#x524D;&#x6CA1;&#x6709;&#x8C03;&#x7528; mcheck&#x3002;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x4E00;&#x81F4;&#x6027;&#x68C0;&#x67E5;&#x3002;</li>
+<li>MCHECK_OK&#xFF1A;&#x672A;&#x68C0;&#x6D4B;&#x5230;&#x4E0D;&#x4E00;&#x81F4;&#x3002;</li>
+<li>MCHECK_HEAD&#xFF1A;&#x5757;&#x4E4B;&#x524D;&#x7684;&#x6570;&#x636E;&#x88AB;&#x7ACB;&#x5373;&#x4FEE;&#x6539;&#x3002;&#x8FD9;&#x901A;&#x5E38;&#x53D1;&#x751F;&#x5728;&#x6570;&#x7EC4;&#x7D22;&#x5F15;&#x6216;&#x6307;&#x9488;&#x51CF;&#x5C11;&#x592A;&#x591A;&#x65F6;&#x3002;</li>
+<li>MCHECK_TAIL&#xFF1A;&#x5757;&#x4E4B;&#x540E;&#x7684;&#x6570;&#x636E;&#x88AB;&#x7ACB;&#x5373;&#x4FEE;&#x6539;&#x3002;&#x5F53;&#x6570;&#x7EC4;&#x7D22;&#x5F15;&#x6216;&#x6307;&#x9488;&#x589E;&#x52A0;&#x592A;&#x591A;&#x65F6;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x53D1;&#x751F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x3002;</li>
+<li>MCHECK_FREE&#xFF1A;&#x8BE5;&#x5757;&#x5DF2;&#x88AB;&#x91CA;&#x653E;&#x3002;</li>
+</ul>
+</li>
+<li>&#x5728;&#x4F7F;&#x7528; malloc&#x3001;realloc &#x548C; free &#x65F6;&#x68C0;&#x67E5;&#x548C;&#x9632;&#x6B62;&#x9519;&#x8BEF;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x53EF;&#x80FD;&#x6027;&#x662F;&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF; MALLOC<em>CHECK</em>&#x3002;&#x5F53; MALLOC<em>CHECK</em> &#x8BBE;&#x7F6E;&#x4E3A;&#x5C0F;&#x4E8E; 4 &#x7684;&#x975E;&#x96F6;&#x503C;&#x65F6;&#xFF0C;&#x5C06;&#x4F7F;&#x7528;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#xFF08;&#x6548;&#x7387;&#x8F83;&#x4F4E;&#x7684;&#xFF09;&#x5B9E;&#x73B0;&#xFF0C;&#x8BE5;&#x5B9E;&#x73B0;&#x65E8;&#x5728;&#x5BB9;&#x5FCD;&#x7B80;&#x5355;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x4F8B;&#x5982;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x53C2;&#x6570;&#x7684;&#x4E24;&#x6B21; free &#x8C03;&#x7528;&#xFF0C;&#x6216;&#x5355;&#x4E2A;&#x5B57;&#x8282;&#x7684;&#x6EA2;&#x51FA;&#xFF08;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#xFF09;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5E76;&#x975E;&#x6240;&#x6709;&#x6B64;&#x7C7B;&#x9519;&#x8BEF;&#x90FD;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4FDD;&#x62A4;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x3002;&#x4E0E; mcheck &#x7684;&#x60C5;&#x51B5;&#x4E00;&#x6837;&#xFF0C;&#x9700;&#x8981;&#x9884;&#x52A0;&#x8F7D; libc<em>malloc_debug &#x5E93;&#x4EE5;&#x542F;&#x7528; MALLOC_CHECK</em> &#x529F;&#x80FD;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x9884;&#x52A0;&#x8F7D;&#x7684;&#x5E93;&#xFF0C;&#x8BBE;&#x7F6E; MALLOC<em>CHECK</em> &#x5C06;&#x65E0;&#x6548;&#x3002;MALLOC<em>CHECK</em> &#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;&#x5728; SUID &#x6216; SGID &#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x7531;&#x4E8E;&#x4E0E;&#x6B63;&#x5E38;&#x7A0B;&#x5E8F;&#x884C;&#x4E3A;&#x4E0D;&#x540C;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x88AB;&#x5229;&#x7528;&#xFF0C;&#x6216;&#x8005;&#x5B83;&#x73B0;&#x5728;&#x5411;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x63CF;&#x8FF0;&#x7B26;&#x5199;&#x5165;&#x4E00;&#x4E9B;&#x5185;&#x5BB9;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5BF9;&#x4E8E; SUID &#x548C; SGID &#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x7981;&#x7528; MALLOC<em>CHECK</em> &#x7684;&#x4F7F;&#x7528;&#x3002;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x5458;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6DFB;&#x52A0;&#x6587;&#x4EF6; /etc/suid-debug &#x518D;&#x6B21;&#x542F;&#x7528;&#x5B83;&#xFF08;&#x5185;&#x5BB9;&#x4E0D;&#x91CD;&#x8981;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#xFF09;&#x3002;</li>
+<li>&#x4F7F;&#x7528; MALLOC<em>CHECK</em> &#x548C;&#x4F7F;&#x7528;&#x201C;-lmcheck&#x201D;&#x94FE;&#x63A5;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x5462;&#xFF1F; MALLOC<em>CHECK</em> &#x4E0E;&#x201C;-lmcheck&#x201D;&#x6B63;&#x4EA4;&#x3002;&#x6DFB;&#x52A0;&#x4E86;&#x201C;-lmcheck&#x201D;&#x4EE5;&#x5B9E;&#x73B0;&#x5411;&#x540E;&#x517C;&#x5BB9;&#x6027;&#x3002;MALLOC<em>CHECK</em> &#x548C;&#x201C;-lmcheck&#x201D;&#x90FD;&#x5E94;&#x8BE5;&#x53D1;&#x73B0;&#x76F8;&#x540C;&#x7684;&#x9519;&#x8BEF;&#x2014;&#x2014;&#x4F46;&#x662F;&#x4F7F;&#x7528; MALLOC<em>CHECK</em> &#x4F60;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</li>
+<li>&#x4EFB;&#x4F55;&#x68C0;&#x6D4B;&#x5230;&#x7684;&#x5806;&#x635F;&#x574F;&#x90FD;&#x4F1A;&#x5BFC;&#x81F4;&#x8FDB;&#x7A0B;&#x7ACB;&#x5373;&#x7EC8;&#x6B62;&#x3002;</li>
+</ul>
+<h3 id="&#x7EDF;&#x8BA1;&#x4F7F;&#x7528;malloc&#x5206;&#x914D;&#x7684;&#x5185;&#x5B58;&#x4FE1;&#x606F;&#xFF08;mallinfo2&#xFF09;">&#x7EDF;&#x8BA1;&#x4F7F;&#x7528;malloc&#x5206;&#x914D;&#x7684;&#x5185;&#x5B58;&#x4FE1;&#x606F;&#xFF08;mallinfo2&#xFF09;</h3>
+<ul>
+<li>&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x7528; mallinfo2 &#x51FD;&#x6570;&#x83B7;&#x53D6;&#x6709;&#x5173;&#x52A8;&#x6001;&#x5185;&#x5B58;&#x5206;&#x914D;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x6B64;&#x51FD;&#x6570;&#x53CA;&#x5176;&#x76F8;&#x5173;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5728; malloc.h &#x4E2D;&#x58F0;&#x660E;&#xFF1B;&#x5B83;&#x4EEC;&#x662F;&#x6807;&#x51C6; SVID/XPG &#x7248;&#x672C;&#x7684;&#x6269;&#x5C55;&#x3002;</li>
+<li>&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF1A;struct mallinfo2<pre><code class="lang-c">  size_t arena
+  &#x8FD9;&#x662F; malloc &#x7528; sbrk &#x5206;&#x914D;&#x7684;&#x5185;&#x5B58;&#x7684;&#x603B;&#x5927;&#x5C0F;&#xFF0C;&#x4EE5;&#x5B57;&#x8282;&#x4E3A;&#x5355;&#x4F4D;&#x3002;
+  size_t ordblks
+  &#x8FD9;&#x662F;&#x672A;&#x4F7F;&#x7528;&#x7684;&#x5757;&#x6570;&#x3002;
+  &#x5185;&#x5B58;&#x5206;&#x914D;&#x5668;&#x5927;&#x5C0F;&#x4ECE;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5185;&#x90E8;&#x83B7;&#x53D6;&#x5185;&#x5B58;&#x5757;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x5B83;&#x4EEC;&#x5206;&#x5272;&#x4EE5;&#x6EE1;&#x8DB3;&#x5404;&#x4E2A; malloc &#x8BF7;&#x6C42;&#x3002;
+  size_t smblks
+  &#x8BE5;&#x5B57;&#x6BB5;&#x672A;&#x4F7F;&#x7528;&#x3002;
+  size_t hblks
+  &#x8FD9;&#x662F;&#x4F7F;&#x7528; mmap &#x5206;&#x914D;&#x7684;&#x5757;&#x7684;&#x603B;&#x6570;&#x3002;
+  size_t hblkhd
+  &#x8FD9;&#x662F;&#x4F7F;&#x7528; mmap &#x5206;&#x914D;&#x7684;&#x5185;&#x5B58;&#x7684;&#x603B;&#x5927;&#x5C0F;&#xFF0C;&#x4EE5;&#x5B57;&#x8282;&#x4E3A;&#x5355;&#x4F4D;&#x3002;
+  size_t usmblks
+  &#x8BE5;&#x5B57;&#x6BB5;&#x672A;&#x4F7F;&#x7528;&#x4E14;&#x59CB;&#x7EC8;&#x4E3A; 0&#x3002;
+  size_t fsmblks
+  &#x8BE5;&#x5B57;&#x6BB5;&#x672A;&#x4F7F;&#x7528;&#x3002;
+  size_t uordblks
+  &#x8FD9;&#x662F; malloc &#x5206;&#x914D;&#x7684;&#x5757;&#x6240;&#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#x603B;&#x5927;&#x5C0F;&#x3002;
+  size_t fordblks
+  &#x8FD9;&#x662F;&#x7A7A;&#x95F2;&#xFF08;&#x672A;&#x4F7F;&#x7528;&#xFF09;&#x5757;&#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#x603B;&#x5927;&#x5C0F;&#x3002;
+  size_t keepcost
+  &#x8FD9;&#x662F;&#x901A;&#x5E38;&#x4E0E;&#x5806;&#x672B;&#x7AEF;&#x63A5;&#x58E4;&#x7684;&#x6700;&#x9AD8;&#x53EF;&#x91CA;&#x653E;&#x5757;&#x7684;&#x5927;&#x5C0F;&#xFF08;&#x5373;&#x865A;&#x62DF;&#x5730;&#x5740;&#x7A7A;&#x95F4;&#x6570;&#x636E;&#x6BB5;&#x7684;&#x9AD8;&#x7AEF;&#xFF09;&#x3002;
+</code></pre>
+</li>
+<li>&#x51FD;&#x6570;&#xFF1A;struct mallinfo2 mallinfo2 (void)</li>
+<li>&#x6B64;&#x51FD;&#x6570;&#x4EE5; struct mallinfo2 &#x7C7B;&#x578B;&#x7684;&#x7ED3;&#x6784;&#x8FD4;&#x56DE;&#x6709;&#x5173;&#x5F53;&#x524D;&#x52A8;&#x6001;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x7684;&#x4FE1;&#x606F;&#x3002;</li>
+</ul>
+<h3 id="malloc&#x76F8;&#x5173;&#x51FD;&#x6570;&#x603B;&#x7ED3;">malloc&#x76F8;&#x5173;&#x51FD;&#x6570;&#x603B;&#x7ED3;</h3>
+<pre><code>```
+void *malloc (size_t size)
+&#x5206;&#x914D;&#x4E00;&#x4E2A; size &#x5B57;&#x8282;&#x7684;&#x5757;&#x3002;
+
+void free (void *addr)
+&#x91CA;&#x653E;&#x4E4B;&#x524D;&#x7531; malloc &#x5206;&#x914D;&#x7684;&#x5757;&#x3002;
+
+void *realloc (void *addr, size_t size)
+&#x4F7F;&#x4EE5;&#x524D;&#x7531; malloc &#x5206;&#x914D;&#x7684;&#x5757;&#x66F4;&#x5927;&#x6216;&#x66F4;&#x5C0F;&#xFF0C;&#x53EF;&#x80FD;&#x901A;&#x8FC7;&#x5C06;&#x5176;&#x590D;&#x5236;&#x5230;&#x65B0;&#x4F4D;&#x7F6E;&#x3002;
+
+void *reallocarray (void *ptr, size_t nmemb, size_t size)
+&#x5C06; malloc &#x5148;&#x524D;&#x5206;&#x914D;&#x7684;&#x5757;&#x7684;&#x5927;&#x5C0F;&#x66F4;&#x6539;&#x4E3A; nmemb * size &#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x4E0E; realloc &#x4E00;&#x6837;&#x3002;
+
+void *calloc (size_t count, size_t eltsize)
+&#x4F7F;&#x7528; malloc &#x5206;&#x914D;&#x4E00;&#x4E2A; count * eltsize &#x5B57;&#x8282;&#x5757;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x5185;&#x5BB9;&#x8BBE;&#x7F6E;&#x4E3A;&#x96F6;&#x3002;
+
+void *valloc (size_t size)
+&#x4ECE;&#x9875;&#x8FB9;&#x754C;&#x5F00;&#x59CB;&#x5206;&#x914D;&#x5927;&#x5C0F;&#x5B57;&#x8282;&#x5757;&#x3002;
+
+void *aligned_alloc (size_t size, size_t alignment)
+&#x4ECE; alignment &#x500D;&#x6570;&#x7684;&#x5730;&#x5740;&#x5F00;&#x59CB;&#x5206;&#x914D; size &#x5B57;&#x8282;&#x5757;&#x3002;
+
+int posix_memalign (void **memptr, size_t alignment, size_t size)
+&#x4ECE; alignment &#x500D;&#x6570;&#x7684;&#x5730;&#x5740;&#x5F00;&#x59CB;&#x5206;&#x914D; size &#x5B57;&#x8282;&#x5757;&#x3002;
+
+void *memalign (size_t size, size_t boundary)
+&#x5206;&#x914D;&#x4E00;&#x4E2A; size &#x5B57;&#x8282;&#x7684;&#x5757;&#xFF0C;&#x4ECE;&#x4E00;&#x4E2A; boundary &#x500D;&#x6570;&#x7684;&#x5730;&#x5740;&#x5F00;&#x59CB;&#x3002;
+
+int mallopt (int param, int value)
+&#x8C03;&#x6574;&#x53EF;&#x8C03;&#x53C2;&#x6570;&#x3002;
+
+int mcheck (void (*abortfn) (void))
+&#x544A;&#x8BC9; malloc &#x5BF9;&#x52A8;&#x6001;&#x5206;&#x914D;&#x7684;&#x5185;&#x5B58;&#x6267;&#x884C;&#x5076;&#x5C14;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x68C0;&#x67E5;&#xFF0C;&#x5E76;&#x5728;&#x53D1;&#x73B0;&#x4E0D;&#x4E00;&#x81F4;&#x65F6;&#x8C03;&#x7528; abortfn&#x3002;
+
+struct mallinfo2 mallinfo2 (void)
+&#x8FD4;&#x56DE;&#x6709;&#x5173;&#x5F53;&#x524D;&#x52A8;&#x6001;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x7684;&#x4FE1;&#x606F;&#x3002;
+```
+</code></pre><h3 id="&#x5206;&#x914D;&#x8C03;&#x8BD5;">&#x5206;&#x914D;&#x8C03;&#x8BD5;</h3>
+<ul>
+<li>&#x57FA;&#x4E8E;&#x4E0D;&#x4F7F;&#x7528;&#x5783;&#x573E;&#x56DE;&#x6536;&#x52A8;&#x6001;&#x5185;&#x5B58;&#x5206;&#x914D;&#x7684;&#x8BED;&#x8A00;&#x8FDB;&#x884C;&#x7F16;&#x7A0B;&#x65F6;&#xFF0C;&#x4E00;&#x9879;&#x590D;&#x6742;&#x7684;&#x4EFB;&#x52A1;&#x662F;&#x67E5;&#x627E;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x3002;&#x957F;&#x65F6;&#x95F4;&#x8FD0;&#x884C;&#x7684;&#x7A0B;&#x5E8F;&#x5FC5;&#x987B;&#x786E;&#x4FDD;&#x52A8;&#x6001;&#x5206;&#x914D;&#x7684;&#x5BF9;&#x8C61;&#x5728;&#x5176;&#x751F;&#x547D;&#x5468;&#x671F;&#x7ED3;&#x675F;&#x65F6;&#x88AB;&#x91CA;&#x653E;&#x3002;&#x5982;&#x679C;&#x8FD9;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#xFF0C;&#x7CFB;&#x7EDF;&#x8FDF;&#x65E9;&#x4F1A;&#x8017;&#x5C3D;&#x5185;&#x5B58;&#xFF0C;GNU C &#x5E93;&#x4E2D;&#x7684; malloc &#x5B9E;&#x73B0;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x68C0;&#x6D4B;&#x6B64;&#x7C7B;&#x6CC4;&#x6F0F;&#x5E76;&#x83B7;&#x53D6;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;&#x4EE5;&#x627E;&#x5230;&#x4F4D;&#x7F6E;&#x3002;&#x4E3A;&#x6B64;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5FC5;&#x987B;&#x4EE5;&#x7531;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x542F;&#x7528;&#x7684;&#x7279;&#x6B8A;&#x6A21;&#x5F0F;&#x542F;&#x52A8;&#x3002;&#x5982;&#x679C;&#x672A;&#x542F;&#x7528;&#x8C03;&#x8BD5;&#x6A21;&#x5F0F;&#xFF0C;&#x5219;&#x7A0B;&#x5E8F;&#x4E0D;&#x4F1A;&#x53D7;&#x5230;&#x901F;&#x5EA6;&#x635F;&#x5931;&#x3002;</li>
+<li>&#x51FD;&#x6570;&#xFF1A;void mtrace (void)</li>
+<li>mtrace &#x51FD;&#x6570;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x6765;&#x8DDF;&#x8E2A;&#x8C03;&#x7528;&#x5B83;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x5185;&#x5B58;&#x5206;&#x914D;&#x4E8B;&#x4EF6;&#x3002;&#x5B83;&#x5728;&#x5E93;&#x4E2D;&#x9ED8;&#x8BA4;&#x7981;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528; LD_PRELOAD &#x73AF;&#x5883;&#x53D8;&#x91CF;&#x9884;&#x52A0;&#x8F7D;&#x8C03;&#x8BD5;&#x5E93; libc_malloc_debug &#x6765;&#x542F;&#x7528;&#x3002;</li>
+<li>&#x5F53;&#x8C03;&#x7528; mtrace &#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x67E5;&#x627E;&#x540D;&#x4E3A; MALLOC_TRACE &#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x5E94;&#x8BE5;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6709;&#x6548;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x3002;&#x7528;&#x6237;&#x5FC5;&#x987B;&#x5177;&#x6709;&#x5199;&#x5165;&#x6743;&#x9650;&#x3002;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x5DF2;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x5C06;&#x5176;&#x622A;&#x65AD;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x6216;&#x8005;&#x5B83;&#x6CA1;&#x6709;&#x547D;&#x540D;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6253;&#x5F00;&#x5199;&#x5165;&#x7684;&#x6709;&#x6548;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x4EC0;&#x4E48;&#x4E5F;&#x4E0D;&#x505A;&#x3002;malloc &#x7B49;&#x7684;&#x884C;&#x4E3A;&#x6CA1;&#x6709;&#x6539;&#x53D8;&#x3002;&#x51FA;&#x4E8E;&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x5982;&#x679C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5B89;&#x88C5;&#x65F6;&#x8BBE;&#x7F6E;&#x4E86; SUID &#x6216; SGID &#x4F4D;&#xFF0C;&#x4E5F;&#x4F1A;&#x53D1;&#x751F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x547D;&#x540D;&#x6587;&#x4EF6;&#x6210;&#x529F;&#x6253;&#x5F00;&#xFF0C;mtrace &#x4F1A;&#x4E3A;&#x51FD;&#x6570; malloc&#x3001;realloc &#x548C; free &#x5B89;&#x88C5;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x3002;&#x4ECE;&#x90A3;&#x65F6;&#x8D77;&#xFF0C;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x7684;&#x6240;&#x6709;&#x4F7F;&#x7528;&#x90FD;&#x88AB;&#x8DDF;&#x8E2A;&#x5E76;&#x534F;&#x8BAE;&#x5316;&#x5230;&#x6587;&#x4EF6;&#x4E2D;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x73B0;&#x5728;&#x5BF9;&#x8DDF;&#x8E2A;&#x51FD;&#x6570;&#x7684;&#x6240;&#x6709;&#x8C03;&#x7528;&#x90FD;&#x4F1A;&#x6709;&#x901F;&#x5EA6;&#x635F;&#x5931;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x671F;&#x95F4;&#x4E0D;&#x5E94;&#x542F;&#x7528;&#x8DDF;&#x8E2A;&#x3002;</li>
+<li>&#x51FD;&#x6570;&#xFF1A;void muntrace (void)</li>
+<li>&#x5728;&#x4F7F;&#x7528; mtrace &#x542F;&#x7528;&#x8DDF;&#x8E2A; malloc &#x8C03;&#x7528;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x8C03;&#x7528; muntrace &#x51FD;&#x6570;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF08;&#x6210;&#x529F;&#xFF09;&#x8C03;&#x7528; mtrace&#xFF0C;&#x5219; muntrace &#x4EC0;&#x4E48;&#x4E5F;&#x4E0D;&#x505A;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x5B83;&#x4F1A;&#x5378;&#x8F7D; malloc&#x3001;realloc &#x548C; free &#x7684;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#xFF0C;&#x7136;&#x540E;&#x5173;&#x95ED;&#x534F;&#x8BAE;&#x6587;&#x4EF6;&#x3002;&#x4E0D;&#x518D;&#x6709;&#x8C03;&#x7528;&#x88AB;&#x534F;&#x8BAE;&#x5904;&#x7406;&#xFF0C;&#x7A0B;&#x5E8F;&#x518D;&#x6B21;&#x5168;&#x901F;&#x8FD0;&#x884C;&#x3002;&#x6B64;&#x529F;&#x80FD;&#x662F; GNU &#x6269;&#x5C55;&#xFF0C;&#x901A;&#x5E38;&#x5728;&#x5176;&#x4ED6;&#x7CFB;&#x7EDF;&#x4E0A;&#x4E0D;&#x53EF;&#x7528;&#x3002;&#x539F;&#x578B;&#x53EF;&#x4EE5;&#x5728; mcheck.h &#x4E2D;&#x627E;&#x5230;&#x3002;</li>
+<li>&#x5373;&#x4F7F;&#x8DDF;&#x8E2A;&#x529F;&#x80FD;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x7A0B;&#x5E8F;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x884C;&#x4E3A;&#xFF0C;&#x5728;&#x6240;&#x6709;&#x7A0B;&#x5E8F;&#x4E2D;&#x8C03;&#x7528; mtrace &#x4E5F;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x597D;&#x4E3B;&#x610F;&#x3002;&#x8BD5;&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;&#x60A8;&#x4F7F;&#x7528; mtrace &#x8C03;&#x8BD5;&#x7A0B;&#x5E8F;&#xFF0C;&#x5E76;&#x4E14;&#x8C03;&#x8BD5;&#x4F1A;&#x8BDD;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x7A0B;&#x5E8F;&#x4E5F;&#x8DDF;&#x8E2A;&#x5B83;&#x4EEC;&#x7684; malloc &#x8C03;&#x7528;&#x3002;&#x6240;&#x6709;&#x7A0B;&#x5E8F;&#x7684;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x90FD;&#x76F8;&#x540C;&#xFF0C;&#x56E0;&#x6B64;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x4E3A;&#x8C03;&#x8BD5;&#x800C;&#x7F16;&#x8BD1;&#x65F6;&#x624D;&#x5E94;&#x8BE5;&#x8C03;&#x7528; mtrace&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x50CF;&#x8FD9;&#x6837;&#x5F00;&#x59CB;&#xFF1A;<pre><code class="lang-c">  #include &lt;mcheck.h&gt;
+  int main (int argc, char *argv[]) 
+  {
+      #ifdef DEBUGGING
+          mtrace ();
+      #endif
+      ...
+  }
+</code></pre>
+</li>
+<li>&#x5982;&#x679C;&#x60A8;&#x60F3;&#x5728;&#x7A0B;&#x5E8F;&#x7684;&#x6574;&#x4E2A;&#x8FD0;&#x884C;&#x65F6;&#x8DDF;&#x8E2A;&#x8C03;&#x7528;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x60A8;&#x6240;&#x9700;&#x8981;&#x7684;&#x3002;&#x6216;&#x8005;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x8C03;&#x7528; muntrace &#x6765;&#x505C;&#x6B62;&#x8DDF;&#x8E2A;&#x3002;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5BF9; mtrace &#x7684;&#x65B0;&#x8C03;&#x7528;&#x518D;&#x6B21;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x8DDF;&#x8E2A;&#x3002;&#x4F46;&#x8FD9;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x4E0D;&#x53EF;&#x9760;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x56E0;&#x4E3A;&#x53EF;&#x80FD;&#x4F1A;&#x8C03;&#x7528;&#x672A;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x4E0D;&#x4EC5;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4F7F;&#x7528;&#x8DDF;&#x8E2A;&#x51FD;&#x6570;&#xFF0C;&#x5E93;&#xFF08;&#x5305;&#x62EC; C &#x5E93;&#x672C;&#x8EAB;&#xFF09;&#x4E5F;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x3002;</li>
+<li>&#x6700;&#x540E;&#x4E00;&#x70B9;&#x4E5F;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5728;&#x7A0B;&#x5E8F;&#x7EC8;&#x6B62;&#x4E4B;&#x524D;&#x8C03;&#x7528; muntrace &#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x597D;&#x4E3B;&#x610F;&#x7684;&#x539F;&#x56E0;&#x3002;&#x5E93;&#x4EC5;&#x5728;&#x7A0B;&#x5E8F;&#x4ECE; main &#x8FD4;&#x56DE;&#x6216;&#x8C03;&#x7528; exit &#x540E;&#x624D;&#x88AB;&#x901A;&#x77E5;&#x7A0B;&#x5E8F;&#x7EC8;&#x6B62;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x6B64;&#x4E4B;&#x524D;&#x65E0;&#x6CD5;&#x91CA;&#x653E;&#x5B83;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x3002;&#x6240;&#x4EE5;&#x6700;&#x597D;&#x7684;&#x529E;&#x6CD5;&#x662F;&#x8C03;&#x7528; mtrace &#x4F5C;&#x4E3A;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x6C38;&#x8FDC;&#x4E0D;&#x8981;&#x8C03;&#x7528; muntrace&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x8BE5;&#x7A0B;&#x5E8F;&#x8DDF;&#x8E2A;&#x51E0;&#x4E4E;&#x6240;&#x6709; malloc &#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;&#xFF08;&#x9664;&#x4E86;&#x90A3;&#x4E9B;&#x7531;&#x7A0B;&#x5E8F;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6216;&#x4F7F;&#x7528;&#x7684;&#x5E93;&#x6267;&#x884C;&#x7684;&#x8C03;&#x7528;&#xFF09;&#x3002;</li>
+</ul>
+<h3 id="&#x89E3;&#x91CA;&#x8DDF;&#x8E2A;">&#x89E3;&#x91CA;&#x8DDF;&#x8E2A;</h3>
+<ul>
+<li>GNU C &#x5E93;&#x9644;&#x5E26;&#x7684;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x89E3;&#x91CA;&#x8DDF;&#x8E2A;&#x5E76;&#x4EE5;&#x7528;&#x6237;&#x53CB;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#x8F93;&#x51FA;&#x6458;&#x8981;&#x3002;&#x8BE5;&#x7A0B;&#x5E8F;&#x79F0;&#x4E3A; mtrace&#xFF08;&#x5B83;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A; Perl &#x811A;&#x672C;&#xFF09;&#xFF0C;&#x5B83;&#x63A5;&#x53D7;&#x4E00;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x3002;&#x5728;&#x4EFB;&#x4F55;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5FC5;&#x987B;&#x6307;&#x5B9A;&#x5E26;&#x6709;&#x8DDF;&#x8E2A;&#x8F93;&#x51FA;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x3002;&#x5982;&#x679C;&#x53EF;&#x9009;&#x53C2;&#x6570;&#x4F4D;&#x4E8E;&#x8DDF;&#x8E2A;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x4E4B;&#x524D;&#xFF0C;&#x5219;&#x5B83;&#x5FC5;&#x987B;&#x662F;&#x751F;&#x6210;&#x8DDF;&#x8E2A;&#x7684;&#x7A0B;&#x5E8F;&#x7684;&#x540D;&#x79F0;&#x3002;<pre><code>  zhangkaiyuan@ubuntu:$ mtrace tst-mtrace log
+  No memory leaks.
+</code></pre></li>
+<li>&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7A0B;&#x5E8F; tst-mtrace &#x8FD0;&#x884C;&#x5E76;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x8DDF;&#x8E2A;&#x6587;&#x4EF6;&#x65E5;&#x5FD7;&#x3002;mtrace &#x6253;&#x5370;&#x7684;&#x6D88;&#x606F;&#x663E;&#x793A;&#x4EE3;&#x7801;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x6709;&#x5206;&#x914D;&#x7684;&#x5185;&#x5B58;&#x968F;&#x540E;&#x90FD;&#x88AB;&#x91CA;&#x653E;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5728;&#x4E0A;&#x9762;&#x7ED9;&#x51FA;&#x7684;&#x793A;&#x4F8B;&#x8DDF;&#x8E2A;&#x4E0A;&#x8C03;&#x7528; mtrace&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5F97;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x8F93;&#x51FA;&#xFF1A;<pre><code>  zhangkaiyuan@ubuntu:$ mtrace tst errlog
+  - 0x08064cc8 Free 2 was never alloc&apos;d /home/drepper/tst.c:39
+  - 0x08064ce0 Free 3 was never alloc&apos;d /home/drepper/tst.c:39
+  - 0x08064cf8 Free 4 was never alloc&apos;d /home/drepper/tst.c:39
+  Memory not freed:
+  -----------------
+  Address Size Caller
+  0x08064c48 0x14 at /home/drepper/tst.c:33
+  0x08064c60 0x14 at /home/drepper/tst.c:33
+  0x08064c78 0x14 at /home/drepper/tst.c:33
+  0x08064c90 0x14 at /home/drepper/tst.c:33
+</code></pre></li>
+<li>&#x89E3;&#x91CA;&#x8FD9;&#x4E2A;&#x8F93;&#x51FA;&#x5E76;&#x4E0D;&#x590D;&#x6742;&#x3002;&#x6700;&#x591A;&#x68C0;&#x6D4B;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x9996;&#x5148;&#xFF0C;free &#x88AB;&#x8C03;&#x7528;&#x7528;&#x4E8E;&#x4ECE;&#x672A;&#x88AB;&#x5206;&#x914D;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x6307;&#x9488;&#x3002;&#x8FD9;&#x901A;&#x5E38;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x7CDF;&#x7CD5;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x8F93;&#x51FA;&#x7684;&#x524D;&#x4E09;&#x884C;&#x663E;&#x793A;&#x4E86;&#x5B83;&#x7684;&#x6837;&#x5B50;&#x3002;&#x50CF;&#x8FD9;&#x6837;&#x7684;&#x60C5;&#x51B5;&#x975E;&#x5E38;&#x7F55;&#x89C1;&#xFF0C;&#x5982;&#x679C;&#x5B83;&#x4EEC;&#x51FA;&#x73B0;&#xFF0C;&#x5B83;&#x4EEC;&#x4F1A;&#x975E;&#x5E38;&#x5267;&#x70C8;&#x5730;&#x51FA;&#x73B0;&#xFF1A;&#x7A0B;&#x5E8F;&#x901A;&#x5E38;&#x4F1A;&#x5D29;&#x6E83;&#x3002;</li>
+</ul>
+<h3 id="&#x66FF;&#x6362;malloc">&#x66FF;&#x6362;malloc</h3>
+<ul>
+<li>GNU C &#x5E93;&#x652F;&#x6301;&#x7528;&#x5177;&#x6709;&#x76F8;&#x540C;&#x63A5;&#x53E3;&#x7684;&#x4E0D;&#x540C;&#x5206;&#x914D;&#x5668;&#x66FF;&#x6362;&#x5185;&#x7F6E; malloc &#x5B9E;&#x73B0;&#x3002;&#x5BF9;&#x4E8E;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x8FD9;&#x901A;&#x8FC7; ELF &#x7B26;&#x53F7;&#x63D2;&#x5165;&#x53D1;&#x751F;&#xFF0C;&#x6216;&#x8005;&#x4F7F;&#x7528;&#x5171;&#x4EAB;&#x5BF9;&#x8C61;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x6216; LD_PRELOAD&#x3002;&#x5BF9;&#x4E8E;&#x9759;&#x6001;&#x94FE;&#x63A5;&#xFF0C;&#x5FC5;&#x987B;&#x5148;&#x94FE;&#x63A5; m&#x200B;&#x200B;alloc &#x66FF;&#x6362;&#x5E93;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x94FE;&#x63A5; libc.a&#xFF08;&#x663E;&#x5F0F;&#x6216;&#x9690;&#x5F0F;&#xFF09;&#x3002;&#x672A;&#x80FD;&#x63D0;&#x4F9B;&#x5B8C;&#x6574;&#x7684;&#x66FF;&#x6362;&#x51FD;&#x6570;&#x96C6;&#xFF08;&#x5373;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3001;GNU C &#x5E93;&#x548C;&#x5176;&#x4ED6;&#x94FE;&#x63A5;&#x5E93;&#x4F7F;&#x7528;&#x7684;&#x6240;&#x6709;&#x51FD;&#x6570;&#xFF09;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x9759;&#x6001;&#x94FE;&#x63A5;&#x5931;&#x8D25;&#xFF0C;&#x5E76;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x5BFC;&#x81F4;&#x5806;&#x635F;&#x574F;&#x548C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5D29;&#x6E83;&#x3002;&#x66FF;&#x6362;&#x51FD;&#x6570;&#x5E94;&#x8BE5;&#x5B9E;&#x73B0;&#x5B83;&#x4EEC;&#x5728; GNU C &#x5E93;&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x884C;&#x4E3A;&#xFF1B;&#x4F8B;&#x5982;&#xFF0C;&#x66FF;&#x6362;free &#x4E5F;&#x5E94;&#x8BE5;&#x4FDD;&#x7559;errno&#x3002;&#x4E0B;&#x8868;&#x7ED9;&#x51FA;&#x4E86;&#x81EA;&#x5B9A;&#x4E49; malloc &#x5FC5;&#x987B;&#x63D0;&#x4F9B;&#x7684;&#x6700;&#x5C0F;&#x529F;&#x80FD;&#x96C6;&#x3002;GNU C &#x5E93;&#x9700;&#x8981;&#x8FD9;&#x4E9B;&#x4E0E; malloc &#x76F8;&#x5173;&#x7684;&#x51FD;&#x6570;&#x624D;&#x80FD;&#x5DE5;&#x4F5C;&#x3002;<pre><code class="lang-c">  malloc
+  free
+  calloc
+  realloc
+</code></pre>
+</li>
+<li>GNU C &#x5E93;&#x4E2D;&#x7684; malloc &#x5B9E;&#x73B0;&#x63D0;&#x4F9B;&#x4E86;&#x5E93;&#x672C;&#x8EAB;&#x4E0D;&#x4F7F;&#x7528;&#x7684;&#x9644;&#x52A0;&#x529F;&#x80FD;&#xFF0C;&#x4F46;&#x5176;&#x4ED6;&#x7CFB;&#x7EDF;&#x5E93;&#x548C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x529F;&#x80FD;&#x3002;&#x901A;&#x7528;&#x66FF;&#x4EE3; malloc &#x5B9E;&#x73B0;&#x4E5F;&#x5E94;&#x8BE5;&#x63D0;&#x4F9B;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x7684;&#x5B9A;&#x4E49;&#x3002;&#x5B83;&#x4EEC;&#x7684;&#x540D;&#x79F0;&#x5217;&#x5728;&#x4E0B;&#x8868;&#x4E2D;&#x3002;<pre><code>  aligned_alloc
+  malloc_usable_size
+  memalign
+  posix_memalign
+  pvalloc
+  valloc
+</code></pre></li>
+<li>&#x5176;&#x4ED6;&#x4E0E; malloc &#x76F8;&#x5173;&#x7684;&#x51FD;&#x6570;&#xFF08;&#x4F8B;&#x5982; mallopt &#x6216; mallinfo2&#xFF09;&#x5728;&#x4F7F;&#x7528;&#x66FF;&#x6362; malloc &#x65F6;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x4EFB;&#x4F55;&#x5F71;&#x54CD;&#x6216;&#x8FD4;&#x56DE;&#x4E0D;&#x6B63;&#x786E;&#x7684;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x672A;&#x80FD;&#x66FF;&#x6362;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x901A;&#x5E38;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x5D29;&#x6E83;&#x6216;&#x5176;&#x4ED6;&#x4E0D;&#x6B63;&#x786E;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x884C;&#x4E3A;&#xFF0C;&#x4F46;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x9759;&#x6001;&#x94FE;&#x63A5;&#x5931;&#x8D25;&#x3002;GNU C &#x5E93;&#x4E2D;&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x51FD;&#x6570;&#xFF08;reallocarray&#x3001;strdup &#x7B49;&#xFF09;&#x672A;&#x5728;&#x4E0A;&#x9762;&#x5217;&#x51FA;&#xFF0C;&#x4F46;&#x4F1A;&#x5C06;&#x65B0;&#x5206;&#x914D;&#x7684;&#x5185;&#x5B58;&#x8FD4;&#x56DE;&#x7ED9;&#x8C03;&#x7528;&#x8005;&#x3002;&#x4E0D;&#x652F;&#x6301;&#x66FF;&#x6362;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x80FD;&#x4F1A;&#x4EA7;&#x751F;&#x4E0D;&#x6B63;&#x786E;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x7684; GNU C &#x5E93;&#x5B9E;&#x73B0;&#x5728;&#x53EF;&#x7528;&#x65F6;&#x8C03;&#x7528;&#x66FF;&#x6362;&#x5206;&#x914D;&#x5668;&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x4E0E; malloc &#x66FF;&#x6362;&#x4E00;&#x8D77;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;</li>
+</ul>
+<h5 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h5>
+<ul>
+<li><a href="https://blog.csdn.net/canpool/article/details/121788937" target="_blank">glibc&#x624B;&#x518C;03&#xFF1A;&#x865A;&#x62DF;&#x5730;&#x5740;&#x5206;&#x914D;&#x548C;&#x5206;&#x9875;</a></li>
+<li><a href="https://www.gnu.org/software/libc/manual/html_mono/libc.html#Memory" target="_blank">Virtual Memory Allocation And Paging</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ProcessMemoryConcepts.html" class="navigation navigation-prev " aria-label="Previous page: 1.1 进程内存概念">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="pageTable.html" class="navigation navigation-next " aria-label="Next page: 1.3 页表">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.2 GNU 分配器","level":"1.2.1.1.2","depth":4,"next":{"title":"1.3 页表","level":"1.2.1.1.3","depth":4,"path":"computer/glibc/memoryManagement/pageTable.md","ref":"computer/glibc/memoryManagement/pageTable.md","articles":[]},"previous":{"title":"1.1 进程内存概念","level":"1.2.1.1.1","depth":4,"path":"computer/glibc/memoryManagement/ProcessMemoryConcepts.md","ref":"computer/glibc/memoryManagement/ProcessMemoryConcepts.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-plus","-font-settings","-livereload","-highlight","-sharing","back-to-top-button","expandable-chapters-small","code","splitter","hide-element","chapter-fold","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"zhangkaiyuan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ebook","language":"zh-hans","gitbook":"*","description":"ebook"},"file":{"path":"computer/glibc/memoryManagement/GNUAllocator.md","mtime":"2023-05-24T02:00:52.582Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-24T09:58:41.387Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
