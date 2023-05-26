@@ -1,0 +1,1284 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1 elf文件详解 · ebook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="zhangkaiyuan">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../literature/literature.html" />
+    
+    
+    <link rel="prev" href="linux.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../computer.html">
+            
+                <a href="../computer.html">
+            
+                    
+                    计算机
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../glibc/glibc.html">
+            
+                <a href="../glibc/glibc.html">
+            
+                    
+                    glibc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../glibc/memoryManagement/memoryManagement.html">
+            
+                <a href="../glibc/memoryManagement/memoryManagement.html">
+            
+                    
+                    1 虚拟地址分配和分页
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="../glibc/memoryManagement/ProcessMemoryConcepts.html">
+            
+                <a href="../glibc/memoryManagement/ProcessMemoryConcepts.html">
+            
+                    
+                    1.1 进程内存概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.2" data-path="../glibc/memoryManagement/GNUAllocator.html">
+            
+                <a href="../glibc/memoryManagement/GNUAllocator.html">
+            
+                    
+                    1.2 GNU 分配器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3" data-path="../glibc/memoryManagement/pageTable.html">
+            
+                <a href="../glibc/memoryManagement/pageTable.html">
+            
+                    
+                    1.3 页表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.4" data-path="../glibc/memoryManagement/gdbDebug.html">
+            
+                <a href="../glibc/memoryManagement/gdbDebug.html">
+            
+                    
+                    1.4 gdb调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="linux.html">
+            
+                <a href="linux.html">
+            
+                    
+                    linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.2.1" data-path="elfFile.html">
+            
+                <a href="elfFile.html">
+            
+                    
+                    1 elf文件详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../literature/literature.html">
+            
+                <a href="../../literature/literature.html">
+            
+                    
+                    文学
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../literature/poetry/poetry.html">
+            
+                <a href="../../literature/poetry/poetry.html">
+            
+                    
+                    诗词
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../literature/poetry/sushi/sushi.html">
+            
+                <a href="../../literature/poetry/sushi/sushi.html">
+            
+                    
+                    苏轼
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1.1" data-path="../../literature/poetry/sushi/1.html">
+            
+                <a href="../../literature/poetry/sushi/1.html">
+            
+                    
+                    《定风波·莫听穿林打叶声》
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >1 elf文件详解</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="elf-&#x6587;&#x4EF6;&#x8BE6;&#x89E3;"><center> elf &#x6587;&#x4EF6;&#x8BE6;&#x89E3;</center></h1>
+<h3 id="&#x5BF9;&#x8C61;&#x6587;&#x4EF6;object-files&#x5206;&#x7C7B;">&#x5BF9;&#x8C61;&#x6587;&#x4EF6;(Object files)&#x5206;&#x7C7B;</h3>
+<ul>
+<li>&#x53EF;&#x91CD;&#x5B9A;&#x4F4D;&#x6587;&#x4EF6;(Relocatable File)<br>&#x8FD9;&#x662F;&#x7531;&#x6C47;&#x7F16;&#x5668;&#x6C47;&#x7F16;&#x751F;&#x6210;&#x7684; .o &#x6587;&#x4EF6;&#x3002;&#x540E;&#x9762;&#x7684;&#x94FE;&#x63A5;&#x5668;(link editor)&#x62FF;&#x4E00;&#x4E2A;&#x6216;&#x4E00;&#x4E9B; Relocatable object files &#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x7ECF;&#x94FE;&#x63A5;&#x5904;&#x7406;&#x540E;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x7684;&#x5BF9;&#x8C61;&#x6587;&#x4EF6; (Executable file) &#x6216;&#x8005;&#x4E00;&#x4E2A;&#x53EF;&#x88AB;&#x5171;&#x4EAB;&#x7684;&#x5BF9;&#x8C61;&#x6587;&#x4EF6;(Shared object file)&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; ar &#x5DE5;&#x5177;&#x5C06;&#x4F17;&#x591A;&#x7684; .o Relocatable object files &#x5F52;&#x6863;(archive)&#x6210; .a &#x9759;&#x6001;&#x5E93;&#x6587;&#x4EF6;&#x3002;&#x5982;&#x4F55;&#x4EA7;&#x751F; Relocatable file&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x5F88;&#x719F;&#x6089;&#x4E86;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;&#x6211;&#x4EEC;&#x76F8;&#x5173;&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x6587;&#x7AE0;&#x548C;JulWiki&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x53EF;&#x4EE5;&#x9884;&#x5148;&#x544A;&#x8BC9;&#x5927;&#x5BB6;&#x7684;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x5185;&#x6838;&#x53EF;&#x52A0;&#x8F7D;&#x6A21;&#x5757; .ko &#x6587;&#x4EF6;&#x4E5F;&#x662F; Relocatable object file&#x3002;</li>
+<li>&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;(Executable File)<br>&#x5305;&#x542B;&#x9002;&#x5408;&#x4E8E;&#x6267;&#x884C;&#x7684;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#xFF0C;&#x6B64;&#x6587;&#x4EF6;&#x89C4;&#x5B9A;&#x4E86;exec() &#x5982;&#x4F55;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x7684;&#x8FDB;&#x7A0B;&#x6620;&#x50CF;&#x3002;&#x8FD9;&#x6211;&#x4EEC;&#x89C1;&#x7684;&#x591A;&#x4E86;&#x3002;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;vi&#x3001;&#x8C03;&#x5F0F;&#x7528;&#x7684;&#x5DE5;&#x5177;gdb&#x3001;&#x64AD;&#x653E;mp3&#x6B4C;&#x66F2;&#x7684;&#x8F6F;&#x4EF6;mplayer&#x7B49;&#x7B49;&#x90FD;&#x662F;Executable object file&#x3002;&#x4F60;&#x5E94;&#x8BE5;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#xFF0C;&#x5728;&#x6211;&#x4EEC;&#x7684; Linux &#x7CFB;&#x7EDF;&#x91CC;&#x9762;&#xFF0C;&#x5B58;&#x5728;&#x4E24;&#x79CD;&#x53EF;&#x6267;&#x884C;&#x7684;&#x4E1C;&#x897F;&#x3002;&#x9664;&#x4E86;&#x8FD9;&#x91CC;&#x8BF4;&#x7684; Executable object file&#xFF0C;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x5C31;&#x662F;&#x53EF;&#x6267;&#x884C;&#x7684;&#x811A;&#x672C;(&#x5982;shell&#x811A;&#x672C;)&#x3002;&#x6CE8;&#x610F;&#x8FD9;&#x4E9B;&#x811A;&#x672C;&#x4E0D;&#x662F; Executable object file&#xFF0C;&#x5B83;&#x4EEC;&#x53EA;&#x662F;&#x6587;&#x672C;&#x6587;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;&#x6267;&#x884C;&#x8FD9;&#x4E9B;&#x811A;&#x672C;&#x6240;&#x7528;&#x7684;&#x89E3;&#x91CA;&#x5668;&#x5C31;&#x662F; Executable object file&#xFF0C;&#x6BD4;&#x5982; bash shell &#x7A0B;&#x5E8F;&#x3002;</li>
+<li>&#x5171;&#x4EAB;&#x76EE;&#x6807;&#x6587;&#x4EF6;(Shared Object File) *.so<br>&#x5305;&#x542B;&#x53EF;&#x5728;&#x4E24;&#x79CD;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x94FE;&#x63A5;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x6570;&#x636E;&#x3002;&#x52A8;&#x6001;&#x5E93;&#x5728;&#x53D1;&#x6325;&#x4F5C;&#x7528;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5FC5;&#x987B;&#x7ECF;&#x8FC7;&#x4E24;&#x4E2A;&#x6B65;&#x9AA4;&#xFF1A;<ul>
+<li>&#x94FE;&#x63A5;&#x7F16;&#x8F91;&#x5668;(link editor)&#x62FF;&#x5B83;&#x548C;&#x5176;&#x4ED6;Relocatable object file&#x4EE5;&#x53CA;&#x5176;&#x4ED6;shared object file&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x7ECF;&#x94FE;&#x63A5;&#x5904;&#x7406;&#x540E;&#xFF0C;&#x751F;&#x6210;&#x53E6;&#x5916;&#x7684; shared object file &#x6216;&#x8005; executable file&#x3002;</li>
+<li>&#x5728;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x5668;(dynamic linker)&#x62FF;&#x5B83;&#x548C;&#x4E00;&#x4E2A;Executable file&#x4EE5;&#x53CA;&#x53E6;&#x5916;&#x4E00;&#x4E9B; Shared object file &#x6765;&#x4E00;&#x8D77;&#x5904;&#x7406;&#xFF0C;&#x5728;Linux&#x7CFB;&#x7EDF;&#x91CC;&#x9762;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x6620;&#x50CF;&#x3002;</li>
+</ul>
+</li>
+<li>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; file &#x547D;&#x4EE4;&#x6765;&#x67E5;&#x770B;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5C5E;&#x4E8E;&#x4E0A;&#x9762;&#x4E09;&#x7C7B;&#x4E2D;&#x7684;&#x54EA;&#x4E00;&#x79CD;  <pre><code>x@ubuntu:~/work/libs/libraries$ file output/build/app/glibc/tmem
+output/build/app/glibc/tmem: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /usr/local/glibc2.37/lib/ld-linux-x86-64.so.2, BuildID[sha1]=2d34a5877d15405a548f8e55b8f410748fde3084, for GNU/Linux 3.2.0, with debug_info, not stripped
+</code></pre></li>
+</ul>
+<h3 id="&#x683C;&#x5F0F;&#x8BF4;&#x660E;">&#x683C;&#x5F0F;&#x8BF4;&#x660E;</h3>
+<h4 id="elf&#x5934;&#x90E8;">ELF&#x5934;&#x90E8;</h4>
+<pre><code>x@ubuntu:~/work/libs/libraries$ readelf -h output/build/app/glibc/tmem
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00
+  Class:                             ELF64
+  Data:                              2&apos;s complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              DYN (Shared object file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x10a0
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          17904 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         13
+  Size of section headers:           64 (bytes)
+  Number of section headers:         37
+  Section header string table index: 36
+</code></pre><pre><code class="lang-c">/* ELF Header */
+#define EI_NIDENT 16
+typedef struct elfhdr {
+    unsigned char    e_ident[EI_NIDENT]; /* ELF Identification */
+    Elf32_Half    e_type;        /* object file type */
+    Elf32_Half    e_machine;    /* machine */
+    Elf32_Word    e_version;    /* object file version */
+    Elf32_Addr    e_entry;      /* virtual entry point */
+    Elf32_Off     e_phoff;      /* program header table offset */
+    Elf32_Off     e_shoff;      /* section header table offset */
+    Elf32_Word    e_flags;      /* processor-specific flags */
+    Elf32_Half    e_ehsize;     /* ELF header size */
+    Elf32_Half    e_phentsize;    /* program header entry size */
+    Elf32_Half    e_phnum;      /* number of program header entries */
+    Elf32_Half    e_shentsize;    /* section header entry size */
+    Elf32_Half    e_shnum;      /* number of section header entries */
+    Elf32_Half    e_shstrndx;    /* section header table&apos;s &quot;section 
+                       header string table&quot; entry offset */
+} Elf32_Ehdr;
+
+typedef struct {
+    unsigned char    e_ident[EI_NIDENT];    /* Id bytes */
+    Elf64_Quarter    e_type;            /* file type */
+    Elf64_Quarter    e_machine;        /* machine type */
+    Elf64_Half       e_version;        /* version number */
+    Elf64_Addr       e_entry;         /* entry point */
+    Elf64_Off        e_phoff;         /* Program hdr offset */
+    Elf64_Off        e_shoff;         /* Section hdr offset */
+    Elf64_Half       e_flags;         /* Processor flags */
+    Elf64_Quarter    e_ehsize;        /* sizeof ehdr */
+    Elf64_Quarter    e_phentsize;     /* Program header entry size */
+    Elf64_Quarter    e_phnum;         /* Number of program headers */
+    Elf64_Quarter    e_shentsize;     /* Section header entry size */
+    Elf64_Quarter    e_shnum;         /* Number of section headers */
+    Elf64_Quarter    e_shstrndx;      /* String table index */
+} Elf64_Ehdr;
+</code></pre>
+<p><img src="elfFile/1.png" alt="elfheaader"></p>
+<h4 id="&#x7A0B;&#x5E8F;&#x5934;&#x90E8;&#xFF08;program-header&#xFF09;">&#x7A0B;&#x5E8F;&#x5934;&#x90E8;&#xFF08;Program Header&#xFF09;</h4>
+<pre><code>x@ubuntu:~/work/libs/libraries$ readelf -l output/build/app/glibc/tmem
+
+Elf file type is DYN (Shared object file)
+Entry point 0x10a0
+There are 13 program headers, starting at offset 64
+
+Program Headers:
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+  PHDR           0x0000000000000040 0x0000000000000040 0x0000000000000040
+                 0x00000000000002d8 0x00000000000002d8  R      0x8
+  INTERP         0x0000000000000318 0x0000000000000318 0x0000000000000318
+                 0x000000000000002e 0x000000000000002e  R      0x1
+      [Requesting program interpreter: /usr/local/glibc2.37/lib/ld-linux-x86-64.so.2]
+  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000818 0x0000000000000818  R      0x1000
+  LOAD           0x0000000000001000 0x0000000000001000 0x0000000000001000
+                 0x00000000000002a5 0x00000000000002a5  R E    0x1000
+  LOAD           0x0000000000002000 0x0000000000002000 0x0000000000002000
+                 0x00000000000001b0 0x00000000000001b0  R      0x1000
+  LOAD           0x0000000000002d98 0x0000000000003d98 0x0000000000003d98
+                 0x0000000000000278 0x0000000000000280  RW     0x1000
+  DYNAMIC        0x0000000000002da8 0x0000000000003da8 0x0000000000003da8
+                 0x0000000000000200 0x0000000000000200  RW     0x8
+  NOTE           0x0000000000000348 0x0000000000000348 0x0000000000000348
+                 0x0000000000000020 0x0000000000000020  R      0x8
+  NOTE           0x0000000000000368 0x0000000000000368 0x0000000000000368
+                 0x0000000000000044 0x0000000000000044  R      0x4
+  GNU_PROPERTY   0x0000000000000348 0x0000000000000348 0x0000000000000348
+                 0x0000000000000020 0x0000000000000020  R      0x8
+  GNU_EH_FRAME   0x0000000000002038 0x0000000000002038 0x0000000000002038
+                 0x000000000000004c 0x000000000000004c  R      0x4
+  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000  RW     0x10
+  GNU_RELRO      0x0000000000002d98 0x0000000000003d98 0x0000000000003d98
+                 0x0000000000000268 0x0000000000000268  R      0x1
+
+ Section to Segment mapping:
+  Segment Sections...
+   00
+   01     .interp
+   02     .interp .note.gnu.property .note.gnu.build-id .note.ABI-tag .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn .rela.plt
+   03     .init .plt .plt.got .plt.sec .text .fini
+   04     .rodata .eh_frame_hdr .eh_frame
+   05     .init_array .fini_array .dynamic .got .data .bss
+   06     .dynamic
+   07     .note.gnu.property
+   08     .note.gnu.build-id .note.ABI-tag
+   09     .note.gnu.property
+   10     .eh_frame_hdr
+   11
+   12     .init_array .fini_array .dynamic .got
+</code></pre><p>&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x5171;&#x4EAB;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x7A0B;&#x5E8F;&#x5934;&#x90E8;&#x662F;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x6570;&#x7EC4;&#xFF0C;&#x6BCF;&#x4E2A;&#x7ED3;&#x6784;&#x63CF;&#x8FF0;&#x4E86;&#x4E00;&#x4E2A;&#x6BB5; &#x6216;&#x8005;&#x7CFB;&#x7EDF;&#x51C6;&#x5907;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x6240;&#x5FC5;&#x9700;&#x7684;&#x5176;&#x5B83;&#x4FE1;&#x606F;&#x3002;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x201C;&#x6BB5;&#x201D;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x201C;&#x8282;&#x533A;&#x201D;&#xFF0C; &#x4E5F;&#x5C31;&#x662F;&#x201C;&#x6BB5;&#x5185;&#x5BB9;(Segment Contents)&#x201D;&#x3002;&#x7A0B;&#x5E8F;&#x5934;&#x90E8;&#x4EC5;&#x5BF9;&#x4E8E;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x548C;&#x5171;&#x4EAB;&#x76EE;&#x6807;&#x6587;&#x4EF6; &#x6709;&#x610F;&#x4E49;&#x3002; &#x53EF;&#x6267;&#x884C;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x5728; ELF &#x5934;&#x90E8;&#x7684; e_phentsize&#x548C;e_phnum &#x6210;&#x5458;&#x4E2D;&#x7ED9;&#x51FA;&#x5176;&#x81EA;&#x8EAB;&#x7A0B;&#x5E8F;&#x5934;&#x90E8; &#x7684;&#x5927;&#x5C0F;&#x3002;&#x7A0B;&#x5E8F;&#x5934;&#x90E8;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;:  </p>
+<pre><code>/* Program Header */
+typedef struct {
+    Elf32_Word    p_type;        /* segment type */
+    Elf32_Off    p_offset;    /* segment offset */
+    Elf32_Addr    p_vaddr;    /* virtual address of segment */
+    Elf32_Addr    p_paddr;    /* physical address - ignored? */
+    Elf32_Word    p_filesz;    /* number of bytes in file for seg. */
+    Elf32_Word    p_memsz;    /* number of bytes in mem. for seg. */
+    Elf32_Word    p_flags;    /* flags */
+    Elf32_Word    p_align;    /* memory alignment */
+} Elf32_Phdr;
+
+typedef struct {
+    Elf64_Half    p_type;        /* entry type */
+    Elf64_Half    p_flags;    /* flags */
+    Elf64_Off    p_offset;    /* offset */
+    Elf64_Addr    p_vaddr;    /* virtual address */
+    Elf64_Addr    p_paddr;    /* physical address */
+    Elf64_Xword    p_filesz;    /* file size */
+    Elf64_Xword    p_memsz;    /* memory size */
+    Elf64_Xword    p_align;    /* memory &amp; file alignment */
+} Elf64_Phdr;
+</code></pre><p>&#x5176;&#x4E2D;&#x5404;&#x4E2A;&#x5B57;&#x6BB5;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ol>
+<li>p_type &#x6B64;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x63CF;&#x8FF0;&#x7684;&#x6BB5;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x6216;&#x8005;&#x5982;&#x4F55;&#x89E3;&#x91CA;&#x6B64;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x5177;&#x4F53;&#x5982;&#x4E0B;&#x56FE;&#x3002;<br><img src="elfFile/2.png" alt="elf&#x6BB5;&#x7C7B;&#x578B;"></li>
+<li>p_offset &#x6B64;&#x6210;&#x5458;&#x7ED9;&#x51FA;&#x4ECE;&#x6587;&#x4EF6;&#x5934;&#x5230;&#x8BE5;&#x6BB5;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x7684;&#x504F;&#x79FB;&#x3002;</li>
+<li>p_vaddr &#x6B64;&#x6210;&#x5458;&#x7ED9;&#x51FA;&#x6BB5;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x5C06;&#x88AB;&#x653E;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x865A;&#x62DF;&#x5730;&#x5740;&#x3002;</li>
+<li>p_paddr &#x6B64;&#x6210;&#x5458;&#x4EC5;&#x7528;&#x4E8E;&#x4E0E;&#x7269;&#x7406;&#x5730;&#x5740;&#x76F8;&#x5173;&#x7684;&#x7CFB;&#x7EDF;&#x4E2D;&#x3002;&#x56E0;&#x4E3A; System V &#x5FFD;&#x7565;&#x6240;&#x6709;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x7269;&#x7406;&#x5730;&#x5740;&#x4FE1;&#x606F;&#xFF0C;&#x6B64;&#x5B57;&#x6BB5;&#x5BF9;&#x4E0E;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x548C;&#x5171;&#x4EAB;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x800C;&#x8A00;&#x5177;&#x4F53;&#x5185;&#x5BB9;&#x662F;&#x6307;&#x5B9A;&#x7684;&#x3002;</li>
+<li>p_filesz &#x6B64;&#x6210;&#x5458;&#x7ED9;&#x51FA;&#x6BB5;&#x5728;&#x6587;&#x4EF6;&#x6620;&#x50CF;&#x4E2D;&#x6240;&#x5360;&#x7684;&#x5B57;&#x8282;&#x6570;&#x3002;&#x53EF;&#x4EE5;&#x4E3A; 0&#x3002;</li>
+<li>p_memsz &#x6B64;&#x6210;&#x5458;&#x7ED9;&#x51FA;&#x6BB5;&#x5728;&#x5185;&#x5B58;&#x6620;&#x50CF;&#x4E2D;&#x5360;&#x7528;&#x7684;&#x5B57;&#x8282;&#x6570;&#x3002;&#x53EF;&#x4EE5;&#x4E3A; 0&#x3002;</li>
+<li>p_flags &#x6B64;&#x6210;&#x5458;&#x7ED9;&#x51FA;&#x4E0E;&#x6BB5;&#x76F8;&#x5173;&#x7684;&#x6807;&#x5FD7;&#x3002;</li>
+<li>p_align &#x53EF;&#x52A0;&#x8F7D;&#x7684;&#x8FDB;&#x7A0B;&#x6BB5;&#x7684; p_vaddr &#x548C; p_offset &#x53D6;&#x503C;&#x5FC5;&#x987B;&#x5408;&#x9002;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x5BF9;&#x9875;&#x9762;&#x5927;&#x5C0F;&#x7684;&#x53D6;&#x6A21;&#x800C;&#x8A00;&#x3002;&#x6B64;&#x6210;&#x5458;&#x7ED9;&#x51FA;&#x6BB5;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x548C;&#x5185;&#x5B58;&#x4E2D;&#x5982;&#x4F55; &#x5BF9;&#x9F50;&#x3002;&#x6570;&#x503C; 0 &#x548C; 1 &#x8868;&#x793A;&#x4E0D;&#x9700;&#x8981;&#x5BF9;&#x9F50;&#x3002;&#x5426;&#x5219; p_align &#x5E94;&#x8BE5;&#x662F;&#x4E2A;&#x6B63;&#x6574;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x662F; 2 &#x7684;&#x5E42;&#x6B21;&#x6570;&#xFF0C;p_vaddr &#x548C; p_offset &#x5BF9; p_align &#x53D6;&#x6A21;&#x540E;&#x5E94;&#x8BE5;&#x76F8;&#x7B49;&#x3002;</li>
+</ol>
+<h4 id="&#x8282;&#x533A;&#xFF08;sections&#xFF09;">&#x8282;&#x533A;&#xFF08;Sections&#xFF09;</h4>
+<pre><code>x@ubuntu:~/work/libs/libraries$ readelf -S output/build/app/glibc/tmem
+There are 37 section headers, starting at offset 0x45f0:
+
+Section Headers:
+  [Nr] Name              Type             Address           Offset
+       Size              EntSize          Flags  Link  Info  Align
+  [ 0]                   NULL             0000000000000000  00000000
+       0000000000000000  0000000000000000           0     0     0
+  [ 1] .interp           PROGBITS         0000000000000318  00000318
+       000000000000002e  0000000000000000   A       0     0     1
+  [ 2] .note.gnu.propert NOTE             0000000000000348  00000348
+       0000000000000020  0000000000000000   A       0     0     8
+  [ 3] .note.gnu.build-i NOTE             0000000000000368  00000368
+       0000000000000024  0000000000000000   A       0     0     4
+  [ 4] .note.ABI-tag     NOTE             000000000000038c  0000038c
+       0000000000000020  0000000000000000   A       0     0     4
+  [ 5] .gnu.hash         GNU_HASH         00000000000003b0  000003b0
+       0000000000000050  0000000000000000   A       6     0     8
+  [ 6] .dynsym           DYNSYM           0000000000000400  00000400
+       00000000000001c8  0000000000000018   A       7     1     8
+  [ 7] .dynstr           STRTAB           00000000000005c8  000005c8
+       00000000000000ff  0000000000000000   A       0     0     1
+  [ 8] .gnu.version      VERSYM           00000000000006c8  000006c8
+       0000000000000026  0000000000000002   A       6     0     2
+  [ 9] .gnu.version_r    VERNEED          00000000000006f0  000006f0
+       0000000000000020  0000000000000000   A       7     1     8
+  [10] .rela.dyn         RELA             0000000000000710  00000710
+       00000000000000c0  0000000000000018   A       6     0     8
+  [11] .rela.plt         RELA             00000000000007d0  000007d0
+       0000000000000048  0000000000000018  AI       6    24     8
+  [12] .init             PROGBITS         0000000000001000  00001000
+       000000000000001b  0000000000000000  AX       0     0     4
+  [13] .plt              PROGBITS         0000000000001020  00001020
+       0000000000000040  0000000000000010  AX       0     0     16
+  [14] .plt.got          PROGBITS         0000000000001060  00001060
+       0000000000000010  0000000000000010  AX       0     0     16
+  [15] .plt.sec          PROGBITS         0000000000001070  00001070
+       0000000000000030  0000000000000010  AX       0     0     16
+  [16] .text             PROGBITS         00000000000010a0  000010a0
+       00000000000001f5  0000000000000000  AX       0     0     16
+  [17] .fini             PROGBITS         0000000000001298  00001298
+       000000000000000d  0000000000000000  AX       0     0     4
+  [18] .rodata           PROGBITS         0000000000002000  00002000
+       0000000000000037  0000000000000000   A       0     0     4
+  [19] .eh_frame_hdr     PROGBITS         0000000000002038  00002038
+       000000000000004c  0000000000000000   A       0     0     4
+  [20] .eh_frame         PROGBITS         0000000000002088  00002088
+       0000000000000128  0000000000000000   A       0     0     8
+  [21] .init_array       INIT_ARRAY       0000000000003d98  00002d98
+       0000000000000008  0000000000000008  WA       0     0     8
+  [22] .fini_array       FINI_ARRAY       0000000000003da0  00002da0
+       0000000000000008  0000000000000008  WA       0     0     8
+  [23] .dynamic          DYNAMIC          0000000000003da8  00002da8
+       0000000000000200  0000000000000010  WA       7     0     8
+  [24] .got              PROGBITS         0000000000003fa8  00002fa8
+       0000000000000058  0000000000000008  WA       0     0     8
+  [25] .data             PROGBITS         0000000000004000  00003000
+       0000000000000010  0000000000000000  WA       0     0     8
+  [26] .bss              NOBITS           0000000000004010  00003010
+       0000000000000008  0000000000000000  WA       0     0     1
+  [27] .comment          PROGBITS         0000000000000000  00003010
+       000000000000002b  0000000000000001  MS       0     0     1
+  [28] .debug_aranges    PROGBITS         0000000000000000  0000303b
+       0000000000000040  0000000000000000           0     0     1
+  [29] .debug_info       PROGBITS         0000000000000000  0000307b
+       000000000000046e  0000000000000000           0     0     1
+  [30] .debug_abbrev     PROGBITS         0000000000000000  000034e9
+       0000000000000136  0000000000000000           0     0     1
+  [31] .debug_line       PROGBITS         0000000000000000  0000361f
+       0000000000000174  0000000000000000           0     0     1
+  [32] .debug_str        PROGBITS         0000000000000000  00003793
+       00000000000003a3  0000000000000001  MS       0     0     1
+  [33] .debug_ranges     PROGBITS         0000000000000000  00003b36
+       0000000000000030  0000000000000000           0     0     1
+  [34] .symtab           SYMTAB           0000000000000000  00003b68
+       00000000000006f0  0000000000000018          35    56     8
+  [35] .strtab           STRTAB           0000000000000000  00004258
+       000000000000022d  0000000000000000           0     0     1
+  [36] .shstrtab         STRTAB           0000000000000000  00004485
+       0000000000000168  0000000000000000           0     0     1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  l (large), p (processor specific)
+</code></pre><p>&#x8282;&#x533A;&#x4E2D;&#x5305;&#x542B;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#xFF0C;&#x9664;&#x4E86;:ELF &#x5934;&#x90E8;&#x3001;&#x7A0B;&#x5E8F;&#x5934;&#x90E8;&#x8868;&#x683C;&#x3001;&#x8282;&#x533A;&#x5934;&#x90E8;&#x8868;&#x683C;&#x3002;&#x8282;&#x533A;&#x6EE1;&#x8DB3;&#x4EE5;&#x4E0B;&#x6761;&#x4EF6;:  </p>
+<ul>
+<li>&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x8282;&#x533A;&#x90FD;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x8282;&#x533A;&#x5934;&#x90E8;&#x63CF;&#x8FF0;&#x5B83;&#xFF0C;&#x53CD;&#x8FC7;&#x6765;&#xFF0C;&#x6709;&#x8282;&#x533A;&#x5934;&#x90E8;&#x4E0D;&#x610F; &#x5473;&#x7740;&#x6709;&#x8282;&#x533A;&#x3002;</li>
+<li>&#x6BCF;&#x4E2A;&#x8282;&#x533A;&#x5360;&#x7528;&#x6587;&#x4EF6;&#x4E2D;&#x4E00;&#x4E2A;&#x8FDE;&#x7EED;&#x5B57;&#x8282;&#x533A;&#x57DF;(&#x8FD9;&#x4E2A;&#x533A;&#x57DF;&#x53EF;&#x80FD;&#x957F;&#x5EA6;&#x4E3A; 0)&#x3002;</li>
+<li>&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x8282;&#x533A;&#x4E0D;&#x80FD;&#x91CD;&#x53E0;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x5B58;&#x5728;&#x4E8E;&#x4E24;&#x4E2A;&#x8282;&#x533A;&#x4E2D;&#x7684;&#x60C5;&#x51B5;&#x53D1;&#x751F;&#x3002;</li>
+<li>&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x4E2D;&#x53EF;&#x80FD;&#x5305;&#x542B;&#x975E;&#x6D3B;&#x52A8;&#x7A7A;&#x95F4;(INACTIVE SPACE)&#x3002;&#x8FD9;&#x4E9B;&#x533A;&#x57DF;&#x4E0D;&#x5C5E;&#x4E8E;&#x4EFB;&#x4F55;&#x5934;&#x90E8;&#x548C;&#x8282;&#x533A;&#x3002;  </li>
+</ul>
+<p>&#x6BCF;&#x4E2A;&#x8282;&#x533A;&#x5934;&#x90E8;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x63CF;&#x8FF0;:</p>
+<pre><code>/* Section Header */
+typedef struct {
+    Elf32_Word    sh_name;    /* name - index into section header
+                       string table section */
+    Elf32_Word    sh_type;    /* type */
+    Elf32_Word    sh_flags;    /* flags */
+    Elf32_Addr    sh_addr;    /* address */
+    Elf32_Off     sh_offset;    /* file offset */
+    Elf32_Word    sh_size;    /* section size */
+    Elf32_Word    sh_link;    /* section header table index link */
+    Elf32_Word    sh_info;    /* extra information */
+    Elf32_Word    sh_addralign;    /* address alignment */
+    Elf32_Word    sh_entsize;    /* section entry size */
+} Elf32_Shdr;
+
+typedef struct {
+    Elf64_Half    sh_name;    /* section name */
+    Elf64_Half    sh_type;    /* section type */
+    Elf64_Xword   sh_flags;    /* section flags */
+    Elf64_Addr    sh_addr;    /* virtual address */
+    Elf64_Off     sh_offset;    /* file offset */
+    Elf64_Xword   sh_size;    /* section size */
+    Elf64_Half    sh_link;    /* link to another */
+    Elf64_Half    sh_info;    /* misc info */
+    Elf64_Xword   sh_addralign;    /* memory alignment */
+    Elf64_Xword   sh_entsize;    /* table entry size */
+} Elf64_Shdr;
+</code></pre><p>&#x5404;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x89E3;&#x91CA;:
+<img src="elfFile/3.png" alt="&#x8282;&#x533A;">  </p>
+<p>sh_type &#x5B57;&#x6BB5; &#x8282;&#x533A;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#xFF1A;<br><img src="elfFile/4.png" alt="&#x8282;&#x533A;&#x7C7B;&#x578B;">   </p>
+<p>sh_flags &#x5B57;&#x6BB5;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x8282;&#x533A;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x3001;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x7B49;&#x4FE1;&#x606F;&#x3002; &#x5982;&#x679C;&#x4E00;&#x4E2A;&#x6807;&#x5FD7;&#x4F4D;&#x88AB;&#x8BBE;&#x7F6E;&#xFF0C;&#x5219;&#x8BE5;&#x4F4D;&#x53D6;&#x503C;&#x4E3A; 1&#x3002; &#x5B9A;&#x4E49;&#x7684;&#x5404;&#x4F4D;&#x90FD;&#x8BBE;&#x7F6E;&#x4E3A; 0&#x3002;</p>
+<ul>
+<li>SHF_WRITE: &#x8282;&#x533A;&#x5305;&#x542B;&#x8FDB;&#x7A0B;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x5C06;&#x53EF;&#x5199;&#x7684;&#x6570;&#x636E;&#x3002;</li>
+<li>SHF_ALLOC: &#x6B64;&#x8282;&#x533A;&#x5728;&#x8FDB;&#x7A0B;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x5360;&#x7528;&#x5185;&#x5B58;&#x3002;&#x67D0;&#x4E9B;&#x63A7;&#x5236;&#x8282;&#x533A;&#x5E76;&#x4E0D;&#x51FA;&#x73B0;&#x4E8E;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5B58;&#x6620;&#x50CF;&#x4E2D;&#xFF0C;&#x5BF9;&#x4E8E;&#x90A3;&#x4E9B;&#x8282;&#x533A;&#xFF0C;&#x6B64;&#x4F4D;&#x5E94;&#x8BBE;&#x7F6E;&#x4E3A; 0&#x3002;</li>
+<li>SHF_EXECINSTR: &#x8282;&#x533A;&#x5305;&#x542B;&#x53EF;&#x6267;&#x884C;&#x7684;&#x673A;&#x5668;&#x6307;&#x4EE4;&#x3002;</li>
+<li>SHF_MASKPROC: &#x6240;&#x6709;&#x5305;&#x542B;&#x4E8E;&#x6B64;&#x63A9;&#x7801;&#x4E2D;&#x7684;&#x56DB;&#x4F4D;&#x90FD;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x5668;&#x4E13;&#x7528;&#x7684;&#x8BED;&#x4E49;&#x3002;  </li>
+</ul>
+<p>&#x6839;&#x636E;&#x8282;&#x533A;&#x7C7B;&#x578B;&#x7684;&#x4E0D;&#x540C;&#xFF0C;sh_link &#x548C; sh_info &#x7684;&#x5177;&#x4F53;&#x542B;&#x4E49;&#x4E5F;&#x6709;&#x6240;&#x4E0D;&#x540C;&#xFF1A;
+<img src="elfFile/5.png" alt="link&amp;info">  </p>
+<ul>
+<li>&#x7279;&#x6B8A;&#x8282;&#x533A;<br><img src="elfFile/6.png" alt="link&amp;info">  <ul>
+<li>&#x4EE5; . &#x5F00;&#x5934;&#x7684;&#x8282;&#x533A;&#x540D;&#x79F0;&#x662F;&#x7CFB;&#x7EDF;&#x4FDD;&#x7559;&#x7684;&#x3002;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6CA1;&#x6709;&#x524D;&#x7F00;&#x7684;&#x8282;&#x533A;&#x540D;&#x79F0;&#xFF0C;&#x4EE5;&#x907F; &#x514D;&#x4E0E;&#x7CFB;&#x7EDF;&#x8282;&#x533A;&#x51B2;&#x7A81;&#x3002;</li>
+<li>&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x5141;&#x8BB8;&#x4EBA;&#x4EEC;&#x5B9A;&#x4E49;&#x4E0D;&#x5728;&#x4E0A;&#x8FF0;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x8282;&#x533A;&#x3002;</li>
+<li>&#x4FDD;&#x7559;&#x7ED9;&#x5904;&#x7406;&#x5668;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x7684;&#x8282;&#x533A;&#x540D;&#x79F0;&#x4E00;&#x822C;&#x6784;&#x6210;&#x4E3A; : &#x5904;&#x7406;&#x5668;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x540D;&#x79F0;&#x7B80;&#x5199; + &#x8282;&#x533A;&#x540D;&#x79F0;&#x3002;</li>
+<li>&#x5904;&#x7406;&#x5668;&#x540D;&#x79F0;&#x5E94;&#x8BE5;&#x4E0E; e_machine &#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x540D;&#x79F0;&#x76F8;&#x540C;&#x3002;&#x4F8B;&#x5982; .FOO.psect &#x8857;&#x533A;&#x662F;&#x7531;FOO &#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x5B9A;&#x4E49;&#x7684; psect &#x8282;&#x533A;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x67E5;&#x770B;-section-&#x5185;&#x5BB9;">&#x67E5;&#x770B; section &#x5185;&#x5BB9;</h3>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; readelf -x SecNum &#x6765;&#x6253;&#x5370;&#x51FA;&#x4E0D;&#x540C; section &#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x65E0;&#x5948;&#x5176;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x90FD;&#x662F;&#x673A;&#x5668;&#x7801;&#xFF0C;&#x5BF9;&#x6211;&#x4EEC;&#x4EBA;&#x6765;&#x8BF4;&#x4E0D;&#x5177;&#x5907;&#x53EF;&#x8BFB;&#x6027;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x6362;&#x7528; binutils &#x5305;&#x4E2D;&#x7684;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5DE5;&#x5177; objdump &#x6765;&#x770B;&#x770B;&#x8FD9;&#x4E9B; sections &#x4E2D;&#x5230;&#x5E95;&#x5177;&#x6709;&#x54EA;&#x4E9B;&#x5185;&#x5BB9;  </p>
+<p>&#x6E90;&#x7801;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code class="lang-c">#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+int gl = 5;
+static void t() {
+    char* p2 = malloc(32);
+    snprintf(p2, 32, &quot;hello, I am here 2&quot;);
+}
+
+int main(int argc, char **argv) {
+    char* p1 = malloc(32);
+    snprintf(p1, 32, &quot;hello, I am here 1&quot;);
+    printf(&quot;111111111111\n&quot;);
+    t();
+
+    return 0;
+}
+</code></pre>
+<h4 id="text">.text</h4>
+<pre><code>x@ubuntu:~/work/libs/libraries$ objdump -d -j .text output/build/app/glibc/tmem
+
+output/build/app/glibc/tmem:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+00000000000010a0 &lt;_start&gt;:
+    10a0:       f3 0f 1e fa             endbr64
+    10a4:       31 ed                   xor    %ebp,%ebp
+    10a6:       49 89 d1                mov    %rdx,%r9
+    10a9:       5e                      pop    %rsi
+    10aa:       48 89 e2                mov    %rsp,%rdx
+    10ad:       48 83 e4 f0             and    $0xfffffffffffffff0,%rsp
+    10b1:       50                      push   %rax
+    10b2:       54                      push   %rsp
+    10b3:       4c 8d 05 d6 01 00 00    lea    0x1d6(%rip),%r8        # 1290 &lt;__libc_csu_fini&gt;
+    10ba:       48 8d 0d 5f 01 00 00    lea    0x15f(%rip),%rcx        # 1220 &lt;__libc_csu_init&gt;
+    10c1:       48 8d 3d fb 00 00 00    lea    0xfb(%rip),%rdi        # 11c3 &lt;main&gt;
+    10c8:       ff 15 12 2f 00 00       callq  *0x2f12(%rip)        # 3fe0 &lt;__libc_start_main@GLIBC_2.2.5&gt;
+    10ce:       f4                      hlt
+    10cf:       90                      nop
+
+00000000000010d0 &lt;deregister_tm_clones&gt;:
+    10d0:       48 8d 3d 39 2f 00 00    lea    0x2f39(%rip),%rdi        # 4010 &lt;completed.8061&gt;
+    10d7:       48 8d 05 32 2f 00 00    lea    0x2f32(%rip),%rax        # 4010 &lt;completed.8061&gt;
+    10de:       48 39 f8                cmp    %rdi,%rax
+    10e1:       74 15                   je     10f8 &lt;deregister_tm_clones+0x28&gt;
+    10e3:       48 8b 05 ee 2e 00 00    mov    0x2eee(%rip),%rax        # 3fd8 &lt;_ITM_deregisterTMCloneTable&gt;
+    10ea:       48 85 c0                test   %rax,%rax
+    10ed:       74 09                   je     10f8 &lt;deregister_tm_clones+0x28&gt;
+    10ef:       ff e0                   jmpq   *%rax
+    10f1:       0f 1f 80 00 00 00 00    nopl   0x0(%rax)
+    10f8:       c3                      retq
+    10f9:       0f 1f 80 00 00 00 00    nopl   0x0(%rax)
+
+0000000000001100 &lt;register_tm_clones&gt;:
+    1100:       48 8d 3d 09 2f 00 00    lea    0x2f09(%rip),%rdi        # 4010 &lt;completed.8061&gt;
+    1107:       48 8d 35 02 2f 00 00    lea    0x2f02(%rip),%rsi        # 4010 &lt;completed.8061&gt;
+    110e:       48 29 fe                sub    %rdi,%rsi
+    1111:       48 89 f0                mov    %rsi,%rax
+    1114:       48 c1 ee 3f             shr    $0x3f,%rsi
+    1118:       48 c1 f8 03             sar    $0x3,%rax
+    111c:       48 01 c6                add    %rax,%rsi
+    111f:       48 d1 fe                sar    %rsi
+    1122:       74 14                   je     1138 &lt;register_tm_clones+0x38&gt;
+    1124:       48 8b 05 c5 2e 00 00    mov    0x2ec5(%rip),%rax        # 3ff0 &lt;_ITM_registerTMCloneTable&gt;
+    112b:       48 85 c0                test   %rax,%rax
+    112e:       74 08                   je     1138 &lt;register_tm_clones+0x38&gt;
+    1130:       ff e0                   jmpq   *%rax
+    1132:       66 0f 1f 44 00 00       nopw   0x0(%rax,%rax,1)
+    1138:       c3                      retq
+    1139:       0f 1f 80 00 00 00 00    nopl   0x0(%rax)
+
+0000000000001140 &lt;__do_global_dtors_aux&gt;:
+    1140:       f3 0f 1e fa             endbr64
+    1144:       80 3d c5 2e 00 00 00    cmpb   $0x0,0x2ec5(%rip)        # 4010 &lt;completed.8061&gt;
+    114b:       75 2b                   jne    1178 &lt;__do_global_dtors_aux+0x38&gt;
+    114d:       55                      push   %rbp
+    114e:       48 83 3d a2 2e 00 00    cmpq   $0x0,0x2ea2(%rip)        # 3ff8 &lt;__cxa_finalize@GLIBC_2.2.5&gt;
+    1155:       00
+    1156:       48 89 e5                mov    %rsp,%rbp
+    1159:       74 0c                   je     1167 &lt;__do_global_dtors_aux+0x27&gt;
+    115b:       48 8b 3d a6 2e 00 00    mov    0x2ea6(%rip),%rdi        # 4008 &lt;__dso_handle&gt;
+    1162:       e8 f9 fe ff ff          callq  1060 &lt;__cxa_finalize@plt&gt;
+    1167:       e8 64 ff ff ff          callq  10d0 &lt;deregister_tm_clones&gt;
+    116c:       c6 05 9d 2e 00 00 01    movb   $0x1,0x2e9d(%rip)        # 4010 &lt;completed.8061&gt;
+    1173:       5d                      pop    %rbp
+    1174:       c3                      retq
+    1175:       0f 1f 00                nopl   (%rax)
+    1178:       c3                      retq
+    1179:       0f 1f 80 00 00 00 00    nopl   0x0(%rax)
+
+0000000000001180 &lt;frame_dummy&gt;:
+    1180:       f3 0f 1e fa             endbr64
+    1184:       e9 77 ff ff ff          jmpq   1100 &lt;register_tm_clones&gt;
+
+0000000000001189 &lt;t&gt;:
+    1189:       f3 0f 1e fa             endbr64
+    118d:       55                      push   %rbp
+    118e:       48 89 e5                mov    %rsp,%rbp
+    1191:       48 83 ec 10             sub    $0x10,%rsp
+    1195:       bf 20 00 00 00          mov    $0x20,%edi
+    119a:       e8 f1 fe ff ff          callq  1090 &lt;malloc@plt&gt;
+    119f:       48 89 45 f8             mov    %rax,-0x8(%rbp)
+    11a3:       48 8b 45 f8             mov    -0x8(%rbp),%rax
+    11a7:       48 8d 15 56 0e 00 00    lea    0xe56(%rip),%rdx        # 2004 &lt;_IO_stdin_used+0x4&gt;
+    11ae:       be 20 00 00 00          mov    $0x20,%esi
+    11b3:       48 89 c7                mov    %rax,%rdi
+    11b6:       b8 00 00 00 00          mov    $0x0,%eax
+    11bb:       e8 c0 fe ff ff          callq  1080 &lt;snprintf@plt&gt;
+    11c0:       90                      nop
+    11c1:       c9                      leaveq
+    11c2:       c3                      retq
+
+00000000000011c3 &lt;main&gt;:
+    11c3:       f3 0f 1e fa             endbr64
+    11c7:       55                      push   %rbp
+    11c8:       48 89 e5                mov    %rsp,%rbp
+    11cb:       48 83 ec 20             sub    $0x20,%rsp
+    11cf:       89 7d ec                mov    %edi,-0x14(%rbp)
+    11d2:       48 89 75 e0             mov    %rsi,-0x20(%rbp)
+    11d6:       bf 20 00 00 00          mov    $0x20,%edi
+    11db:       e8 b0 fe ff ff          callq  1090 &lt;malloc@plt&gt;
+    11e0:       48 89 45 f8             mov    %rax,-0x8(%rbp)
+    11e4:       48 8b 45 f8             mov    -0x8(%rbp),%rax
+    11e8:       48 8d 15 28 0e 00 00    lea    0xe28(%rip),%rdx        # 2017 &lt;_IO_stdin_used+0x17&gt;
+    11ef:       be 20 00 00 00          mov    $0x20,%esi
+    11f4:       48 89 c7                mov    %rax,%rdi
+    11f7:       b8 00 00 00 00          mov    $0x0,%eax
+    11fc:       e8 7f fe ff ff          callq  1080 &lt;snprintf@plt&gt;
+    1201:       48 8d 3d 22 0e 00 00    lea    0xe22(%rip),%rdi        # 202a &lt;_IO_stdin_used+0x2a&gt;
+    1208:       e8 63 fe ff ff          callq  1070 &lt;puts@plt&gt;
+    120d:       b8 00 00 00 00          mov    $0x0,%eax
+    1212:       e8 72 ff ff ff          callq  1189 &lt;t&gt;
+    1217:       b8 00 00 00 00          mov    $0x0,%eax
+    121c:       c9                      leaveq
+    121d:       c3                      retq
+    121e:       66 90                   xchg   %ax,%ax
+
+0000000000001220 &lt;__libc_csu_init&gt;:
+    1220:       f3 0f 1e fa             endbr64
+    1224:       41 57                   push   %r15
+    1226:       4c 8d 3d 6b 2b 00 00    lea    0x2b6b(%rip),%r15        # 3d98 &lt;__frame_dummy_init_array_entry&gt;
+    122d:       41 56                   push   %r14
+    122f:       49 89 d6                mov    %rdx,%r14
+    1232:       41 55                   push   %r13
+    1234:       49 89 f5                mov    %rsi,%r13
+    1237:       41 54                   push   %r12
+    1239:       41 89 fc                mov    %edi,%r12d
+    123c:       55                      push   %rbp
+    123d:       48 8d 2d 5c 2b 00 00    lea    0x2b5c(%rip),%rbp        # 3da0 &lt;__do_global_dtors_aux_fini_array_entry&gt;
+    1244:       53                      push   %rbx
+    1245:       4c 29 fd                sub    %r15,%rbp
+    1248:       48 83 ec 08             sub    $0x8,%rsp
+    124c:       e8 af fd ff ff          callq  1000 &lt;_init&gt;
+    1251:       48 c1 fd 03             sar    $0x3,%rbp
+    1255:       74 1f                   je     1276 &lt;__libc_csu_init+0x56&gt;
+    1257:       31 db                   xor    %ebx,%ebx
+    1259:       0f 1f 80 00 00 00 00    nopl   0x0(%rax)
+    1260:       4c 89 f2                mov    %r14,%rdx
+    1263:       4c 89 ee                mov    %r13,%rsi
+    1266:       44 89 e7                mov    %r12d,%edi
+    1269:       41 ff 14 df             callq  *(%r15,%rbx,8)
+    126d:       48 83 c3 01             add    $0x1,%rbx
+    1271:       48 39 dd                cmp    %rbx,%rbp
+    1274:       75 ea                   jne    1260 &lt;__libc_csu_init+0x40&gt;
+    1276:       48 83 c4 08             add    $0x8,%rsp
+    127a:       5b                      pop    %rbx
+    127b:       5d                      pop    %rbp
+    127c:       41 5c                   pop    %r12
+    127e:       41 5d                   pop    %r13
+    1280:       41 5e                   pop    %r14
+    1282:       41 5f                   pop    %r15
+    1284:       c3                      retq
+    1285:       66 66 2e 0f 1f 84 00    data16 nopw %cs:0x0(%rax,%rax,1)
+    128c:       00 00 00 00
+
+0000000000001290 &lt;__libc_csu_fini&gt;:
+    1290:       f3 0f 1e fa             endbr64
+    1294:       c3                      retq
+</code></pre><h4 id="data">.data</h4>
+<pre><code>x@ubuntu:~/work/libs/libraries$ objdump -d -j .data output/build/app/glibc/tmem
+
+output/build/app/glibc/tmem:     file format elf64-x86-64
+
+
+Disassembly of section .data:
+
+0000000000004000 &lt;__data_start&gt;:
+        ...
+
+0000000000004008 &lt;__dso_handle&gt;:
+    4008:       08 40 00 00 00 00 00 00                             .@......
+
+0000000000004010 &lt;gl&gt;:
+    4010:       05 00 00 00
+</code></pre><h4 id="rodata">.rodata</h4>
+<pre><code>x@ubuntu:~/work/libs/libraries$ objdump -d -j .rodata output/build/app/glibc/tmem
+
+output/build/app/glibc/tmem:     file format elf64-x86-64
+
+
+Disassembly of section .rodata:
+
+0000000000002000 &lt;_IO_stdin_used&gt;:
+    2000:       01 00 02 00 68 65 6c 6c 6f 2c 20 49 20 61 6d 20     ....hello, I am
+    2010:       68 65 72 65 20 32 00 68 65 6c 6c 6f 2c 20 49 20     here 2.hello, I
+    2020:       61 6d 20 68 65 72 65 20 31 00 31 31 31 31 31 31     am here 1.111111
+    2030:       31 31 31 31 31 31 00                                111111.
+</code></pre><h4 id="strtab">.strtab</h4>
+<pre><code>x@ubuntu:~/work/libs/libraries$ readelf -x 35 output/build/app/glibc/tmem
+
+Hex dump of section &apos;.strtab&apos;:
+  0x00000000 00637274 73747566 662e6300 64657265 .crtstuff.c.dere
+  0x00000010 67697374 65725f74 6d5f636c 6f6e6573 gister_tm_clones
+  0x00000020 005f5f64 6f5f676c 6f62616c 5f64746f .__do_global_dto
+  0x00000030 72735f61 75780063 6f6d706c 65746564 rs_aux.completed
+  0x00000040 2e383036 31005f5f 646f5f67 6c6f6261 .8061.__do_globa
+  0x00000050 6c5f6474 6f72735f 6175785f 66696e69 l_dtors_aux_fini
+  0x00000060 5f617272 61795f65 6e747279 00667261 _array_entry.fra
+  0x00000070 6d655f64 756d6d79 005f5f66 72616d65 me_dummy.__frame
+  0x00000080 5f64756d 6d795f69 6e69745f 61727261 _dummy_init_arra
+  0x00000090 795f656e 74727900 745f6d65 6d2e6300 y_entry.t_mem.c.
+  0x000000a0 5f5f4652 414d455f 454e445f 5f005f5f __FRAME_END__.__
+  0x000000b0 696e6974 5f617272 61795f65 6e64005f init_array_end._
+  0x000000c0 5f64736f 5f68616e 646c6500 5f44594e _dso_handle._DYN
+  0x000000d0 414d4943 005f5f69 6e69745f 61727261 AMIC.__init_arra
+  0x000000e0 795f7374 61727400 5f5f474e 555f4548 y_start.__GNU_EH
+  0x000000f0 5f465241 4d455f48 4452005f 5f544d43 _FRAME_HDR.__TMC
+  0x00000100 5f454e44 5f5f005f 474c4f42 414c5f4f _END__._GLOBAL_O
+  0x00000110 46465345 545f5441 424c455f 005f5f6c FFSET_TABLE_.__l
+  0x00000120 6962635f 6373755f 66696e69 005f4954 ibc_csu_fini._IT
+  0x00000130 4d5f6465 72656769 73746572 544d436c M_deregisterTMCl
+  0x00000140 6f6e6554 61626c65 00707574 73404047 oneTable.puts@@G
+  0x00000150 4c494243 5f322e32 2e35005f 65646174 LIBC_2.2.5._edat
+  0x00000160 6100736e 7072696e 74664040 474c4942 a.snprintf@@GLIB
+  0x00000170 435f322e 322e3500 5f5f6c69 62635f73 C_2.2.5.__libc_s
+  0x00000180 74617274 5f6d6169 6e404047 4c494243 tart_main@@GLIBC
+  0x00000190 5f322e32 2e35005f 5f646174 615f7374 _2.2.5.__data_st
+  0x000001a0 61727400 5f5f676d 6f6e5f73 74617274 art.__gmon_start
+  0x000001b0 5f5f005f 494f5f73 7464696e 5f757365 __._IO_stdin_use
+  0x000001c0 64005f5f 6c696263 5f637375 5f696e69 d.__libc_csu_ini
+  0x000001d0 74006d61 6c6c6f63 4040474c 4942435f t.malloc@@GLIBC_
+  0x000001e0 322e322e 35005f5f 6273735f 73746172 2.2.5.__bss_star
+  0x000001f0 74006d61 696e0067 6c005f49 544d5f72 t.main.gl._ITM_r
+  0x00000200 65676973 74657254 4d436c6f 6e655461 egisterTMCloneTa
+  0x00000210 626c6500 5f5f6378 615f6669 6e616c69 ble.__cxa_finali
+  0x00000220 7a654040 474c4942 435f322e 322e3500 ze@@GLIBC_2.2.5.
+</code></pre><p>strtab section &#x4E2D;&#x5B58;&#x50A8;&#x7740;&#x7684;&#x90FD;&#x662F;&#x4EE5;&#x5B57;&#x7B26;&#x4E3A;&#x5206;&#x5272;&#x7B26;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FD9;&#x4E9B;&#x5B57;&#x7B26;&#x4E32;&#x6240;&#x8868;&#x793A;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x7A0B;&#x5E8F;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x540D;&#x79F0;&#x3001;&#x6240;&#x5B9A;&#x4E49;&#x8FC7;&#x7684;&#x53D8;&#x91CF;&#x540D;&#x79F0;&#x7B49;&#x7B49;&#x3002;&#x3002;&#x3002;&#x5F53;&#x5BF9;&#x8C61;&#x6587;&#x4EF6;&#x4E2D;&#x5176;&#x4ED6;&#x5730;&#x65B9;&#x9700;&#x8981;&#x548C;&#x4E00;&#x4E2A;&#x8FD9;&#x6837;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x76F8;&#x5173;&#x8054;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5F80;&#x5F80;&#x4F1A;&#x5728;&#x5BF9;&#x5E94;&#x7684;&#x5730;&#x65B9;&#x5B58;&#x50A8; .strtab section &#x4E2D;&#x7684;&#x7D22;&#x5F15;&#x503C;&#x3002;&#x6BD4;&#x65B9;&#x4E0B;&#x9762;&#x5C06;&#x8981;&#x4ECB;&#x7ECD;&#x7684;&#x7B26;&#x53F7;&#x8868; .symtab section &#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x6761;&#x76EE;&#x662F;&#x7528;&#x6765;&#x63CF;&#x8FF0;&#x7B26;&#x53F7; gv_inited &#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x8BE5;&#x6761;&#x76EE;&#x4E2D;&#x5C31;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;(st_name)&#x8BB0;&#x5F55;&#x7740;&#x5B57;&#x7B26;&#x4E32; gv_inited &#x5728; .strtab section &#x4E2D;&#x7684;&#x7D22;&#x5F15; 7 &#x3002; .shstrtab &#x4E5F;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x5176;&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x662F; section &#x7684;&#x540D;&#x5B57;&#xFF0C;&#x800C;&#x975E;&#x6240;&#x7528;&#x51FD;&#x6570;&#x6216;&#x8005;&#x53D8;&#x91CF;&#x7684;&#x540D;&#x79F0;&#x3002;<br>&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x5728;&#x771F;&#x6B63;&#x94FE;&#x63A5;&#x548C;&#x751F;&#x6210;&#x8FDB;&#x7A0B;&#x6620;&#x50CF;&#x8FC7;&#x7A0B;&#x4E2D;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x5BF9;&#x6211;&#x4EEC;&#x8C03;&#x8BD5;&#x7A0B;&#x5E8F;&#x6765;&#x8BF4;&#x5C31;&#x7279;&#x522B;&#x6709;&#x5E2E;&#x52A9;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x4EBA;&#x770B;&#x8D77;&#x6765;&#x6700;&#x8212;&#x670D;&#x7684;&#x8FD8;&#x662F;&#x81EA;&#x7136;&#x5F62;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x800C;&#x975E;&#x50CF;&#x5929;&#x4E66;&#x4E00;&#x6837;&#x7684;&#x6570;&#x5B57;&#x7B26;&#x53F7;&#x3002;&#x524D;&#x9762;&#x4F7F;&#x7528;objdump&#x6765;&#x53CD;&#x6C47;&#x7F16; .text section &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E4B;&#x6240;&#x4EE5;&#x80FD;&#x770B;&#x5230;&#x5B9A;&#x4E49;&#x4E86;&#x51FD;&#x6570; sum_func &#xFF0C;&#x90A3;&#x4E5F;&#x662F;&#x56E0;&#x4E3A;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x7684;&#x539F;&#x56E0;&#x3002;&#x5F53;&#x7136;&#x8D77;&#x5173;&#x952E;&#x4F5C;&#x7528;&#x7684;&#xFF0C;&#x8FD8;&#x662F;&#x7B26;&#x53F7;&#x8868; .symtab section &#x5728;&#x5176;&#x4E2D;&#x4F5C;&#x4E3A;&#x4E2D;&#x4ECB;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C31;&#x6765;&#x770B;&#x770B;&#x7B26;&#x53F7;&#x8868;&#x3002;</p>
+<h4 id="symtab">.symtab</h4>
+<pre><code>x@ubuntu:~/work/libs/libraries$ readelf -s output/build/app/glibc/tmem
+
+Symbol table &apos;.dynsym&apos; contains 20 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND
+     1: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND _ITM_deregisterTMCloneTab
+     2: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND puts@GLIBC_2.2.5 (2)
+     3: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND snprintf@GLIBC_2.2.5 (2)
+     4: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __libc_start_main@GLIBC_2.2.5 (2)
+     5: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND __gmon_start__
+     6: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND malloc@GLIBC_2.2.5 (2)
+     7: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND _ITM_registerTMCloneTable
+     8: 0000000000004014     0 NOTYPE  GLOBAL DEFAULT   25 _edata
+     9: 0000000000004000     0 NOTYPE  GLOBAL DEFAULT   25 __data_start
+    10: 0000000000004018     0 NOTYPE  GLOBAL DEFAULT   26 _end
+    11: 0000000000004010     4 OBJECT  GLOBAL DEFAULT   25 gl
+    12: 0000000000000000     0 FUNC    WEAK   DEFAULT  UND __cxa_finalize@GLIBC_2.2.5 (2)
+    13: 0000000000004000     0 NOTYPE  WEAK   DEFAULT   25 data_start
+    14: 0000000000002000     4 OBJECT  GLOBAL DEFAULT   18 _IO_stdin_used
+    15: 0000000000001220   101 FUNC    GLOBAL DEFAULT   16 __libc_csu_init
+    16: 00000000000010a0    47 FUNC    GLOBAL DEFAULT   16 _start
+    17: 0000000000004014     0 NOTYPE  GLOBAL DEFAULT   26 __bss_start
+    18: 00000000000011c3    91 FUNC    GLOBAL DEFAULT   16 main
+    19: 0000000000001290     5 FUNC    GLOBAL DEFAULT   16 __libc_csu_fini
+
+Symbol table &apos;.symtab&apos; contains 75 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND
+     1: 0000000000000318     0 SECTION LOCAL  DEFAULT    1
+     2: 0000000000000348     0 SECTION LOCAL  DEFAULT    2
+     3: 0000000000000368     0 SECTION LOCAL  DEFAULT    3
+     4: 000000000000038c     0 SECTION LOCAL  DEFAULT    4
+     5: 00000000000003b0     0 SECTION LOCAL  DEFAULT    5
+     6: 0000000000000410     0 SECTION LOCAL  DEFAULT    6
+     7: 00000000000005f0     0 SECTION LOCAL  DEFAULT    7
+     8: 00000000000006f2     0 SECTION LOCAL  DEFAULT    8
+     9: 0000000000000720     0 SECTION LOCAL  DEFAULT    9
+    10: 0000000000000740     0 SECTION LOCAL  DEFAULT   10
+    11: 0000000000000800     0 SECTION LOCAL  DEFAULT   11
+    12: 0000000000001000     0 SECTION LOCAL  DEFAULT   12
+    13: 0000000000001020     0 SECTION LOCAL  DEFAULT   13
+    14: 0000000000001060     0 SECTION LOCAL  DEFAULT   14
+    15: 0000000000001070     0 SECTION LOCAL  DEFAULT   15
+    16: 00000000000010a0     0 SECTION LOCAL  DEFAULT   16
+    17: 0000000000001298     0 SECTION LOCAL  DEFAULT   17
+    18: 0000000000002000     0 SECTION LOCAL  DEFAULT   18
+    19: 0000000000002038     0 SECTION LOCAL  DEFAULT   19
+    20: 0000000000002088     0 SECTION LOCAL  DEFAULT   20
+    21: 0000000000003d98     0 SECTION LOCAL  DEFAULT   21
+    22: 0000000000003da0     0 SECTION LOCAL  DEFAULT   22
+    23: 0000000000003da8     0 SECTION LOCAL  DEFAULT   23
+    24: 0000000000003fa8     0 SECTION LOCAL  DEFAULT   24
+    25: 0000000000004000     0 SECTION LOCAL  DEFAULT   25
+    26: 0000000000004014     0 SECTION LOCAL  DEFAULT   26
+    27: 0000000000000000     0 SECTION LOCAL  DEFAULT   27
+    28: 0000000000000000     0 SECTION LOCAL  DEFAULT   28
+    29: 0000000000000000     0 SECTION LOCAL  DEFAULT   29
+    30: 0000000000000000     0 SECTION LOCAL  DEFAULT   30
+    31: 0000000000000000     0 SECTION LOCAL  DEFAULT   31
+    32: 0000000000000000     0 SECTION LOCAL  DEFAULT   32
+    33: 0000000000000000     0 SECTION LOCAL  DEFAULT   33
+    34: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS crtstuff.c
+    35: 00000000000010d0     0 FUNC    LOCAL  DEFAULT   16 deregister_tm_clones
+    36: 0000000000001100     0 FUNC    LOCAL  DEFAULT   16 register_tm_clones
+    37: 0000000000001140     0 FUNC    LOCAL  DEFAULT   16 __do_global_dtors_aux
+    38: 0000000000004014     1 OBJECT  LOCAL  DEFAULT   26 completed.8061
+    39: 0000000000003da0     0 OBJECT  LOCAL  DEFAULT   22 __do_global_dtors_aux_fin
+    40: 0000000000001180     0 FUNC    LOCAL  DEFAULT   16 frame_dummy
+    41: 0000000000003d98     0 OBJECT  LOCAL  DEFAULT   21 __frame_dummy_init_array_
+    42: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS t_mem.c
+    43: 0000000000001189    58 FUNC    LOCAL  DEFAULT   16 t
+    44: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS crtstuff.c
+    45: 00000000000021ac     0 OBJECT  LOCAL  DEFAULT   20 __FRAME_END__
+    46: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS
+    47: 0000000000001298     0 FUNC    LOCAL  DEFAULT   17 _fini
+    48: 0000000000003da0     0 NOTYPE  LOCAL  DEFAULT   21 __init_array_end
+    49: 0000000000004008     0 OBJECT  LOCAL  DEFAULT   25 __dso_handle
+    50: 0000000000003da8     0 OBJECT  LOCAL  DEFAULT   23 _DYNAMIC
+    51: 0000000000003d98     0 NOTYPE  LOCAL  DEFAULT   21 __init_array_start
+    52: 0000000000002038     0 NOTYPE  LOCAL  DEFAULT   19 __GNU_EH_FRAME_HDR
+    53: 0000000000004018     0 OBJECT  LOCAL  DEFAULT   25 __TMC_END__
+    54: 0000000000003fa8     0 OBJECT  LOCAL  DEFAULT   24 _GLOBAL_OFFSET_TABLE_
+    55: 0000000000001000     0 FUNC    LOCAL  DEFAULT   12 _init
+    56: 0000000000001290     5 FUNC    GLOBAL DEFAULT   16 __libc_csu_fini
+    57: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND _ITM_deregisterTMCloneTab
+    58: 0000000000004000     0 NOTYPE  WEAK   DEFAULT   25 data_start
+    59: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND puts@@GLIBC_2.2.5
+    60: 0000000000004014     0 NOTYPE  GLOBAL DEFAULT   25 _edata
+    61: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND snprintf@@GLIBC_2.2.5
+    62: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __libc_start_main@@GLIBC_
+    63: 0000000000004000     0 NOTYPE  GLOBAL DEFAULT   25 __data_start
+    64: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND __gmon_start__
+    65: 0000000000002000     4 OBJECT  GLOBAL DEFAULT   18 _IO_stdin_used
+    66: 0000000000001220   101 FUNC    GLOBAL DEFAULT   16 __libc_csu_init
+    67: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND malloc@@GLIBC_2.2.5
+    68: 0000000000004018     0 NOTYPE  GLOBAL DEFAULT   26 _end
+    69: 00000000000010a0    47 FUNC    GLOBAL DEFAULT   16 _start
+    70: 0000000000004014     0 NOTYPE  GLOBAL DEFAULT   26 __bss_start
+    71: 00000000000011c3    91 FUNC    GLOBAL DEFAULT   16 main
+    72: 0000000000004010     4 OBJECT  GLOBAL DEFAULT   25 gl
+    73: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND _ITM_registerTMCloneTable
+    74: 0000000000000000     0 FUNC    WEAK   DEFAULT  UND __cxa_finalize@@GLIBC_2.2
+</code></pre><ol>
+<li>ELF &#x7B26;&#x53F7;&#x7C7B;&#x578B;<ul>
+<li>STT_OBJECT &#x8868;&#x793A;&#x548C;&#x8BE5;&#x7B26;&#x53F7;&#x5BF9;&#x5E94;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5BF9;&#x8C61;</li>
+<li>STT_FUNC &#x8868;&#x793A;&#x8BE5;&#x7B26;&#x53F7;&#x5BF9;&#x5E94;&#x7684;&#x662F;&#x51FD;&#x6570;</li>
+<li>STT_SECTION &#x8868;&#x793A;&#x8BE5;&#x7B26;&#x53F7;&#x548C;&#x4E00;&#x4E2A; section &#x76F8;&#x5173;&#xFF0C;&#x8FD9;&#x79CD;&#x7B26;&#x53F7;&#x7528;&#x4E8E;&#x91CD;&#x5B9A;&#x4F4D;&#x3002;</li>
+</ul>
+</li>
+<li>ELF &#x7B26;&#x53F7;&#x7684;&#x7ED1;&#x5B9A;&#x7C7B;&#x578B;<ul>
+<li>STB_LOCA &#x4EC5;&#x672C;&#x5BF9;&#x8C61;&#x6587;&#x4EF6;&#x53EF;&#x89C1;</li>
+<li>STB_GLOBAL &#x5168;&#x5C40;&#x53EF;&#x89C1;</li>
+<li>STB_WEAK</li>
+</ul>
+</li>
+<li>ELF &#x7B26;&#x53F7;&#x7684;&#x503C;<ul>
+<li>&#x5728;&#x53EF;&#x91CD;&#x5B9A;&#x4F4D;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x7B26;&#x53F7;&#x5BF9;&#x5E94;&#x7684;section index(&#x4E0A;&#x9762;&#x7684;Ndx)&#x4E3A;SHN_COMMON&#xFF0C;&#x90A3;&#x4E48;&#x7B26;&#x53F7;&#x7684;&#x503C;&#x8868;&#x793A;&#x7684;&#x662F;&#x8BE5;&#x6570;&#x636E;&#x7684;&#x5BF9;&#x9F50;&#x8981;&#x6C42;&#x3002;</li>
+<li>&#x5728;&#x53EF;&#x91CD;&#x5B9A;&#x4F4D;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x9664;&#x53BB;&#x4E0A;&#x9762;&#x90A3;&#x6761;&#x5B9A;&#x4E49;&#x7684;&#x7B26;&#x53F7;&#xFF0C;&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x7684;&#x7B26;&#x53F7;&#x6765;&#x8BF4;&#xFF0C;&#x5176;&#x503C;&#x8868;&#x793A;&#x7684;&#x662F;&#x5BF9;&#x5E94; section &#x5185;&#x7684;&#x504F;&#x79FB;&#x503C;&#x3002;</li>
+<li>&#x5728;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x52A8;&#x6001;&#x5E93;&#x4E2D;&#xFF0C;&#x7B26;&#x53F7;&#x7684;&#x503C;&#x8868;&#x793A;&#x7684;&#x662F;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;&#x3002;  </li>
+</ul>
+</li>
+</ol>
+<h4 id="&#x91CD;&#x5B9A;&#x4F4D;">&#x91CD;&#x5B9A;&#x4F4D;</h4>
+<p>&#x5047;&#x5982;&#x5728;&#x6240;&#x4EA7;&#x751F;&#x7684;&#x5BF9;&#x8C61;&#x6587;&#x4EF6; test.o &#x4E2D;&#x6709;&#x5BF9;&#x51FD;&#x6570; sum_func &#x7684;&#x5F15;&#x7528;&#xFF0C;&#x8FD9;&#x5BF9;&#x6211;&#x4EEC;&#x7684;x386&#x7ED3;&#x6784;&#x6765;&#x8BF4;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x6761;call&#x6307;&#x4EE4;&#x3002;&#x65E2;&#x7136; sum_func &#x662F;&#x5B9A;&#x4E49;&#x5728; sum.o &#x4E2D;&#x7684;&#xFF0C;&#x90A3;&#x5BF9; test.o &#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5916;&#x90E8;&#x5F15;&#x7528;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6C47;&#x7F16;&#x5668;&#x5728;&#x4EA7;&#x751F; test.o &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B83;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x91CD;&#x5B9A;&#x4F4D;&#x6761;&#x76EE;&#x3002;&#x91CD;&#x5B9A;&#x4F4D;&#x6761;&#x76EE;&#x4E2D;&#x4F1A;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x51E0;&#x7C7B;&#x4E1C;&#x897F;&#xFF1A;</p>
+<ul>
+<li>&#x5B83;&#x4F1A;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x7B26;&#x53F7;&#x8868;&#x4E2D;&#x4E00;&#x4E2A;&#x6761;&#x76EE;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x624D;&#x77E5;&#x9053;&#x5B83;&#x5177;&#x4F53;&#x662F;&#x54EA;&#x4E2A;&#x7B26;&#x53F7;&#x9700;&#x8981;&#x88AB;&#x91CD;&#x5B9A;&#x4F4D;&#x7684;&#xFF1B;</li>
+<li>&#x5B83;&#x4F1A;&#x5305;&#x542B;&#x4E00;&#x4E2A; .text section &#x4E2D;&#x7684;&#x5730;&#x5740;&#x5355;&#x5143;&#x7684;&#x504F;&#x79FB;&#x503C;&#x3002;&#x539F;&#x672C;&#x8FD9;&#x4E2A;&#x504F;&#x79FB;&#x503C;&#x5904;&#x7684;&#x5730;&#x5740;&#x5355;&#x5143;&#x91CC;&#x9762;&#x5E94;&#x8BE5;&#x5B58;&#x653E;&#x7740; call &#x6307;&#x4EE4;&#x7684;&#x64CD;&#x4F5C;&#x6570;&#x3002;&#x5BF9;&#x4E0A;&#x9762;&#x6765;&#x8BF4;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x51FD;&#x6570; sum_func &#x7684;&#x5730;&#x5740;&#xFF0C;&#x4F46;&#x662F;&#x76EE;&#x524D;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x6C47;&#x7F16;&#x5668;&#x8FD8;&#x4E0D;&#x77E5;&#x9053;&#x3002;</li>
+<li>&#x5B83;&#x8FD8;&#x4F1A;&#x5305;&#x542B;&#x4E00;&#x4E2A;tag&#xFF0C;&#x4EE5;&#x6307;&#x660E;&#x8BE5;&#x91CD;&#x5B9A;&#x4F4D;&#x5C5E;&#x4E8E;&#x4F55;&#x79CD;&#x7C7B;&#x578B;&#x3002;<br>&#x5F53;&#x6211;&#x4EEC;&#x7528;&#x94FE;&#x63A5;&#x5668;&#x53BB;&#x94FE;&#x63A5;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x94FE;&#x63A5;&#x5668;&#x4F1A;&#x904D;&#x5386;&#x6240;&#x6709;&#x7684;&#x91CD;&#x5B9A;&#x4F4D;&#x6761;&#x76EE;&#xFF0C;&#x78B0;&#x5230;&#x50CF; sum_func &#x8FD9;&#x6837;&#x7684;&#x5916;&#x90E8;&#x5F15;&#x7528;&#xFF0C;&#x5B83;&#x4F1A;&#x627E;&#x5230; sum_func &#x7684;&#x786E;&#x5207;&#x5730;&#x5740;&#xFF0C;&#x5E76;&#x4E14;&#x628A;&#x5B83;&#x5199;&#x56DE;&#x5230;&#x4E0A;&#x9762; call &#x6307;&#x4EE4;&#x64CD;&#x4F5C;&#x6570;&#x6240;&#x5360;&#x7528;&#x7684;&#x90A3;&#x4E2A;&#x5730;&#x5740;&#x5355;&#x5143;&#x3002;&#x50CF;&#x8FD9;&#x6837;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x79F0;&#x4E4B;&#x4E3A;&#x91CD;&#x5B9A;&#x4F4D;&#x64CD;&#x4F5C;&#x3002;link editor &#x548C; dynamic linker &#x90FD;&#x8981;&#x5B8C;&#x6210;&#x4E00;&#x4E9B;&#x91CD;&#x5B9A;&#x4F4D;&#x64CD;&#x4F5C;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x540E;&#x8005;&#x7684;&#x52A8;&#x4F5C;&#x66F4;&#x52A0;&#x590D;&#x6742;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x662F;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x52A8;&#x6001;&#x5B8C;&#x6210;&#x7684;&#x3002;&#x6982;&#x62EC;&#x4E00;&#x4E0B;&#xFF0C;&#x6240;&#x8C13;&#x91CD;&#x5B9A;&#x4F4D;&#x64CD;&#x4F5C;&#x5C31;&#x662F;&#xFF1A;&#x201C;&#x6C47;&#x7F16;&#x7684;&#x65F6;&#x5019;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x7A7A;&#x5750;&#x4F4D;&#xFF0C;&#x4E0A;&#x9762;&#x7528;&#x7EA2;&#x7EB8;&#x5199;&#x7740;&#x8981;&#x5750;&#x5728;&#x8FD9;&#x4E2A;&#x5EA7;&#x4F4D;&#x4E0A;&#x7684;&#x4EBA;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x7136;&#x540E;&#x8FDE;&#x63A5;&#x5668;&#x5728;&#x5F00;&#x4F1A;&#x524D;&#x5B89;&#x6392;&#x90A3;&#x4E2A;&#x4EBA;&#x5750;&#x4E0A;&#x53BB;&#x201D;&#x3002;<br>&#x5982;&#x524D;&#x9762;&#x6211;&#x4EEC;&#x8BF4;&#x8FC7;&#x7684;&#xFF0C;&#x5BF9;&#x8C61;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x91CD;&#x5B9A;&#x4F4D;&#x6761;&#x76EE;&#xFF0C;&#x4F1A;&#x6784;&#x6210;&#x4E00;&#x4E2A;&#x4E2A;&#x5355;&#x72EC;&#x7684; section&#x3002;&#x8FD9;&#x4E9B; section &#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5E38;&#x4F1A;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x5F62;&#x5F0F;&#xFF1A;&quot;.rel.XXX&quot;&#x3002;&#x5176;&#x4E2D;XXX&#x8868;&#x793A;&#x7684;&#x662F;&#x8FD9;&#x4E9B;&#x91CD;&#x5B9A;&#x4F4D;&#x6761;&#x76EE;&#x6240;&#x4F5C;&#x7528;&#x5230;&#x7684;section&#xFF0C;&#x5982; .text section&#x3002;&#x91CD;&#x5B9A;&#x4F4D;&#x6761;&#x76EE;&#x6240;&#x6784;&#x6210;&#x7684;section&#x9700;&#x8981;&#x548C;&#x53E6;&#x5916;&#x4E24;&#x4E2A;section&#x4EA7;&#x751F;&#x5173;&#x8054;&#xFF1A;&#x7B26;&#x53F7;&#x8868;section(&#x8868;&#x793A;&#x8981;&#x91CD;&#x5B9A;&#x4F4D;&#x7684;&#x662F;&#x54EA;&#x4E00;&#x4E2A;&#x7B26;&#x53F7;)&#x4EE5;&#x53CA;&#x53D7;&#x5F71;&#x54CD;&#x5730;&#x5740;&#x5355;&#x5143;&#x6240;&#x5728;&#x7684;section&#x3002;&#x4E0B;&#x9762;&#x4F7F;&#x7528;&#x5DE5;&#x5177;&#x6765;&#x67E5;&#x770B;&#x91CD;&#x5B9A;&#x4F4D;section&#xFF1A;  </li>
+</ul>
+<pre><code>x@ubuntu:~/work/libs/libraries$ readelf -r output/build/app/glibc/tmem
+
+Relocation section &apos;.rela.dyn&apos; at offset 0x740 contains 8 entries:
+  Offset          Info           Type           Sym. Value    Sym. Name + Addend
+000000003d98  000000000008 R_X86_64_RELATIVE                    1180
+000000003da0  000000000008 R_X86_64_RELATIVE                    1140
+000000004008  000000000008 R_X86_64_RELATIVE                    4008
+000000003fd8  000100000006 R_X86_64_GLOB_DAT 0000000000000000 _ITM_deregisterTMClone + 0
+000000003fe0  000400000006 R_X86_64_GLOB_DAT 0000000000000000 __libc_start_main@GLIBC_2.2.5 + 0
+000000003fe8  000500000006 R_X86_64_GLOB_DAT 0000000000000000 __gmon_start__ + 0
+000000003ff0  000700000006 R_X86_64_GLOB_DAT 0000000000000000 _ITM_registerTMCloneTa + 0
+000000003ff8  000c00000006 R_X86_64_GLOB_DAT 0000000000000000 __cxa_finalize@GLIBC_2.2.5 + 0
+
+Relocation section &apos;.rela.plt&apos; at offset 0x800 contains 3 entries:
+  Offset          Info           Type           Sym. Value    Sym. Name + Addend
+000000003fc0  000200000007 R_X86_64_JUMP_SLO 0000000000000000 puts@GLIBC_2.2.5 + 0
+000000003fc8  000300000007 R_X86_64_JUMP_SLO 0000000000000000 snprintf@GLIBC_2.2.5 + 0
+000000003fd0  000600000007 R_X86_64_JUMP_SLO 0000000000000000 malloc@GLIBC_2.2.5 + 0
+</code></pre><ul>
+<li>r_offset &#x5BF9;&#x4E8E;&#x53EF;&#x91CD;&#x5B9A;&#x4F4D;&#x6587;&#x4EF6;.o&#x6765;&#x8BF4;&#xFF0C;&#x5C31;&#x662F;&#x5730;&#x5740;&#x5355;&#x5143;&#x7684;&#x504F;&#x79FB;&#x503C;&#xFF1B;&#x5BF9;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x52A8;&#x6001;&#x5E93;&#x6765;&#x8BF4;&#xFF0C;&#x5C31;&#x662F;&#x8BE5;&#x5730;&#x5740;&#x5355;&#x5143;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x5730;&#x5740;&#x3002;  </li>
+</ul>
+<h3 id="segments&#x6BB5;">segments(&#x6BB5;)</h3>
+<ul>
+<li>&#x94FE;&#x63A5;&#x5668;&#x5728;&#x94FE;&#x63A5;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x6216;&#x52A8;&#x6001;&#x5E93;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5B83;&#x4F1A;&#x628A;&#x6765;&#x81EA;&#x4E0D;&#x540C;&#x53EF;&#x91CD;&#x5B9A;&#x4F4D;&#x5BF9;&#x8C61;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x76F8;&#x540C;&#x540D;&#x79F0;&#x7684; section &#x5408;&#x5E76;&#x8D77;&#x6765;&#x6784;&#x6210;&#x540C;&#x540D;&#x7684; section&#x3002;&#x63A5;&#x7740;&#xFF0C;&#x5B83;&#x53C8;&#x4F1A;&#x628A;&#x5E26;&#x6709;&#x76F8;&#x540C;&#x5C5E;&#x6027;(&#x6BD4;&#x65B9;&#x90FD;&#x662F;&#x53EA;&#x8BFB;&#x5E76;&#x53EF;&#x52A0;&#x8F7D;&#x7684;)&#x7684; section &#x90FD;&#x5408;&#x5E76;&#x6210;&#x6240;&#x8C13; segments(&#x6BB5;)&#x3002;segments &#x4F5C;&#x4E3A;&#x94FE;&#x63A5;&#x5668;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x8F93;&#x51FA;section&#x3002;&#x6211;&#x4EEC;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x54EA;&#x4E9B;&#x4E0D;&#x540C;.o&#x6587;&#x4EF6;&#x7684;sections&#x6765;&#x6700;&#x540E;&#x5408;&#x5E76;&#x6784;&#x6210;&#x4E0D;&#x540C;&#x540D;&#x79F0;&#x7684; segments&#x3002;&#x5982;&#x4F55;&#x63A7;&#x5236;&#x5462;&#xFF0C;&#x5C31;&#x662F;&#x901A;&#x8FC7; linker script &#x6765;&#x6307;&#x5B9A;&#x3002;</li>
+<li>&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684; segment &#x901A;&#x5E38;&#x4F1A;&#x5305;&#x542B;&#x51E0;&#x4E2A;&#x4E0D;&#x540C;&#x7684; sections&#xFF0C;&#x6BD4;&#x65B9;&#x4E00;&#x4E2A;&#x53EF;&#x88AB;&#x52A0;&#x8F7D;&#x7684;&#x3001;&#x53EA;&#x8BFB;&#x7684;segment &#x901A;&#x5E38;&#x5C31;&#x4F1A;&#x5305;&#x62EC;&#x53EF;&#x6267;&#x884C;&#x4EE3;&#x7801;section .text&#x3001;&#x53EA;&#x8BFB;&#x7684;&#x6570;&#x636E;section .rodata&#x4EE5;&#x53CA;&#x7ED9;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x5668;&#x4F7F;&#x7528;&#x7684;&#x7B26;&#x53F7;section .dymsym&#x7B49;&#x7B49;&#x3002;section &#x662F;&#x88AB;&#x94FE;&#x63A5;&#x5668;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x4F46;&#x662F; segments &#x662F;&#x88AB;&#x52A0;&#x8F7D;&#x5668;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x3002;&#x52A0;&#x8F7D;&#x5668;&#x4F1A;&#x5C06;&#x6240;&#x9700;&#x8981;&#x7684; segment &#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x4E2D;&#x8FD0;&#x884C;&#x3002;&#x548C;&#x7528; sections header table &#x6765;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x53EF;&#x91CD;&#x5B9A;&#x4F4D;&#x6587;&#x4EF6;&#x4E2D;&#x5230;&#x5E95;&#x6709;&#x54EA;&#x4E9B; sections &#x4E00;&#x6837;&#x3002;&#x5728;&#x4E00;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x52A8;&#x6001;&#x5E93;&#x4E2D;&#xFF0C;&#x4E5F;&#x9700;&#x8981;&#x6709;&#x4E00;&#x79CD;&#x4FE1;&#x606F;&#x7ED3;&#x6784;&#x6765;&#x6307;&#x51FA;&#x5305;&#x542B;&#x6709;&#x54EA;&#x4E9B; segments&#x3002;&#x8FD9;&#x79CD;&#x4FE1;&#x606F;&#x7ED3;&#x6784;&#x5C31;&#x662F; program header table&#x3002;  </li>
+</ul>
+<pre><code>x@ubuntu:~/work/libs/libraries$ readelf -l output/build/app/glibc/tmem
+
+Elf file type is DYN (Shared object file)
+Entry point 0x10a0
+There are 13 program headers, starting at offset 64
+
+Program Headers:
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+  PHDR           0x0000000000000040 0x0000000000000040 0x0000000000000040
+                 0x00000000000002d8 0x00000000000002d8  R      0x8
+  INTERP         0x0000000000000318 0x0000000000000318 0x0000000000000318
+                 0x000000000000002e 0x000000000000002e  R      0x1
+      [Requesting program interpreter: /usr/local/glibc2.37/lib/ld-linux-x86-64.so.2]
+  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000848 0x0000000000000848  R      0x1000
+  LOAD           0x0000000000001000 0x0000000000001000 0x0000000000001000
+                 0x00000000000002a5 0x00000000000002a5  R E    0x1000
+  LOAD           0x0000000000002000 0x0000000000002000 0x0000000000002000
+                 0x00000000000001b0 0x00000000000001b0  R      0x1000
+  LOAD           0x0000000000002d98 0x0000000000003d98 0x0000000000003d98
+                 0x000000000000027c 0x0000000000000280  RW     0x1000
+  DYNAMIC        0x0000000000002da8 0x0000000000003da8 0x0000000000003da8
+                 0x0000000000000200 0x0000000000000200  RW     0x8
+  NOTE           0x0000000000000348 0x0000000000000348 0x0000000000000348
+                 0x0000000000000020 0x0000000000000020  R      0x8
+  NOTE           0x0000000000000368 0x0000000000000368 0x0000000000000368
+                 0x0000000000000044 0x0000000000000044  R      0x4
+  GNU_PROPERTY   0x0000000000000348 0x0000000000000348 0x0000000000000348
+                 0x0000000000000020 0x0000000000000020  R      0x8
+  GNU_EH_FRAME   0x0000000000002038 0x0000000000002038 0x0000000000002038
+                 0x000000000000004c 0x000000000000004c  R      0x4
+  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000  RW     0x10
+  GNU_RELRO      0x0000000000002d98 0x0000000000003d98 0x0000000000003d98
+                 0x0000000000000268 0x0000000000000268  R      0x1
+
+ Section to Segment mapping:
+  Segment Sections...
+   00
+   01     .interp
+   02     .interp .note.gnu.property .note.gnu.build-id .note.ABI-tag .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn .rela.plt
+   03     .init .plt .plt.got .plt.sec .text .fini
+   04     .rodata .eh_frame_hdr .eh_frame
+   05     .init_array .fini_array .dynamic .got .data .bss
+   06     .dynamic
+   07     .note.gnu.property
+   08     .note.gnu.build-id .note.ABI-tag
+   09     .note.gnu.property
+   10     .eh_frame_hdr
+   11
+   12     .init_array .fini_array .dynamic .got
+</code></pre><p>&#x7ED3;&#x679C;&#x663E;&#x793A;&#xFF0C;&#x5728;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6; output/build/app/glibc/tmem &#x4E2D;&#xFF0C;&#x603B;&#x5171;&#x6709;13&#x4E2A; segments&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x8BE5;&#x7ED3;&#x679C;&#x4E5F;&#x5F88;&#x660E;&#x767D;&#x663E;&#x793A;&#x51FA;&#x4E86;&#x54EA;&#x4E9B; section &#x6620;&#x5C04;&#x5230;&#x54EA;&#x4E00;&#x4E2A; segment &#x5F53;&#x4E2D;&#x53BB;&#x3002;&#x6BD4;&#x65B9;&#x5728;&#x7D22;&#x5F15;&#x4E3A;2&#x7684;&#x90A3;&#x4E2A;segment &#x4E2D;&#xFF0C;&#x603B;&#x5171;&#x6709;10&#x4E2A; sections &#x6620;&#x5C04;&#x8FDB;&#x6765;&#x3002;&#x6CE8;&#x610F;segment &#x6709;&#x4E09;&#x4E2A;&#x6807;&#x5FD7;: R &#x3001;W &#x548C; E&#x3002;&#x8FD9;&#x4E2A;&#x8868;&#x793A;&#x8BE5;segment&#x662F;&#x53EF;&#x8BFB;&#xFF0C;&#x53EF;&#x5199;&#xFF0C;&#x4E5F;&#x53EF;&#x6267;&#x884C;&#x7684;&#x3002;</p>
+<ul>
+<li>&#x7C7B;&#x578B;&#x4E3A;PHDR&#x7684;segment&#xFF0C;&#x7528;&#x6765;&#x5305;&#x542B;&#x7A0B;&#x5E8F;&#x5934;&#x8868;&#x672C;&#x8EAB;&#x3002;</li>
+<li>&#x7C7B;&#x578B;&#x4E3A;INTERP&#x7684;segment&#x53EA;&#x5305;&#x542B;&#x4E00;&#x4E2A; section&#xFF0C;&#x90A3;&#x5C31;&#x662F; .interp&#x3002;&#x5728;&#x8FD9;&#x4E2A;section&#x4E2D;&#xFF0C;&#x5305;&#x542B;&#x4E86;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x8FC7;&#x7A0B;&#x4E2D;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x89E3;&#x91CA;&#x5668;&#x8DEF;&#x5F84;&#x548C;&#x540D;&#x79F0;&#x3002;&#x5728;Linux&#x91CC;&#x9762;&#xFF0C;&#x8FD9;&#x4E2A;&#x89E3;&#x91CA;&#x5668;&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F; /lib/ &#xFF0C;&#x8FD9;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684; hexdump &#x770B;&#x51FA;&#x6765;&#xFF1A;  </li>
+<li>Offset &#x8868;&#x793A;&#x5F53;&#x524D;&#x6BB5;&#x5728;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E;&#x3002;  </li>
+</ul>
+<pre><code>x@ubuntu:~/work/libs/libraries$ hexdump -s 0x318 -n 46 -C output/build/app/glibc/tmem
+00000318  2f 75 73 72 2f 6c 6f 63  61 6c 2f 67 6c 69 62 63  |/usr/local/glibc|
+00000328  32 2e 33 37 2f 6c 69 62  2f 6c 64 2d 6c 69 6e 75  |2.37/lib/ld-linu|
+00000338  78 2d 78 38 36 2d 36 34  2e 73 6f 2e 32 00        |x-x86-64.so.2.|
+00000346
+</code></pre><ul>
+<li>&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x4E2A; segment&#xFF1F;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5199;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x901A;&#x5E38;&#x90FD;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x5E93;.so&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x5148;&#x5927;&#x81F4;&#x8BF4;&#x8BF4;&#x7A0B;&#x5E8F;&#x5728;linux&#x91CC;&#x9762;&#x662F;&#x600E;&#x4E48;&#x6837;&#x8FD0;&#x884C;&#x8D77;&#x6765;&#x7684;&#x5427;&#x3002;&#x5F53;&#x4F60;&#x5728; shell &#x4E2D;&#x6572;&#x5165;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x8981;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5185;&#x6838;&#x4F1A;&#x5E2E;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x8FDB;&#x7A0B;&#xFF0C;&#x5B83;&#x5728;&#x5F80;&#x8FD9;&#x4E2A;&#x65B0;&#x8FDB;&#x7A0B;&#x7684;&#x8FDB;&#x7A0B;&#x7A7A;&#x95F4;&#x91CC;&#x9762;&#x52A0;&#x8F7D;&#x8FDB;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x7684;&#x4EE3;&#x7801;&#x6BB5;&#x548C;&#x6570;&#x636E;&#x6BB5;&#x540E;&#xFF0C;&#x4E5F;&#x4F1A;&#x52A0;&#x8F7D;&#x8FDB;&#x52A8;&#x6001;&#x8FDE;&#x63A5;&#x5668;(&#x5728;Linux&#x91CC;&#x9762;&#x901A;&#x5E38;&#x5C31;&#x662F; /lib/ld-linux.so &#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x6240;&#x6307;&#x5411;&#x7684;&#x90A3;&#x4E2A;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B83;&#x672C;&#x7701;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x52A8;&#x6001;&#x5E93;)&#x7684;&#x4EE3;&#x7801;&#x6BB5;&#x548C;&#x6570;&#x636E;&#x3002;&#x5728;&#x8FD9;&#x4E4B;&#x540E;&#xFF0C;&#x5185;&#x6838;&#x5C06;&#x63A7;&#x5236;&#x4F20;&#x9012;&#x7ED9;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x5E93;&#x91CC;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x52A8;&#x6001;&#x8FDE;&#x63A5;&#x5668;&#x63A5;&#x4E0B;&#x6765;&#x8D1F;&#x8D23;&#x52A0;&#x8F7D;&#x8BE5;&#x547D;&#x4EE4;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6240;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x5404;&#x79CD;&#x52A8;&#x6001;&#x5E93;&#x3002;&#x52A0;&#x8F7D;&#x5B8C;&#x6BD5;&#xFF0C;&#x52A8;&#x6001;&#x8FDE;&#x63A5;&#x5668;&#x624D;&#x5C06;&#x63A7;&#x5236;&#x4F20;&#x9012;&#x7ED9;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;main&#x51FD;&#x6570;&#x3002;&#x5982;&#x6B64;&#xFF0C;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x624D;&#x5F97;&#x4EE5;&#x8FD0;&#x884C;&#x3002;</li>
+<li>&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528;&#x5F88;&#x591A;&#x5B9A;&#x4E49;&#x5728;&#x52A8;&#x6001;&#x5E93;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x3002;&#x6700;&#x6700;&#x57FA;&#x7840;&#x7684;&#x6BD4;&#x65B9;C&#x51FD;&#x6570;&#x5E93;(&#x5176;&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x52A8;&#x6001;&#x5E93;)&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x6BCF;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x603B;&#x8981;&#x4F7F;&#x7528;&#x5230;&#xFF0C;&#x5C31;&#x50CF;&#x6211;&#x4EEC;test&#x7A0B;&#x5E8F;&#x4E2D;&#x4F7F;&#x7528;&#x5230;&#x7684; printf &#x51FD;&#x6570;&#x3002;&#x4E3A;&#x4E86;&#x4F7F;&#x5F97;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x80FD;&#x591F;&#x6B63;&#x786E;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x5E93;&#xFF0C;&#x52A8;&#x6001;&#x8FDE;&#x63A5;&#x5668;&#x5728;&#x52A0;&#x8F7D;&#x52A8;&#x6001;&#x5E93;&#x540E;&#xFF0C;&#x5B83;&#x8FD8;&#x4F1A;&#x505A;&#x66F4;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x94FE;&#x63A5;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x3002;&#x4E3A;&#x4E86;&#x8BA9;&#x52A8;&#x6001;&#x8FDE;&#x63A5;&#x5668;&#x80FD;&#x6210;&#x529F;&#x7684;&#x5B8C;&#x6210;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x8FC7;&#x7A0B;&#xFF0C;&#x5728;&#x524D;&#x9762;&#x8FD0;&#x884C;&#x7684;link editor&#x9700;&#x8981;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x4E2D;&#x751F;&#x6210;&#x6570;&#x4E2A;&#x7279;&#x6B8A;&#x7684; sections&#xFF0C;&#x6BD4;&#x65B9; .dynamic&#x3001;.dynsym&#x3001;.got&#x548C;.plt&#x7B49;&#x7B49;&#x3002;</li>
+<li>&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x6570;&#x4E2A; segments &#x4E2D;&#xFF0C;&#x6700;&#x91CD;&#x8981;&#x7684;&#x662F;&#x4E09;&#x4E2A; segment&#xFF1A;&#x4EE3;&#x7801;&#x6BB5;&#xFF0C;&#x6570;&#x636E;&#x6BB5;&#x548C;&#x5806;&#x6808;&#x6BB5;&#x3002;&#x4EE3;&#x7801;&#x6BB5;&#x548C;&#x5806;&#x6808;&#x6BB5;&#x7684; VirtAddr &#x5217;&#x7684;&#x503C;&#x5206;&#x522B;&#x4E3A; 0x0000000000001000 &#x548C; 0x0000000000003d98&#x3002;&#x8FD9;&#x662F;&#x4EC0;&#x4E48;&#x610F;&#x601D;&#x5462;&#xFF1F;&#x8FD9;&#x662F;&#x8BF4;&#x5BF9;&#x5E94;&#x7684;&#x6BB5;&#x8981;&#x52A0;&#x8F7D;&#x5728;&#x8FDB;&#x7A0B;&#x865A;&#x62DF;&#x5730;&#x5740;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x8D77;&#x59CB;&#x5730;&#x5740;&#x3002;&#x867D;&#x7136;&#x5728;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x4E2D;&#x89C4;&#x5B9A;&#x4E86; text segment&#x548C; data segment &#x7684;&#x8D77;&#x59CB;&#x5730;&#x5740;&#xFF0C;&#x4F46;&#x662F;&#x6700;&#x7EC8;&#xFF0C;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x8FD9;&#x4E9B;&#x6BB5;&#x7684;&#x771F;&#x6B63;&#x8D77;&#x59CB;&#x5730;&#x5740;&#xFF0C;&#x5374;&#x53EF;&#x80FD;&#x4E0D;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x5668;&#x52A0;&#x8F7D;&#x8FD9;&#x4E9B;&#x6BB5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x8003;&#x8651;&#x5230;&#x9875;&#x9762;&#x5BF9;&#x9F50;&#x7684;&#x56E0;&#x7D20;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#xFF1F;&#x56E0;&#x4E3A;&#x50CF;x86&#x8FD9;&#x6837;&#x7684;&#x67B6;&#x6784;&#xFF0C;&#x5B83;&#x7ED9;&#x5185;&#x5B58;&#x5355;&#x5143;&#x5206;&#x914D;&#x8BFB;&#x5199;&#x6743;&#x9650;&#x7684;&#x6700;&#x5C0F;&#x5355;&#x4F4D;&#x662F;&#x9875;(page)&#x800C;&#x4E0D;&#x662F;&#x5B57;&#x8282;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5B83;&#x80FD;&#x89C4;&#x5B9A;&#x4ECE;&#x67D0;&#x4E2A;&#x9875;&#x5F00;&#x59CB;&#x3001;&#x8FDE;&#x7EED;&#x591A;&#x5C11;&#x9875;&#x662F;&#x53EA;&#x8BFB;&#x7684;&#x3002;&#x5374;&#x4E0D;&#x80FD;&#x89C4;&#x5B9A;&#x4ECE;&#x67D0;&#x4E2A;&#x9875;&#x5185;&#x7684;&#x54EA;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x5F00;&#x59CB;&#xFF0C;&#x8FDE;&#x7EED;&#x591A;&#x5C11;&#x4E2A;&#x5B57;&#x8282;&#x662F;&#x53EA;&#x8BFB;&#x7684;&#x3002;&#x56E0;&#x4E3A;x86&#x67B6;&#x6784;&#x4E2D;&#xFF0C;&#x4E00;&#x4E2A;page&#x5927;&#x5C0F;&#x662F;4k&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x5668;&#x5728;&#x52A0;&#x8F7D; segment &#x5230;&#x865A;&#x62DF;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5176;&#x771F;&#x5B9E;&#x7684;&#x8D77;&#x59CB;&#x5730;&#x5740;&#x7684;&#x4F4E;12&#x4F4D;&#x90FD;&#x662F;&#x96F6;&#xFF0C;&#x4E5F;&#x5373;&#x4EE5; 0x1000 &#x5BF9;&#x9F50;&#x3002;</li>
+<li>&#x771F;&#x5B9E;&#x7684;&#x8FDB;&#x7A0B;&#x4E2D;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x4FE1;&#x606F;&#xFF1A; </li>
+</ul>
+<pre><code>(gdb) i proc mappings
+process 1041268
+Mapped address spaces:
+
+          Start Addr           End Addr       Size     Offset objfile
+      0x555555554000     0x555555555000     0x1000        0x0 /home/zhangkaiyuan/work/libs/libraries/output/build/app/glibc/tmem
+      0x555555555000     0x555555556000     0x1000     0x1000 /home/zhangkaiyuan/work/libs/libraries/output/build/app/glibc/tmem
+      0x555555556000     0x555555557000     0x1000     0x2000 /home/zhangkaiyuan/work/libs/libraries/output/build/app/glibc/tmem
+      0x555555557000     0x555555558000     0x1000     0x2000 /home/zhangkaiyuan/work/libs/libraries/output/build/app/glibc/tmem
+      0x555555558000     0x555555559000     0x1000     0x3000 /home/zhangkaiyuan/work/libs/libraries/output/build/app/glibc/tmem
+      0x555555559000     0x55555557a000    0x21000        0x0 [heap]
+      0x7ffff7df2000     0x7ffff7df4000     0x2000        0x0
+      0x7ffff7df4000     0x7ffff7e1c000    0x28000        0x0 /usr/local/glibc2.37/lib/libc.so.6
+      0x7ffff7e1c000     0x7ffff7f57000   0x13b000    0x28000 /usr/local/glibc2.37/lib/libc.so.6
+      0x7ffff7f57000     0x7ffff7fad000    0x56000   0x163000 /usr/local/glibc2.37/lib/libc.so.6
+      0x7ffff7fad000     0x7ffff7fae000     0x1000   0x1b9000 /usr/local/glibc2.37/lib/libc.so.6
+      0x7ffff7fae000     0x7ffff7fb2000     0x4000   0x1b9000 /usr/local/glibc2.37/lib/libc.so.6
+      0x7ffff7fb2000     0x7ffff7fb4000     0x2000   0x1bd000 /usr/local/glibc2.37/lib/libc.so.6
+      0x7ffff7fb4000     0x7ffff7fc3000     0xf000        0x0
+      0x7ffff7fc3000     0x7ffff7fc7000     0x4000        0x0 [vvar]
+      0x7ffff7fc7000     0x7ffff7fc9000     0x2000        0x0 [vdso]
+      0x7ffff7fc9000     0x7ffff7fca000     0x1000        0x0 /usr/local/glibc2.37/lib/ld-linux-x86-64.so.2
+      0x7ffff7fca000     0x7ffff7fef000    0x25000     0x1000 /usr/local/glibc2.37/lib/ld-linux-x86-64.so.2
+      0x7ffff7fef000     0x7ffff7ffa000     0xb000    0x26000 /usr/local/glibc2.37/lib/ld-linux-x86-64.so.2
+      0x7ffff7ffb000     0x7ffff7ffd000     0x2000    0x31000 /usr/local/glibc2.37/lib/ld-linux-x86-64.so.2
+      0x7ffff7ffd000     0x7ffff7fff000     0x2000    0x33000 /usr/local/glibc2.37/lib/ld-linux-x86-64.so.2
+      0x7ffffffde000     0x7ffffffff000    0x21000        0x0 [stack]
+  0xffffffffff600000 0xffffffffff601000     0x1000        0x0 [vsyscall]
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="linux.html" class="navigation navigation-prev " aria-label="Previous page: linux">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../literature/literature.html" class="navigation navigation-next " aria-label="Next page: 文学">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1 elf文件详解","level":"1.2.2.1","depth":3,"next":{"title":"文学","level":"1.3","depth":1,"path":"literature/literature.md","ref":"literature/literature.md","articles":[{"title":"诗词","level":"1.3.1","depth":2,"path":"literature/poetry/poetry.md","ref":"literature/poetry/poetry.md","articles":[{"title":"苏轼","level":"1.3.1.1","depth":3,"path":"literature/poetry/sushi/sushi.md","ref":"literature/poetry/sushi/sushi.md","articles":[{"title":"《定风波·莫听穿林打叶声》","level":"1.3.1.1.1","depth":4,"path":"literature/poetry/sushi/1.md","ref":"literature/poetry/sushi/1.md","articles":[]}]}]}]},"previous":{"title":"linux","level":"1.2.2","depth":2,"path":"computer/linux/linux.md","ref":"computer/linux/linux.md","articles":[{"title":"1 elf文件详解","level":"1.2.2.1","depth":3,"path":"computer/linux/elfFile.md","ref":"computer/linux/elfFile.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-plus","-font-settings","-livereload","-highlight","-sharing","back-to-top-button","expandable-chapters-small","code","splitter","hide-element","chapter-fold","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"zhangkaiyuan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ebook","language":"zh-hans","gitbook":"*","description":"ebook"},"file":{"path":"computer/linux/elfFile.md","mtime":"2023-05-26T08:23:21.858Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-26T10:12:35.615Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

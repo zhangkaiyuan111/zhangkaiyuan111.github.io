@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>1 虚拟地址分配和分页 · ebook</title>
+        <title>1.4 gdb调试 · ebook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -73,10 +73,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="ProcessMemoryConcepts.html" />
+    <link rel="next" href="../../linux/linux.html" />
     
     
-    <link rel="prev" href="../glibc.html" />
+    <link rel="prev" href="pageTable.html" />
     
 
     </head>
@@ -146,7 +146,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1.1" data-path="memoryManagement.html">
+        <li class="chapter " data-level="1.2.1.1" data-path="memoryManagement.html">
             
                 <a href="memoryManagement.html">
             
@@ -199,7 +199,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.1.4" data-path="gdbDebug.html">
+        <li class="chapter active" data-level="1.2.1.1.4" data-path="gdbDebug.html">
             
                 <a href="gdbDebug.html">
             
@@ -359,7 +359,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >1 虚拟地址分配和分页</a>
+        <a href="../../.." >1.4 gdb调试</a>
     </h1>
 </div>
 
@@ -374,13 +374,97 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="memory-management"><center> Memory management</center></h1>
+                                <h1 id="gdb-&#x8C03;&#x8BD5;"><center> GDB &#x8C03;&#x8BD5;</center></h1>
+<h3 id="gdb-&#x73AF;&#x5883;&#x8BBE;&#x7F6E;">GDB &#x73AF;&#x5883;&#x8BBE;&#x7F6E;</h3>
+<ol>
+<li>&#x8FDB;&#x5165;gdb<br>x@ubuntu:~/work/libs/libraries$ gdb ./output/build/app/glibc/tmem</li>
+<li>&#x8BBE;&#x7F6E;&#x8C03;&#x8BD5;&#x6E90;&#x4EE3;&#x7801;&#x8DEF;&#x5F84;<br>(gdb) directory package/glibc-2.37/malloc/</li>
+<li>&#x663E;&#x793A;&#x8C03;&#x8BD5;&#x6E90;&#x4EE3;&#x7801;&#x8DEF;&#x5F84;<br>(gdb) show directories<br>Source directories searched: /home/x/work/libs/libraries/package/glibc-2.37/malloc:$cdir:$cwd</li>
+<li>&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;<br>(gdb) b main  </li>
+<li>run &#x8FD0;&#x884C;<br>(gdb) r</li>
+<li>Step Into &#x5355;&#x6B65;&#x8DDF;&#x8E2A;&#x8FDB;&#x5165;&#xFF0C;n(Step Over&#xFF0C;&#x5355;&#x6B65;&#x8DDF;&#x8E2A;)<br>(gdb) s</li>
+</ol>
+<h3 id="&#x4F7F;&#x7528;-gdb-&#x67E5;&#x770B;&#x5185;&#x5B58;&#x6620;&#x5C04;&#x4FE1;&#x606F;">&#x4F7F;&#x7528; GDB &#x67E5;&#x770B;&#x5185;&#x5B58;&#x6620;&#x5C04;&#x4FE1;&#x606F;</h3>
+<pre><code class="lang-c">(gdb) i proc mapping
+process 587676
+Mapped address spaces:
+
+          Start Addr           End Addr       Size     Offset objfile
+      0x555555554000     0x555555555000     0x1000        0x0 /home/x/work/libs/libraries/output/build/app/glibc/tmem
+      0x555555555000     0x555555556000     0x1000     0x1000 /home/x/work/libs/libraries/output/build/app/glibc/tmem
+      0x555555556000     0x555555557000     0x1000     0x2000 /home/x/work/libs/libraries/output/build/app/glibc/tmem
+      0x555555557000     0x555555558000     0x1000     0x2000 /home/x/work/libs/libraries/output/build/app/glibc/tmem
+      0x555555558000     0x555555559000     0x1000     0x3000 /home/x/work/libs/libraries/output/build/app/glibc/tmem
+      0x7ffff7df2000     0x7ffff7df4000     0x2000        0x0
+      0x7ffff7df4000     0x7ffff7e1c000    0x28000        0x0 /usr/local/glibc2.37/lib/libc.so.6
+      0x7ffff7e1c000     0x7ffff7f57000   0x13b000    0x28000 /usr/local/glibc2.37/lib/libc.so.6
+      0x7ffff7f57000     0x7ffff7fad000    0x56000   0x163000 /usr/local/glibc2.37/lib/libc.so.6
+      0x7ffff7fad000     0x7ffff7fae000     0x1000   0x1b9000 /usr/local/glibc2.37/lib/libc.so.6
+      0x7ffff7fae000     0x7ffff7fb2000     0x4000   0x1b9000 /usr/local/glibc2.37/lib/libc.so.6
+      0x7ffff7fb2000     0x7ffff7fb4000     0x2000   0x1bd000 /usr/local/glibc2.37/lib/libc.so.6
+      0x7ffff7fb4000     0x7ffff7fc3000     0xf000        0x0
+      0x7ffff7fc3000     0x7ffff7fc7000     0x4000        0x0 [vvar]
+      0x7ffff7fc7000     0x7ffff7fc9000     0x2000        0x0 [vdso]
+      0x7ffff7fc9000     0x7ffff7fca000     0x1000        0x0 /usr/local/glibc2.37/lib/ld-linux-x86-64.so.2
+      0x7ffff7fca000     0x7ffff7fef000    0x25000     0x1000 /usr/local/glibc2.37/lib/ld-linux-x86-64.so.2
+      0x7ffff7fef000     0x7ffff7ffa000     0xb000    0x26000 /usr/local/glibc2.37/lib/ld-linux-x86-64.so.2
+      0x7ffff7ffb000     0x7ffff7ffd000     0x2000    0x31000 /usr/local/glibc2.37/lib/ld-linux-x86-64.so.2
+      0x7ffff7ffd000     0x7ffff7fff000     0x2000    0x33000 /usr/local/glibc2.37/lib/ld-linux-x86-64.so.2
+      0x7ffffffde000     0x7ffffffff000    0x21000        0x0 [stack]
+  0xffffffffff600000 0xffffffffff601000     0x1000        0x0 [vsyscall]
+(gdb)
+</code></pre>
+<h3 id="&#x4F7F;&#x7528;-gdb-&#x67E5;&#x770B;&#x7A0B;&#x5E8F;&#x7684;&#x6808;&#x7A7A;&#x95F4;">&#x4F7F;&#x7528; GDB &#x67E5;&#x770B;&#x7A0B;&#x5E8F;&#x7684;&#x6808;&#x7A7A;&#x95F4;</h3>
 <ul>
-<li><a href="ProcessMemoryConcepts.html">&#x8FDB;&#x7A0B;&#x5185;&#x5B58;&#x6982;&#x5FF5;(Process Memory Concepts)</a></li>
-<li><a href="GNUAllocator.html">GNU &#x5206;&#x914D;&#x5668;(The GNU Allocator)</a></li>
-<li><a href="pageTable.html">&#x9875;&#x8868;</a></li>
-<li><a href="gdbDebug.html">gdb &#x8C03;&#x8BD5;</a></li>
+<li>bt(backtrace) &#x547D;&#x4EE4;&#xFF1A;&#x67E5;&#x770B;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x5373;&#x5F53;&#x524D;&#x51FD;&#x6570;&#x5411;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;&#x4FE1;&#x606F;&#x3002;</li>
+<li>info frame &#x547D;&#x4EE4;&#xFF1A;&#x4E0E; bt &#x547D;&#x4EE4;&#x4E0D;&#x540C;&#xFF0C;i frame &#x547D;&#x4EE4;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684;&#x6808;&#x5E27;&#x4FE1;&#x606F;&#x3002;&#x800C;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x5806;&#x6808;&#x4FE1;&#x606F;&#x3002;</li>
 </ul>
+<pre><code class="lang-c">#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+static void t() {
+    char* p2 = malloc(32);
+    snprintf(p2, 32, &quot;hello, I am here 2&quot;);
+}
+
+int main(int argc, char **argv) {
+    char* p1 = malloc(32);
+    snprintf(p1, 32, &quot;hello, I am here 1&quot;);
+    printf(&quot;111111111111\n&quot;);
+    t();
+
+    return 0;
+}
+</code></pre>
+<ul>
+<li>&#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;&#x5982;&#x4E0A;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-c">(gdb) b main
+Note: breakpoint 1 also set at pc 0x5555555551c3.
+Breakpoint 2 at 0x5555555551c3: file /home/x/work/libs/libraries/app/glibc/t_mem.c, line 9.
+(gdb) r
+Starting program: /home/x/work/libs/libraries/output/build/app/glibc/tmem
+
+Breakpoint 1, main (argc=32767, argv=0xcffffe358) at /home/x/work/libs/libraries/app/glibc/t_mem.c:9
+9           char* p1 = malloc(32);
+(gdb) s
+10          snprintf(p1, 32, &quot;hello, I am here 1&quot;);
+(gdb)
+__GI___libc_malloc (bytes=32) at malloc.c:3263
+3263    {
+(gdb) bt
+#0  __GI___libc_malloc (bytes=32) at malloc.c:3263
+#1  0x00005555555551e0 in main (argc=1, argv=0x7fffffffe238) at /home/x/work/libs/libraries/app/glibc/t_mem.c:10
+(gdb) i frame
+Stack level 0, frame at 0x7fffffffe120:
+ rip = 0x7ffff7e82b6e in __GI___libc_malloc (malloc.c:3263); saved rip = 0x5555555551e0
+ called by frame at 0x7fffffffe150
+ source language c.
+ Arglist at 0x7fffffffe110, args: bytes=32
+ Locals at 0x7fffffffe110, Previous frame&apos;s sp is 0x7fffffffe120
+ Saved registers:
+  rip at 0x7fffffffe118
+(gdb)
+</code></pre>
 
                                 
                                 </section>
@@ -408,12 +492,12 @@
 
             
                 
-                <a href="../glibc.html" class="navigation navigation-prev " aria-label="Previous page: glibc">
+                <a href="pageTable.html" class="navigation navigation-prev " aria-label="Previous page: 1.3 页表">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="ProcessMemoryConcepts.html" class="navigation navigation-next " aria-label="Next page: 1.1 进程内存概念">
+                <a href="../../linux/linux.html" class="navigation navigation-next " aria-label="Next page: linux">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -424,7 +508,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1 虚拟地址分配和分页","level":"1.2.1.1","depth":3,"next":{"title":"1.1 进程内存概念","level":"1.2.1.1.1","depth":4,"path":"computer/glibc/memoryManagement/ProcessMemoryConcepts.md","ref":"computer/glibc/memoryManagement/ProcessMemoryConcepts.md","articles":[]},"previous":{"title":"glibc","level":"1.2.1","depth":2,"path":"computer/glibc/glibc.md","ref":"computer/glibc/glibc.md","articles":[{"title":"1 虚拟地址分配和分页","level":"1.2.1.1","depth":3,"path":"computer/glibc/memoryManagement/memoryManagement.md","ref":"computer/glibc/memoryManagement/memoryManagement.md","articles":[{"title":"1.1 进程内存概念","level":"1.2.1.1.1","depth":4,"path":"computer/glibc/memoryManagement/ProcessMemoryConcepts.md","ref":"computer/glibc/memoryManagement/ProcessMemoryConcepts.md","articles":[]},{"title":"1.2 GNU 分配器","level":"1.2.1.1.2","depth":4,"path":"computer/glibc/memoryManagement/GNUAllocator.md","ref":"computer/glibc/memoryManagement/GNUAllocator.md","articles":[]},{"title":"1.3 页表","level":"1.2.1.1.3","depth":4,"path":"computer/glibc/memoryManagement/pageTable.md","ref":"computer/glibc/memoryManagement/pageTable.md","articles":[]},{"title":"1.4 gdb调试","level":"1.2.1.1.4","depth":4,"path":"computer/glibc/memoryManagement/gdbDebug.md","ref":"computer/glibc/memoryManagement/gdbDebug.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["-search","search-plus","-font-settings","-livereload","-highlight","-sharing","back-to-top-button","expandable-chapters-small","code","splitter","hide-element","chapter-fold","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"zhangkaiyuan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ebook","language":"zh-hans","gitbook":"*","description":"ebook"},"file":{"path":"computer/glibc/memoryManagement/memoryManagement.md","mtime":"2023-05-25T07:48:28.699Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-26T10:12:35.615Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.4 gdb调试","level":"1.2.1.1.4","depth":4,"next":{"title":"linux","level":"1.2.2","depth":2,"path":"computer/linux/linux.md","ref":"computer/linux/linux.md","articles":[{"title":"1 elf文件详解","level":"1.2.2.1","depth":3,"path":"computer/linux/elfFile.md","ref":"computer/linux/elfFile.md","articles":[]}]},"previous":{"title":"1.3 页表","level":"1.2.1.1.3","depth":4,"path":"computer/glibc/memoryManagement/pageTable.md","ref":"computer/glibc/memoryManagement/pageTable.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-plus","-font-settings","-livereload","-highlight","-sharing","back-to-top-button","expandable-chapters-small","code","splitter","hide-element","chapter-fold","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"zhangkaiyuan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ebook","language":"zh-hans","gitbook":"*","description":"ebook"},"file":{"path":"computer/glibc/memoryManagement/gdbDebug.md","mtime":"2023-05-26T01:15:57.472Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-26T10:12:35.615Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
