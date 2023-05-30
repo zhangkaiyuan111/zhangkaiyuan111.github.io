@@ -729,13 +729,122 @@ int memLibTest() {
     return 0;
 }
 </code></pre>
-<p>dump&#x51FA;&#x6765;&#x7684;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;  </p>
-<pre><code>x@ubuntu:~/work/libs/libraries$ objdump -d -j .text output/build/app/glibc/libtstmem.so
+<p>dump&#x51FA;&#x6765;&#x7684;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;   </p>
+<pre><code>zhangkaiyuan@ubuntu:~/work/libs/libraries$ objdump -d output/build/app/glibc/libtstmem.so
 
 output/build/app/glibc/libtstmem.so:     file format elf64-x86-64
 
 
+Disassembly of section .init:
+
+0000000000001000 &lt;_init&gt;:
+    1000:       f3 0f 1e fa             endbr64
+    1004:       48 83 ec 08             sub    $0x8,%rsp
+    1008:       48 8b 05 d9 2f 00 00    mov    0x2fd9(%rip),%rax        # 3fe8 &lt;__gmon_start__&gt;
+    100f:       48 85 c0                test   %rax,%rax
+    1012:       74 02                   je     1016 &lt;_init+0x16&gt;
+    1014:       ff d0                   callq  *%rax
+    1016:       48 83 c4 08             add    $0x8,%rsp
+    101a:       c3                      retq
+
+Disassembly of section .plt:
+
+0000000000001020 &lt;.plt&gt;:
+    1020:       ff 35 e2 2f 00 00       pushq  0x2fe2(%rip)        # 4008 &lt;_GLOBAL_OFFSET_TABLE_+0x8&gt;
+    1026:       f2 ff 25 e3 2f 00 00    bnd jmpq *0x2fe3(%rip)        # 4010 &lt;_GLOBAL_OFFSET_TABLE_+0x10&gt;
+    102d:       0f 1f 00                nopl   (%rax)
+    1030:       f3 0f 1e fa             endbr64
+    1034:       68 00 00 00 00          pushq  $0x0
+    1039:       f2 e9 e1 ff ff ff       bnd jmpq 1020 &lt;.plt&gt;
+    103f:       90                      nop
+    1040:       f3 0f 1e fa             endbr64
+    1044:       68 01 00 00 00          pushq  $0x1
+    1049:       f2 e9 d1 ff ff ff       bnd jmpq 1020 &lt;.plt&gt;
+    104f:       90                      nop
+    1050:       f3 0f 1e fa             endbr64
+    1054:       68 02 00 00 00          pushq  $0x2
+    1059:       f2 e9 c1 ff ff ff       bnd jmpq 1020 &lt;.plt&gt;
+    105f:       90                      nop
+
+Disassembly of section .plt.got:
+
+0000000000001060 &lt;__cxa_finalize@plt&gt;:
+    1060:       f3 0f 1e fa             endbr64
+    1064:       f2 ff 25 8d 2f 00 00    bnd jmpq *0x2f8d(%rip)        # 3ff8 &lt;__cxa_finalize@GLIBC_2.2.5&gt;
+    106b:       0f 1f 44 00 00          nopl   0x0(%rax,%rax,1)
+
+Disassembly of section .plt.sec:
+
+0000000000001070 &lt;snprintf@plt&gt;:
+    1070:       f3 0f 1e fa             endbr64
+    1074:       f2 ff 25 9d 2f 00 00    bnd jmpq *0x2f9d(%rip)        # 4018 &lt;snprintf@GLIBC_2.2.5&gt;
+    107b:       0f 1f 44 00 00          nopl   0x0(%rax,%rax,1)
+
+0000000000001080 &lt;ts@plt&gt;:
+    1080:       f3 0f 1e fa             endbr64
+    1084:       f2 ff 25 95 2f 00 00    bnd jmpq *0x2f95(%rip)        # 4020 &lt;ts@@Base+0x2ec7&gt;
+    108b:       0f 1f 44 00 00          nopl   0x0(%rax,%rax,1)
+
+0000000000001090 &lt;malloc@plt&gt;:
+    1090:       f3 0f 1e fa             endbr64
+    1094:       f2 ff 25 8d 2f 00 00    bnd jmpq *0x2f8d(%rip)        # 4028 &lt;malloc@GLIBC_2.2.5&gt;
+    109b:       0f 1f 44 00 00          nopl   0x0(%rax,%rax,1)
+
 Disassembly of section .text:
+
+00000000000010a0 &lt;deregister_tm_clones&gt;:
+    10a0:       48 8d 3d 99 2f 00 00    lea    0x2f99(%rip),%rdi        # 4040 &lt;__TMC_END__&gt;
+    10a7:       48 8d 05 92 2f 00 00    lea    0x2f92(%rip),%rax        # 4040 &lt;__TMC_END__&gt;
+    10ae:       48 39 f8                cmp    %rdi,%rax
+    10b1:       74 15                   je     10c8 &lt;deregister_tm_clones+0x28&gt;
+    10b3:       48 8b 05 1e 2f 00 00    mov    0x2f1e(%rip),%rax        # 3fd8 &lt;_ITM_deregisterTMCloneTable&gt;
+    10ba:       48 85 c0                test   %rax,%rax
+    10bd:       74 09                   je     10c8 &lt;deregister_tm_clones+0x28&gt;
+    10bf:       ff e0                   jmpq   *%rax
+    10c1:       0f 1f 80 00 00 00 00    nopl   0x0(%rax)
+    10c8:       c3                      retq
+    10c9:       0f 1f 80 00 00 00 00    nopl   0x0(%rax)
+
+00000000000010d0 &lt;register_tm_clones&gt;:
+    10d0:       48 8d 3d 69 2f 00 00    lea    0x2f69(%rip),%rdi        # 4040 &lt;__TMC_END__&gt;
+    10d7:       48 8d 35 62 2f 00 00    lea    0x2f62(%rip),%rsi        # 4040 &lt;__TMC_END__&gt;
+    10de:       48 29 fe                sub    %rdi,%rsi
+    10e1:       48 89 f0                mov    %rsi,%rax
+    10e4:       48 c1 ee 3f             shr    $0x3f,%rsi
+    10e8:       48 c1 f8 03             sar    $0x3,%rax
+    10ec:       48 01 c6                add    %rax,%rsi
+    10ef:       48 d1 fe                sar    %rsi
+    10f2:       74 14                   je     1108 &lt;register_tm_clones+0x38&gt;
+    10f4:       48 8b 05 f5 2e 00 00    mov    0x2ef5(%rip),%rax        # 3ff0 &lt;_ITM_registerTMCloneTable&gt;
+    10fb:       48 85 c0                test   %rax,%rax
+    10fe:       74 08                   je     1108 &lt;register_tm_clones+0x38&gt;
+    1100:       ff e0                   jmpq   *%rax
+    1102:       66 0f 1f 44 00 00       nopw   0x0(%rax,%rax,1)
+    1108:       c3                      retq
+    1109:       0f 1f 80 00 00 00 00    nopl   0x0(%rax)
+
+0000000000001110 &lt;__do_global_dtors_aux&gt;:
+    1110:       f3 0f 1e fa             endbr64
+    1114:       80 3d 21 2f 00 00 00    cmpb   $0x0,0x2f21(%rip)        # 403c &lt;completed.8061&gt;
+    111b:       75 2b                   jne    1148 &lt;__do_global_dtors_aux+0x38&gt;
+    111d:       55                      push   %rbp
+    111e:       48 83 3d d2 2e 00 00    cmpq   $0x0,0x2ed2(%rip)        # 3ff8 &lt;__cxa_finalize@GLIBC_2.2.5&gt;
+    1125:       00
+    1126:       48 89 e5                mov    %rsp,%rbp
+    1129:       74 0c                   je     1137 &lt;__do_global_dtors_aux+0x27&gt;
+    112b:       48 8b 3d fe 2e 00 00    mov    0x2efe(%rip),%rdi        # 4030 &lt;__dso_handle&gt;
+    1132:       e8 29 ff ff ff          callq  1060 &lt;__cxa_finalize@plt&gt;
+    1137:       e8 64 ff ff ff          callq  10a0 &lt;deregister_tm_clones&gt;
+    113c:       c6 05 f9 2e 00 00 01    movb   $0x1,0x2ef9(%rip)        # 403c &lt;completed.8061&gt;
+    1143:       5d                      pop    %rbp
+    1144:       c3                      retq
+    1145:       0f 1f 00                nopl   (%rax)
+    1148:       c3                      retq
+    1149:       0f 1f 80 00 00 00 00    nopl   0x0(%rax)
+
+0000000000001150 &lt;frame_dummy&gt;:
+    1150:       f3 0f 1e fa             endbr64
+    1154:       e9 77 ff ff ff          jmpq   10d0 &lt;register_tm_clones&gt;
 
 0000000000001159 &lt;ts&gt;:
     1159:       f3 0f 1e fa             endbr64
@@ -773,26 +882,144 @@ Disassembly of section .text:
     11d9:       b8 00 00 00 00          mov    $0x0,%eax
     11de:       c9                      leaveq
     11df:       c3                      retq
-</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x5728; e8 b5 fe ff ff          callq  1080 <a href="mailto:ts@plt" target="_blank">ts@plt</a> &#x5904;&#x8C03;&#x7528;&#x4E86;ts&#x51FD;&#x6570;&#x3002;<br>&#x7EE7;&#x7EED;&#x67E5;&#x770B;&#x52A8;&#x6001;&#x91CD;&#x5B9A;&#x5411;&#x533A;&#x4FE1;&#x606F;</p>
-<pre><code>x@ubuntu:~/work/libs/libraries$ readelf -r output/build/app/glibc/libtstmem.so
 
-Relocation section &apos;.rela.dyn&apos; at offset 0x500 contains 8 entries:
-  Offset          Info           Type           Sym. Value    Sym. Name + Addend
-000000003de8  000000000008 R_X86_64_RELATIVE                    1150
-000000003df0  000000000008 R_X86_64_RELATIVE                    1110
-000000004030  000000000008 R_X86_64_RELATIVE                    4030
-000000003fd8  000100000006 R_X86_64_GLOB_DAT 0000000000000000 _ITM_deregisterTMClone + 0
-000000003fe0  000800000006 R_X86_64_GLOB_DAT 0000000000004038 mem_tst + 0
-000000003fe8  000300000006 R_X86_64_GLOB_DAT 0000000000000000 __gmon_start__ + 0
-000000003ff0  000500000006 R_X86_64_GLOB_DAT 0000000000000000 _ITM_registerTMCloneTa + 0
-000000003ff8  000600000006 R_X86_64_GLOB_DAT 0000000000000000 __cxa_finalize@GLIBC_2.2.5 + 0
+Disassembly of section .fini:
 
-Relocation section &apos;.rela.plt&apos; at offset 0x5c0 contains 3 entries:
-  Offset          Info           Type           Sym. Value    Sym. Name + Addend
-000000004018  000200000007 R_X86_64_JUMP_SLO 0000000000000000 snprintf@GLIBC_2.2.5 + 0
-000000004020  000900000007 R_X86_64_JUMP_SLO 0000000000001159 ts + 0
-000000004028  000400000007 R_X86_64_JUMP_SLO 0000000000000000 malloc@GLIBC_2.2.5 + 0
-</code></pre>
+00000000000011e0 &lt;_fini&gt;:
+    11e0:       f3 0f 1e fa             endbr64
+    11e4:       48 83 ec 08             sub    $0x8,%rsp
+    11e8:       48 83 c4 08             add    $0x8,%rsp
+    11ec:       c3                      retq
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x5728; e8 b5 fe ff ff          callq  1080 <a href="mailto:ts@plt" target="_blank">ts@plt</a> &#x5904;&#x8C03;&#x7528;&#x4E86;ts&#x51FD;&#x6570;&#x3002;
+&#x5730;&#x5740; 1080 &#x5904;&#xFF0C;&#x5373;&#x4E3A; <a href="mailto:ts@plt" target="_blank">ts@plt</a> &#x51FD;&#x6570;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x6211;&#x4EEC;&#x63A5;&#x4E0B;&#x6765;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x4F4D;&#x4E8E; .plt.sec section &#x4E2D;&#x7684; <a href="mailto:ts@plt" target="_blank">ts@plt</a> &#x51FD;&#x6570;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code>0000000000001080 &lt;ts@plt&gt;:
+    1080:       f3 0f 1e fa             endbr64
+    1084:       f2 ff 25 95 2f 00 00    bnd jmpq *0x2f95(%rip)        # 4020 &lt;ts@@Base+0x2ec7&gt;
+    108b:       0f 1f 44 00 00          nopl   0x0(%rax,%rax,1)
+</code></pre><p>bnd jmpq *0x2f95(%rip)        # 4020 <a href="mailto:ts@@Base+0x2ec7" target="_blank">ts@@Base+0x2ec7</a> &#x8FD9;&#x4E2A;&#x8DF3;&#x8F6C;&#x662F;&#x53BB;&#x62FF; .got.plt &#x8868; 0x4020 &#x4F4D;&#x7F6E; ts &#x7684;&#x5730;&#x5740;&#xFF0C;&#x6B64;&#x503C;&#x4E3A; 0x1040&#xFF0C;&#x5373;&#x8DF3;&#x8F6C;&#x5230; .plt &#x8282;&#x90A3;&#x91CC;&#xFF0C;&#x6267;&#x884C;pushq  $0x1&#x3002;0x1 &#x4E3A; ts &#x5728; rela.plt &#x8868;&#x4E2D;&#x7684; index&#xFF0C;.got.plt &#x8868;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<ul>
+<li>0x2f95 &#x7684;&#x7531;&#x6765;&#xFF1A; &#x6839;&#x636E; .rela.plt &#x8282;&#x533A;&#x53EF;&#x77E5; ts &#x5730;&#x5740;&#x4FDD;&#x5B58;&#x5728; 0x0402 &#x5904;&#xFF0C;&#x540C;&#x65F6;&#x8BE5;&#x6761;&#x6307;&#x4EE4;&#x7684;&#x4E0B;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x7684;&#x5730;&#x5740;&#x4E3A; 0x108b &#xFF0C; &#x6240;&#x4EE5; 0x4020 - 0x108b = 0x2f95&#xFF1B;&#x6240;&#x4EE5; jmpq *0x2f95(%rip) &#x6307;&#x4EE4;&#x7684;&#x542B;&#x4E49;&#x4E3A;&#x5148;&#x8BA1;&#x7B97; rip + 0x2f95 &#x7684;&#x503C;&#xFF0C;&#x8BE5;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x5730;&#x5740;&#xFF0C;&#x53D6;&#x51FA;&#x8BE5;&#x5730;&#x5740;&#x4E2D;&#x7684;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x8DF3;&#x8F6C;&#x5230;&#x8BE5;&#x503C;&#x6240;&#x793A;&#x7684;&#x5730;&#x5740;&#x6267;&#x884C;&#x3002;</li>
+</ul>
+<pre><code>x@ubuntu:~/work/libs/libraries$ readelf -x 23 output/build/app/glibc/libtstmem.so
+
+Hex dump of section &apos;.got.plt&apos;:
+ NOTE: This section has relocations against it, but these have NOT been applied to this dump.
+  0x00004000 f83d0000 00000000 00000000 00000000 .=..............
+  0x00004010 00000000 00000000 30100000 00000000 ........0.......
+  0x00004020 40100000 00000000 50100000 00000000 @.......P.......
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230; 0x00004020 &#x5730;&#x5740;&#x5904;&#x7684;&#x503C;&#x662F; 0x40100000&#xFF0C;&#x5C0F;&#x7AEF;&#x6A21;&#x5F0F;&#xFF0C;&#x8F6C;&#x5316;&#x7684;&#x503C;&#x4E3A; 0x1040 &#xFF0C;&#x6240;&#x4EE5;&#x8DF3;&#x8F6C;&#x5230; 0x1040 &#x5730;&#x5740;&#x5904;&#x6267;&#x884C;&#xFF0C; 0x1040 &#x5728; .plt &#x8282;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code>0000000000001020 &lt;.plt&gt;:
+    1020:       ff 35 e2 2f 00 00       pushq  0x2fe2(%rip)        # 4008 &lt;_GLOBAL_OFFSET_TABLE_+0x8&gt;
+    1026:       f2 ff 25 e3 2f 00 00    bnd jmpq *0x2fe3(%rip)        # 4010 &lt;_GLOBAL_OFFSET_TABLE_+0x10&gt;
+    102d:       0f 1f 00                nopl   (%rax)
+    1030:       f3 0f 1e fa             endbr64
+    1034:       68 00 00 00 00          pushq  $0x0
+    1039:       f2 e9 e1 ff ff ff       bnd jmpq 1020 &lt;.plt&gt;
+    103f:       90                      nop
+    1040:       f3 0f 1e fa             endbr64
+    1044:       68 01 00 00 00          pushq  $0x1
+    1049:       f2 e9 d1 ff ff ff       bnd jmpq 1020 &lt;.plt&gt;
+    104f:       90                      nop
+    1050:       f3 0f 1e fa             endbr64
+    1054:       68 02 00 00 00          pushq  $0x2
+    1059:       f2 e9 c1 ff ff ff       bnd jmpq 1020 &lt;.plt&gt;
+    105f:       90
+</code></pre><p>1049:       f2 e9 d1 ff ff ff       bnd jmpq 1020 &lt;.plt&gt; &#x6B64;&#x884C;&#x4EE3;&#x7801;&#x4F1A;&#x8DF3;&#x8F6C;&#x5230; .ptl &#x7684;&#x57FA;&#x5740;&#x5904;&#xFF0C;&#x6267;&#x884C; 1020:       ff 35 e2 2f 00 00       pushq  0x2fe2(%rip)        # 4008 <_global_offset_table_+0x8> &#x6307;&#x4EE4;&#xFF0C;*(GOT +0x8)&#x538B;&#x5165;&#x6808;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C; bnd jmpq *0x2fe3(%rip)        # 4010 <_global_offset_table_+0x10> &#x8C03;&#x8F6C;&#x5230; *(GOT+0x10) &#x5904;&#xFF0C;&#x5BF9; *(GOT+0x10)&#x53CD;&#x6C47;&#x7F16;&#xFF0C;&#x5F97;&#x77E5;&#x8FD9;&#x5C31;&#x662F; _dl_runtime_resolve_xsavec &#x51FD;&#x6570;&#xFF0C;_dl_runtime_resolve_xsavec &#x51FD;&#x6570;&#x6709;&#x4E24;&#x4E2A;&#x529F;&#x80FD;&#xFF1A;</_global_offset_table_+0x10></_global_offset_table_+0x8></p>
+<ol>
+<li>&#x4FEE;&#x6539;GOT&#x8868;&#x7684;&#x6761;&#x76EE;&#xFF08;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x4E0D;&#x9700;&#x8981;&#x6BCF;&#x6B21;&#x90FD;&#x52A8;&#x6001;&#x89E3;&#x6790;&#xFF09;&#x3002;</li>
+<li>&#x8DF3;&#x8F6C;&#x5230;_IO_puts &#x6267;&#x884C;&#x52A8;&#x6001;&#x5E93;&#x51FD;&#x6570;&#x3002;  </li>
+</ol>
+<p>gdb&#x8C03;&#x8BD5;&#xFF1A;<br>&#x901A;&#x8FC7;&#x65AD;&#x70B9;&#x8FDB;&#x5165;&#x5230;&#x5E93;&#x4E2D;&#x7684; memLibTest &#x51FD;&#x6570;&#xFF0C;&#x53CD;&#x6C47;&#x7F16;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code>(gdb) disassemble
+Dump of assembler code for function memLibTest:
+   0x00007ffff7fbd17d &lt;+0&gt;:     endbr64
+   0x00007ffff7fbd181 &lt;+4&gt;:     push   %rbp
+   0x00007ffff7fbd182 &lt;+5&gt;:     mov    %rsp,%rbp
+   0x00007ffff7fbd185 &lt;+8&gt;:     sub    $0x10,%rsp
+   0x00007ffff7fbd189 &lt;+12&gt;:    mov    $0x20,%edi
+   0x00007ffff7fbd18e &lt;+17&gt;:    callq  0x7ffff7fbd090 &lt;malloc@plt&gt;
+   0x00007ffff7fbd193 &lt;+22&gt;:    mov    %rax,-0x8(%rbp)
+=&gt; 0x00007ffff7fbd197 &lt;+26&gt;:    mov    -0x8(%rbp),%rax
+   0x00007ffff7fbd19b &lt;+30&gt;:    lea    0xe5e(%rip),%rdx        # 0x7ffff7fbe000
+   0x00007ffff7fbd1a2 &lt;+37&gt;:    mov    $0x20,%esi
+   0x00007ffff7fbd1a7 &lt;+42&gt;:    mov    %rax,%rdi
+   0x00007ffff7fbd1aa &lt;+45&gt;:    mov    $0x0,%eax
+   0x00007ffff7fbd1af &lt;+50&gt;:    callq  0x7ffff7fbd070 &lt;snprintf@plt&gt;
+   0x00007ffff7fbd1b4 &lt;+55&gt;:    mov    0x2e25(%rip),%rax        # 0x7ffff7fbffe0
+   0x00007ffff7fbd1bb &lt;+62&gt;:    movl   $0x9,(%rax)
+   0x00007ffff7fbd1c1 &lt;+68&gt;:    mov    $0x0,%eax
+   0x00007ffff7fbd1c6 &lt;+73&gt;:    callq  0x7ffff7fbd080 &lt;ts@plt&gt;
+   0x00007ffff7fbd1cb &lt;+78&gt;:    movl   $0x0,-0xc(%rbp)
+   0x00007ffff7fbd1d2 &lt;+85&gt;:    movl   $0xa,-0xc(%rbp)
+   0x00007ffff7fbd1d9 &lt;+92&gt;:    mov    $0x0,%eax
+   0x00007ffff7fbd1de &lt;+97&gt;:    leaveq
+   0x00007ffff7fbd1df &lt;+98&gt;:    retq
+</code></pre><p>&#x901A;&#x8FC7; si &#x6307;&#x4EE4;&#x8FDB;&#x5165;&#x5230; ts@plt ()  &#x51FD;&#x6570;&#xFF0C; disassemble &#x53CD;&#x6C47;&#x7F16;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code>(gdb) si
+0x00007ffff7fbd080 in ts@plt () from /home/x/work/libs/libraries/output/build/app/glibc/libtstmem.so
+(gdb) disassemble
+Dump of assembler code for function ts@plt:
+=&gt; 0x00007ffff7fbd080 &lt;+0&gt;:     endbr64
+   0x00007ffff7fbd084 &lt;+4&gt;:     bnd jmpq *0x2f95(%rip)        # 0x7ffff7fc0020 &lt;ts@got.plt&gt;
+   0x00007ffff7fbd08b &lt;+11&gt;:    nopl   0x0(%rax,%rax,1)
+End of assembler dump.
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x5728; 0x00007ffff7fbd084 &#x5904;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x8DF3;&#x8F6C;&#x5230; 0x7ffff7fbc000(&#x5E93;&#x52A0;&#x8F7D;&#x57FA;&#x5740;) + 0x4020 = 0x7ffff7fc0020 &#x5730;&#x5740;&#x5904;&#xFF0C;&#x4E5F;&#x5373; .got.plt &#x8282;&#x533A;&#x5904;, &#x6211;&#x4EEC;&#x6253;&#x5370; 0x7ffff7fc0020 &#x5904;&#x5730;&#x5740;&#x7684;&#x5185;&#x5BB9;&#xFF1A;  </p>
+<pre><code>(gdb) x/16xw 0x7ffff7fc0020
+0x7ffff7fc0020 &lt;ts@got.plt&gt;:    0xf7fbd040      0x00007fff      0xf7e7db6e      0x00007fff
+0x7ffff7fc0030: 0xf7fc0030      0x00007fff      0x00000009      0x00000000
+0x7ffff7fc0040: 0x62552820      0x75746e75      0x342e3920      0x312d302e
+0x7ffff7fc0050: 0x6e756275      0x7e317574      0x302e3032      0x29312e34
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230; 0x7ffff7fc0020 &#x5185;&#x5BB9;&#x4E3A; 0x00007ffff7fbd040 &#xFF0C;&#x56E0;&#x6B64;&#x7A0B;&#x5E8F;&#x7EE7;&#x7EED;&#x8DF3;&#x8F6C;&#x5230; 0x00007ffff7fbd040 &#x5730;&#x5740;&#x5904;&#x6267;&#x884C;&#xFF0C;&#x4E5F;&#x5373; .plt &#x5904;&#xFF0C;&#x7EE7;&#x7EED;&#x6C47;&#x7F16;&#x5355;&#x6B65;&#x6267;&#x884C;&#xFF0C;&#x7A0B;&#x5E8F;&#x8FDB;&#x5165;&#x5230;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;  </p>
+<pre><code>(gdb) disassemble 0x00007ffff7fbd040, +32
+Dump of assembler code from 0x7ffff7fbd040 to 0x7ffff7fbd060:
+=&gt; 0x00007ffff7fbd040:  endbr64
+   0x00007ffff7fbd044:  pushq  $0x1
+   0x00007ffff7fbd049:  bnd jmpq 0x7ffff7fbd020
+   0x00007ffff7fbd04f:  nop
+   0x00007ffff7fbd050:  endbr64
+   0x00007ffff7fbd054:  pushq  $0x2
+   0x00007ffff7fbd059:  bnd jmpq 0x7ffff7fbd020
+   0x00007ffff7fbd05f:  nop
+End of assembler dump.
+</code></pre><p>&#x7A0B;&#x5E8F;&#x7EE7;&#x7EED;&#x8DF3;&#x8F6C;&#x5230; 0x7ffff7fbd020 &#x5730;&#x5740;&#x5904;&#x6267;&#x884C;&#xFF1A;  </p>
+<pre><code>(gdb) disassemble 0x00007ffff7fbd020, +32
+Dump of assembler code from 0x7ffff7fbd020 to 0x7ffff7fbd040:
+=&gt; 0x00007ffff7fbd020:  pushq  0x2fe2(%rip)        # 0x7ffff7fc0008
+   0x00007ffff7fbd026:  bnd jmpq *0x2fe3(%rip)        # 0x7ffff7fc0010
+   0x00007ffff7fbd02d:  nopl   (%rax)
+   0x00007ffff7fbd030:  endbr64
+   0x00007ffff7fbd034:  pushq  $0x0
+   0x00007ffff7fbd039:  bnd jmpq 0x7ffff7fbd020
+   0x00007ffff7fbd03f:  nop
+</code></pre><p>&#x7EE7;&#x7EED;&#x5355;&#x6B65;&#x6267;&#x884C;&#x5230; bnd jmpq *0x2fe3(%rip)        # 0x7ffff7fc0010 &#xFF0C;&#x7A0B;&#x5E8F;&#x53C8;&#x8C03;&#x8F6C;&#x5230; *(GOT+0x10) &#x5904;&#xFF0C;&#x5373; _dl_runtime_resolve_xsavec &#x51FD;&#x6570;&#x6267;&#x884C;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code>(gdb) si
+_dl_runtime_resolve_xsavec () at ../sysdeps/x86_64/dl-trampoline.h:71
+warning: Source file is more recent than executable.
+</code></pre><p>&#x6B64;&#x51FD;&#x6570;&#x6267;&#x884C;&#x5B8C;&#x540E;&#x4F1A;&#x8DF3;&#x8F6C;&#x5230; ts() &#x51FD;&#x6570;&#x6267;&#x884C;&#xFF0C;ts() &#x51FD;&#x6570;&#x5730;&#x5740;&#x5728; 0x00007ffff7fbc000 + 0x1159 = 0x00007ffff7fbd159 &#x5904;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;  </p>
+<pre><code>(gdb)
+ts () at /home/zhangkaiyuan/work/libs/libraries/app/glibc/t_mem_lib.c:5
+5       int ts() {
+(gdb) disassemble
+Dump of assembler code for function ts:
+=&gt; 0x00007ffff7fbd159 &lt;+0&gt;:     endbr64
+   0x00007ffff7fbd15d &lt;+4&gt;:     push   %rbp
+   0x00007ffff7fbd15e &lt;+5&gt;:     mov    %rsp,%rbp
+   0x00007ffff7fbd161 &lt;+8&gt;:     mov    0x2e78(%rip),%rax        # 0x7ffff7fbffe0
+   0x00007ffff7fbd168 &lt;+15&gt;:    mov    (%rax),%eax
+   0x00007ffff7fbd16a &lt;+17&gt;:    lea    0x3(%rax),%edx
+   0x00007ffff7fbd16d &lt;+20&gt;:    mov    0x2e6c(%rip),%rax        # 0x7ffff7fbffe0
+   0x00007ffff7fbd174 &lt;+27&gt;:    mov    %edx,(%rax)
+   0x00007ffff7fbd176 &lt;+29&gt;:    mov    $0x0,%eax
+   0x00007ffff7fbd17b &lt;+34&gt;:    pop    %rbp
+   0x00007ffff7fbd17c &lt;+35&gt;:    retq
+</code></pre><p>&#x540C;&#x65F6; .got.plt &#x8282;&#x533A;&#x4E2D; ts@got.plt &#x5730;&#x5740; 0x7ffff7fc0020 &#x5904;&#x7684;&#x503C;&#x5DF2;&#x7ECF;&#x4FEE;&#x6539;&#x4E3A; ts() &#x51FD;&#x6570;&#x7684;&#x771F;&#x5B9E;&#x5730;&#x5740;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code>(gdb) x/16xw 0x7ffff7fc0020
+0x7ffff7fc0020 &lt;ts@got.plt&gt;:    0xf7fbd159      0x00007fff      0xf7e7db6e      0x00007fff
+0x7ffff7fc0030: 0xf7fc0030      0x00007fff      0x00000009      0x00000000
+0x7ffff7fc0040: 0x62552820      0x75746e75      0x342e3920      0x312d302e
+0x7ffff7fc0050: 0x6e756275      0x7e317574      0x302e3032      0x29312e34
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x51FA; 0x7ffff7fc0020 &#x5730;&#x5740;&#x5904;&#x7684;&#x503C;&#x53D8;&#x4E3A; 0x00007ffff7fbd159 &#xFF0C;&#x6B64;&#x5730;&#x5740;&#x5373;&#x4E3A; ts() &#x51FD;&#x6570;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x771F;&#x5B9E;&#x5730;&#x5740;&#xFF0C;&#x5B8C;&#x6210;&#x4E86; ts() &#x51FD;&#x6570;&#x7684;&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#x3002;</p>
+
                                 
                                 </section>
                             
@@ -835,7 +1062,7 @@ Relocation section &apos;.rela.plt&apos; at offset 0x5c0 contains 3 entries:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.1 重定位","level":"1.2.2.2.1","depth":4,"next":{"title":"文学","level":"1.3","depth":1,"path":"literature/literature.md","ref":"literature/literature.md","articles":[{"title":"诗词","level":"1.3.1","depth":2,"path":"literature/poetry/poetry.md","ref":"literature/poetry/poetry.md","articles":[{"title":"苏轼","level":"1.3.1.1","depth":3,"path":"literature/poetry/sushi/sushi.md","ref":"literature/poetry/sushi/sushi.md","articles":[{"title":"《定风波·莫听穿林打叶声》","level":"1.3.1.1.1","depth":4,"path":"literature/poetry/sushi/1.md","ref":"literature/poetry/sushi/1.md","articles":[]}]}]}]},"previous":{"title":"2 动态库","level":"1.2.2.2","depth":3,"path":"computer/linux/dynamic_library/dynamicLibrary.md","ref":"computer/linux/dynamic_library/dynamicLibrary.md","articles":[{"title":"2.1 重定位","level":"1.2.2.2.1","depth":4,"path":"computer/linux/dynamic_library/relocation/relocation.md","ref":"computer/linux/dynamic_library/relocation/relocation.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-plus","-font-settings","-livereload","-highlight","-sharing","back-to-top-button","expandable-chapters-small","code","splitter","hide-element","chapter-fold","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"zhangkaiyuan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ebook","language":"zh-hans","gitbook":"*","description":"ebook"},"file":{"path":"computer/linux/dynamic_library/relocation/relocation.md","mtime":"2023-05-29T09:42:51.878Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-29T10:15:44.705Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.1 重定位","level":"1.2.2.2.1","depth":4,"next":{"title":"文学","level":"1.3","depth":1,"path":"literature/literature.md","ref":"literature/literature.md","articles":[{"title":"诗词","level":"1.3.1","depth":2,"path":"literature/poetry/poetry.md","ref":"literature/poetry/poetry.md","articles":[{"title":"苏轼","level":"1.3.1.1","depth":3,"path":"literature/poetry/sushi/sushi.md","ref":"literature/poetry/sushi/sushi.md","articles":[{"title":"《定风波·莫听穿林打叶声》","level":"1.3.1.1.1","depth":4,"path":"literature/poetry/sushi/1.md","ref":"literature/poetry/sushi/1.md","articles":[]}]}]}]},"previous":{"title":"2 动态库","level":"1.2.2.2","depth":3,"path":"computer/linux/dynamic_library/dynamicLibrary.md","ref":"computer/linux/dynamic_library/dynamicLibrary.md","articles":[{"title":"2.1 重定位","level":"1.2.2.2.1","depth":4,"path":"computer/linux/dynamic_library/relocation/relocation.md","ref":"computer/linux/dynamic_library/relocation/relocation.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-plus","-font-settings","-livereload","-highlight","-sharing","back-to-top-button","expandable-chapters-small","code","splitter","hide-element","chapter-fold","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"zhangkaiyuan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ebook","language":"zh-hans","gitbook":"*","description":"ebook"},"file":{"path":"computer/linux/dynamic_library/relocation/relocation.md","mtime":"2023-05-30T08:40:31.743Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-30T08:41:17.287Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>
